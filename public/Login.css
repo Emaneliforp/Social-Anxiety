@@ -91,3 +91,7 @@ input, button{
   border: 1px solid red;
   cursor: pointer;
 }
+a{
+  color: white;
+  text-decoration: none;
+}
