@@ -1,0 +1,21 @@
+p {
+  font-family: "Arial";
+}
+.main{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.title {
+    background-size: cover;
+    background-color: #ececec;
+    min-height: 100px;
+    height: 400px;
+    background-image: url('tempbg1.png');
+    background-repeat: no-repeat;
+}
+.communities {
+  background-color: #ffc399;
+}
+.recentskill {
+  background-color: #fd989a;
+}
