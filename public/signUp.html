@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <title>Firebase Signup</title>
@@ -10,7 +11,7 @@
       <div class="flex-container">
         <div><img id="logo1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Y__KOvXxJNqeQBRHD-53W9XXEqTppRAtT1G_tY162JDQyOcq" width="75"></div>
         <div id="welcomeToWay"><h4>Welcome to Way</h4></div>
-        <div class="signUpBtn"><button class="signUpBtn">Sign Up</button></div>
+        <div id="loginDiv"><button id="loginUpBtn">Login</button></div>
        </div>
      </div>
      <div id="login_div" class="main-div">
@@ -22,34 +23,6 @@
         <input type="age" placeholder="Age" id="age_field"/>
         <h1></h1>
         <button onclick="create()">Create Account</button>
-    </div>
-  </div>
-    <!--<div id="bottomExplain">
-      <h1><strong><em>What should I say?</em> This is the common phrase that crosses minds of many.
-      We fear the awkward silence and the uncomfortable looks as we interact daily with others. Named
-      the third largest psychological issue, social anxiety affects many in their daily lives. If you
-      experience emotional distress in social interations, don't fear, we have the solution for you.
-      Explore and develop your communication skills though WAY.</h1>
-    </div>-->
-    <div id="user_div" class="loggedin-div">
-       <h3>Welcome User</h3>
-       <p id="user_para">Welcome to Firebase Web</p>
-       <button onclick="logout()">Logout</button>
-    </div>
-  </div>
-<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDOLbWSHVG0fu6uWVNUYrTpHQvS8qnlUOw",
-    authDomain: "fir-web-login-cf956.firebaseapp.com",
-    databaseURL: "https://fir-web-login-cf956.firebaseio.com",
-    projectId: "fir-web-login-cf956",
-    storageBucket: "",
-    messagingSenderId: "187560757282"
-  };
-  firebase.initializeApp(config);
-</script>
-    <script src="index.js"></script>
-  </body>
+     </div>
+   </body>
 </html>
