@@ -1,0 +1,50 @@
+p {
+  font-family: "Arial";
+}
+.sidebar{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111; /*change later*/
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+.sidebar a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover{
+  color: #f1f1f1;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 36px;
+  margin-right: 25px;
+}
+.sidebarbtn {
+  float: right;
+}
+.title {
+    background-size: cover;
+    background-color: #ececec;
+    min-height: 100px;
+    height: 400px;
+    background-image: url('tempbg1.png');
+    background-repeat: no-repeat;
+}
+.communities {
+  background-color: #ffc399;
+}
+.recentskill {
+  background-color: #fd989a;
+}

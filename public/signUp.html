@@ -5,6 +5,7 @@
     <link href=https://fonts.googleapis.com/css?family=Nunito:400,700: rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
     <link rel="stylesheet" href="signUp.css"/>
+   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
   </head>
   <body>
     <div id="topHeader">
@@ -17,12 +18,13 @@
      <div id="login_div" class="main-div">
         <h1>Sign Up</h1>
         <h2>Welcome to Way</h2>
-        <input type="email" placeholder="Email...." id="email_field"/>
-        <input type="password" placeholder="Password" id="password_field"/>
         <input type="name" placeholder="Name" id="name_field">
         <input type="age" placeholder="Age" id="age_field"/>
+        <input type="email" placeholder="Email" id="email_field"/>
+        <input type="password" placeholder="Password" id="password_field"/>
         <h1></h1>
         <button onclick="create()">Create Account</button>
      </div>
+
    </body>
 </html>
