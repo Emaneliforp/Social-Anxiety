@@ -1,5 +1,5 @@
 body{
-  background:url(https://cdn.dribbble.com/users/6063/screenshots/1968684/walkers.gif);
+  background:url(walker.gif);
   background-repeat: no-repeat;
   background-size: 2000px 1200px;
    padding: 0px;
@@ -71,9 +71,24 @@ input, button{
 #welcomeToWay{
   float: center;
 }
-
-/*#bottomExplain{
-background: linear-gradient(135deg, #ff5f6d 20%, #ffc371 80%);
-opacity: 0.7;
-margin: 20px;
-}*/
+#loginDiv{
+  margin-left: 75%;
+}
+#loginUpBtn{
+  background: red;
+  font-size: 35px;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px 3px gray;
+  height: 7%;
+  transition:0.3s;
+  -webkit-transition:0.3s;
+  -moz-transition: 0.3s;
+}
+#loginUpBtn:hover{
+  background: crimson;
+  color: white;
+  border: 1px solid red;
+  cursor: pointer;
+}
