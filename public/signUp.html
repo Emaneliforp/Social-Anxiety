@@ -5,7 +5,6 @@
     <link href=https://fonts.googleapis.com/css?family=Nunito:400,700: rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
     <link rel="stylesheet" href="css/signUp.css"/>
-   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
    <script src="signUp.js" defer></script>
 
   </head>
@@ -29,6 +28,19 @@
         <h1></h1>
         <button id = "signUpBtn">Create Account</button>
      </div>
+     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
 
+     <script>
+       // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+         authDomain: "social-anxiety.firebaseapp.com",
+         databaseURL: "https://social-anxiety.firebaseio.com",
+         projectId: "social-anxiety",
+         storageBucket: "social-anxiety.appspot.com",
+         messagingSenderId: "321965462198"
+       };
+       firebase.initializeApp(config);
+     </script>
    </body>
 </html>
