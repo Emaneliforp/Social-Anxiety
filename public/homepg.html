@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="homepg.css">
-  <script src= "homepg.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/homepg.css">
+  <script src= "js/homepg.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Gafata|Megrim" rel="stylesheet">
 </head>
 <body>
   <!--sidebar-->
@@ -17,14 +18,20 @@
     <span style= "cursor: pointer" onclick="opennav()">&#9776;</span>
   </div>
 <!--this is the banner pic-->
-  <div class= "title"></div>
+<div class="slidecontent slidecontainer">
+  <img class="mySlides" src="tempbg1.png">
+  <img class="mySlides" src="tempbg2.png">
+  <img class="mySlides" src="tempbg3.png">
+  <button class="button buttonl" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="button buttonr" onclick="plusDivs(1)">&#10095;</button>
+</div>
 <!--main content idk how to do back end-->
 <div class= "main">
-  <h1> Communities You're In: </h1>
+  <h1 class= "section"> Communities You're In: </h1>
   <div class= "communities">
     Placeholder for communities user joined
   </div>
-  <h1> Recently Worked on: </h1>
+  <h1 class= "section"> Recently Worked on: </h1>
   <div class= "recentskill">
     Placeholder for recent skills user worked on
   </div>
