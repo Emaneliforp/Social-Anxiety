@@ -1,0 +1,59 @@
+var c = lastUserMessage.search(/c/i);
+if (c!==-1){
+const hi=['I am going to the beach', 'No plans. Let's just see what happens?', 'I am not sure. What about you?']
+botMessage=hi[Math.floor(Math.random()*(hi.length))];;
+}
+var d=lastUserMessage.search(/d/i);
+if(d!==-1){
+  botMessage='Nice to know';
+}
+var e=lastUserMessage.search(/e/i);
+if(e!==-1){
+  botMessage='My interest is in talking to people.Everyone has such unique personallities'+'Wow, we have been talking for a long time'+'I need to go in an hour.';
+}
+var f=lastUserMessage.search(/f/i);
+if(f!==-1){
+  botMessage='I don't like the weather'+'It has been terrible recently';
+}
+var ghij=lastUserMessage.search(/Goodbye/i);
+if(ghij!==-1){
+  botMessage=='Goodbye. Nice talking to you.';
+}
+
+//Add semi colons for the ones above
+if (lastUserMessage=='d'){
+  cat="I am well. Thank you";
+}
+if (lastUserMessage=='e'){
+  cat="I see, What are your interests?";
+}
+if (lastUserMessage=='f'){
+  cat="How do you like the weather";
+}
+if (lastUserMessage=='g'){
+  cat="I'm going to be late"+"Goodbye";
+}
+if (lastUserMessage=='h'){
+  cat="Goodbye";
+}
+if (lastUserMessage=='i'){
+  cat="Me too."+"Goodbye";
+}
+if (lastUserMessage=='j'){
+  cat="See you later! Goodbye";
+}
+
+//put in function showNextSlide(){
+  if (currentSlide==slides.length-1){
+    showSlide(currentSlide==0);
+  }
+  else{
+    showSlide(currentSlide+1);
+  }
+}
+
+//Notes
+-maybe change to to three or two
+//Thought:
+The message made by the robot must answer the question and make another very open ended prompt or no prompt at all.
+//put all the comments in and give good explanations
