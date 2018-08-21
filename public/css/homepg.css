@@ -1,3 +1,4 @@
+/* blue: #07cdb2; red: #f5324a; yellow: #fab50f; white*/
 p {
   font-family: "Arial";
 }
@@ -9,17 +10,17 @@ p {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   right: 0;
-  background-color: #111; /*change later*/
+  background-color: #07cdb2;
   overflow-x: hidden;
-  padding-top: 10vh;
+  padding-top: 8vh;
   transition: 0.5s;
   font-family: Gafata;
 }
 .sidebar a{
-  padding: 2vw 2vw 2vw 4vw;
+  padding: 0vw 0vw 2vw 2vw;
   text-decoration: none;
   font-size: 2vw;
   color: #818181;
@@ -35,22 +36,27 @@ p {
   right: 1vw;
   font-size: 3vw;
   margin-right: 1vw;
+  z-index: 2;
 }
-.sidebarbtn {
+#sidebarbtn {
   position: fixed;
-  right: 0vw;
+  right: 1vw;
   z-index: 1;
+  font-size: 2vw;
 }
 .section {
   font-family: Megrim;
+  padding: 2vw;
+  background-color: #fab50f;
+  border-radius: 2vw;
 }
 .communities {
-  background-color: #ffc399;
+  background-color: #f5324a;
   padding: 8vw;
   border-radius: 5vw;
 }
 .recentskill {
-  background-color: #fd989a;
+  background-color: #f5324a;
   padding: 8vw;
   border-radius: 5vw;
 }
