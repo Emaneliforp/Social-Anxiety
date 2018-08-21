@@ -1,11 +1,12 @@
 
 <html>
   <head>
-    <title>Firebase Signup</title>
+    <title>Signup</title>
     <link href=https://fonts.googleapis.com/css?family=Nunito:400,700: rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
-    <link rel="stylesheet" href="signUp.css"/>
-   <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <link rel="stylesheet" href="css/signUp.css"/>
+   <script src="signUp.js" defer></script>
+
   </head>
   <body>
     <div id="topHeader">
@@ -22,8 +23,27 @@
         <input type="age" placeholder="Age" id="age_field"/>
         <input type="email" placeholder="Email" id="email_field"/>
         <input type="password" placeholder="Password" id="password_field"/>
+        <input type="password" placeholder="Re-enter password" id="repassword_field"/>
+
         <h1></h1>
-        <button onclick="create()">Create Account</button>
+        <button id = "signUpBtn">Create Account</button>
      </div>
+<<<<<<< HEAD
+=======
+     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+
+     <script>
+       // Initialize Firebase
+       var config = {
+         apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+         authDomain: "social-anxiety.firebaseapp.com",
+         databaseURL: "https://social-anxiety.firebaseio.com",
+         projectId: "social-anxiety",
+         storageBucket: "social-anxiety.appspot.com",
+         messagingSenderId: "321965462198"
+       };
+       firebase.initializeApp(config);
+     </script>
+>>>>>>> f2c68feacc7c1c308086c1b18355860c5db6fe1c
    </body>
 </html>

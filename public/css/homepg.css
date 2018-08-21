@@ -1,0 +1,88 @@
+p {
+  font-family: "Arial";
+}
+.main{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.sidebar{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111; /*change later*/
+  overflow-x: hidden;
+  padding-top: 10vh;
+  transition: 0.5s;
+  font-family: Gafata;
+}
+.sidebar a{
+  padding: 2vw 2vw 2vw 4vw;
+  text-decoration: none;
+  font-size: 2vw;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover{
+  color: #f1f1f1;
+}
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 1vw;
+  font-size: 3vw;
+  margin-right: 1vw;
+}
+.sidebarbtn {
+  position: fixed;
+  right: 0vw;
+  z-index: 1;
+}
+.section {
+  font-family: Megrim;
+}
+.communities {
+  background-color: #ffc399;
+  padding: 8vw;
+  border-radius: 5vw;
+}
+.recentskill {
+  background-color: #fd989a;
+  padding: 8vw;
+  border-radius: 5vw;
+}
+
+img {
+  border-style: none;
+  vertical-align: middle;
+}
+.slidecontent{
+  margin: auto;
+}
+.slidecontainer{
+  position: relative;
+}
+.mySlides {
+  width: 100%;
+}
+.button{
+  color: #fff!important;
+  background-color: #000!important;
+  border: none;
+  padding: 2vh;
+}
+.buttonl{
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+}
+.buttonr{
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(0%, -50%);
+}
