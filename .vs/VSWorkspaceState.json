@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public"
+    "\\public",
+    "\\public\\css",
+    "\\public\\js"
   ],
-  "SelectedNode": "\\public\\index.js",
+  "SelectedNode": "\\public\\homepg.html",
   "PreviewInSolutionExplorer": false
 }
