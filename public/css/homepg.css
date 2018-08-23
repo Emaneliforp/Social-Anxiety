@@ -2,9 +2,13 @@
 p {
   font-family: "Arial";
 }
+body {
+  margin: 0vw;
+}
 .main{
   padding-left: 5%;
   padding-right: 5%;
+  padding-bottom: 2%;
 }
 .sidebar{
   height: 100%;
@@ -13,7 +17,7 @@ p {
   z-index: 2;
   top: 0;
   right: 0;
-  background-color: #07cdb2;
+  background-color: #f5324a;
   overflow-x: hidden;
   padding-top: 8vh;
   transition: 0.5s;
@@ -23,7 +27,7 @@ p {
   padding: 0vw 0vw 2vw 2vw;
   text-decoration: none;
   font-size: 2vw;
-  color: #818181;
+  color: #fff;
   display: block;
   transition: 0.3s;
 }
@@ -46,17 +50,15 @@ p {
 }
 .section {
   font-family: Megrim;
-  padding: 2vw;
-  background-color: #fab50f;
-  border-radius: 2vw;
+  text-shadow: 0.5vh 0.5vh #07cdb2;
 }
 .communities {
-  background-color: #f5324a;
+  background-color: #fab50f;
   padding: 8vw;
   border-radius: 5vw;
 }
 .recentskill {
-  background-color: #f5324a;
+  background-color: #fab50f;
   padding: 8vw;
   border-radius: 5vw;
 }
