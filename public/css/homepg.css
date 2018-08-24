@@ -6,9 +6,11 @@ body {
   margin: 0vw;
 }
 .main{
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2%;
+  padding: 3%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 2vh;
+  grid-column-gap: 2vw;
 }
 .sidebar{
   height: 100%;
@@ -49,7 +51,7 @@ body {
   font-size: 2vw;
 }
 .section {
-  font-family: Megrim;
+  font-family: Gafata;
   text-shadow: 0.5vh 0.5vh #07cdb2;
 }
 .communities {
@@ -70,17 +72,36 @@ img {
 .slidecontent{
   margin: auto;
 }
+.slidecontent img{
+  height: 60vh;
+}
 .slidecontainer{
   position: relative;
 }
+.ccontainer: after, .ccontainer: before {
+  content:none;
+  display: table;
+  clear:both;
+}
 .mySlides {
   width: 100%;
+}
+.caption{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 0;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .button{
   color: #fff!important;
   background-color: #000!important;
   border: none;
   padding: 2vh;
+  position: relative;
 }
 .buttonl{
   position: absolute;
