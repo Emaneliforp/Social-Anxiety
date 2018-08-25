@@ -1,10 +1,11 @@
-let ham = document.getElementById('ham');
-let close = document.getElementById('close');
+var signUpButtona = document.getElementById("signup");
 
-ham.addEventListener('click', function () {
-        document.getElementById("sidenav").style.width = "15vw";
+signUpButtona.addEventListener("click", function(){
+  window.location.href = "signUp.html";
 });
 
-close.addEventListener('click', function () {
-    document.getElementById('sidenav').style.width = '0vw';
+var loginButtona = document.getElementById("loginbtn");
+
+loginButtona.addEventListener("click", function(){
+  window.location.href = "login.html";
 });

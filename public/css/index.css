@@ -3,6 +3,8 @@
     padding: 0;
     cursor: default;
     user-select: none;
+    border: 0;
+
 }
 
 body{
@@ -10,29 +12,56 @@ body{
 }
 
 nav {
-    position: fixed;
     width: 100%;
     background: #f5324a;
-    padding: 1vw;
     text-align: left;
+    margin-left: 0%;
+    height: 3em;
+    overflow: hidden;
+
 }
     nav a {
+        display: inline-block;
+        padding: 1vh 0;
         text-decoration: none;
         border-right: 0.2vw solid #ffffff;
-        font-size: 1vw;
+        font-size: 1.5vw;
         color: white;
-        padding: 1vw;
+        padding-left: 1em;
+        padding-right: 1em;
+        line-height: 100%;
+
         font-family: CenturyGothic, Helvetica, sans-serif;
     }
     nav a:hover{
-        background-color: indianred;
+        background-color: #c41d30;
+    }
+
+    nav button{
+      display: inline-block;
+      float: right;
+      margin-left: 30vh;
+      font-family: CenturyGothic, Helvetica, sans-serif;
+      font-size: 1.5vw;
+      padding-left: 2em;
+      padding-right: 2em;
+      background-color: #f5324a;
+      text-decoration: none;
+      color: white;
+      border: solid white 0.2em;
+      border-radius: 1vw;
+      margin: 0.1em;
+
     }
 
 
-
 .section{
+  overflow: hidden;
    height: 100vh;
    background-color: #07cdb2;
+   margin-top: 2vh;
+   font-family: CenturyGothic, Helvetica, sans-serif;
+
 }
 
 .info{
@@ -40,28 +69,33 @@ nav {
   color:#ffffff;
   font-size: 1.5vw;
   padding-bottom: 4vh;
-  line-height: 140%;
+  line-height: 180%;
 }
 
-img{
+#section1 img{
   float: left;
   position: relative;
-  padding-top: 10vh;
-  padding-left: 0vw;
-  padding-right: 0vw;
+  padding-top: 5vh;
+
   height: 40vh;
   width: 50vw;
 }
 
+
+
 #rightSec {
   position: relative;
-  padding-top: 10vh;
+  padding-top: 0;
   padding-right: 10vh;
+  height: 100vh;
 }
 
 #section1 {
     text-align: center;
     padding-top: 20vh;
+    height: 68vh;
+
+
 }
 #section1 p{
     font-family: CenturyGothic, Arial, Helvetica, sans-serif;
@@ -70,9 +104,10 @@ img{
     line-height: 100%
 }
 #signup {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: CenturyGothic, Helvetica, sans-serif;
     font-size: 1.5vw;
     padding: 1vw;
+    margin-left: 50vw;
     background-color: #fab50f;
     text-decoration: none;
     color: white;
@@ -80,10 +115,35 @@ img{
     border-radius: 1vw;
 }
 #section2{
-    background: linear-gradient(to right bottom, #ff7373, #f69191);
+    background:#fab50f;
+}
+#section2 img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 #section3 {
-    background: linear-gradient(to left bottom, #ff6a00, #ff7373);
+  text-align: center;
+  align-content: center;
+    background:#f5324a;
+}
+#section3 img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+  display: block;
+    width: 70%;
+}
+
+#credit{
+  height: 5vh;
+  background-color: black;
+  font-family: CenturyGothic, Helvetica, sans-serif;
+  font-size: 1.5vh;
+  text-align: center;
+  color: white;
+  padding: 2vh;
 }
 
 @font-face {
