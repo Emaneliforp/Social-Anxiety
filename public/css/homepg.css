@@ -54,21 +54,15 @@ body {
   font-family: Gafata;
   text-shadow: 0.5vh 0.5vh #07cdb2;
 }
-.box1{
-  background-color: #fab50f;
-  padding: 8vw;
-  border-radius: 5vw;
-}
-.box2{
-  background-color: #fab50f;
-  padding: 8vw;
-  border-radius: 5vw;
-}
 .communities {
-
+  background-color: #fab50f;
+  padding: 8vw;
+  border-radius: 5vw;
 }
 .recentskill {
-
+  background-color: #fab50f;
+  padding: 8vw;
+  border-radius: 5vw;
 }
 
 img {
