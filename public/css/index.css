@@ -4,6 +4,7 @@
     cursor: default;
     user-select: none;
     border: 0;
+    z-index: 0;
 
 }
 
@@ -16,17 +17,18 @@ nav {
     background: #f5324a;
     text-align: left;
     margin-left: 0%;
-    height: 3em;
+    height: 6vh;
     overflow: hidden;
 
 }
     nav a {
         display: inline-block;
-        padding: 1vh 0;
+        padding: 1.5vh 0;
         text-decoration: none;
         border-right: 0.2vw solid #ffffff;
         font-size: 1.5vw;
         color: white;
+        margin:0;
         padding-left: 1em;
         padding-right: 1em;
         line-height: 100%;
@@ -51,8 +53,14 @@ nav {
       border: solid white 0.2em;
       border-radius: 1vw;
       margin: 0.1em;
+      transition: all 0.2s ease;
 
     }
+    nav button:hover {
+  background: white;
+  color: #f5324a;
+
+}
 
 
 .section{
@@ -81,8 +89,6 @@ nav {
   width: 50vw;
 }
 
-
-
 #rightSec {
   position: relative;
   padding-top: 0;
@@ -104,24 +110,32 @@ nav {
     line-height: 100%
 }
 #signup {
-    font-family: CenturyGothic, Helvetica, sans-serif;
-    font-size: 1.5vw;
-    padding: 1vw;
-    margin-left: 50vw;
-    background-color: #fab50f;
-    text-decoration: none;
-    color: white;
-    border: none;
-    border-radius: 1vw;
+  font-family: CenturyGothic, Helvetica, sans-serif;
+  font-size: 1.5vw;
+  padding: 1vw;
+  margin-left: 50vw;
+  background-color: #fab50f;
+  text-decoration: none;
+  color: white;
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 1vw;
+}
+#signup:hover{
+  background: #07cdb2;
+  color: white;
+  border: white solid 0.2em;
+
+
 }
 #section2{
-    background:#fab50f;
+  background:#fab50f;
 }
 #section2 img{
   display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 }
 #section3 {
   text-align: center;
@@ -130,10 +144,10 @@ nav {
 }
 #section3 img{
   display: block;
-    margin-left: auto;
-    margin-right: auto;
-  display: block;
-    width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+
 }
 
 #credit{
@@ -143,7 +157,7 @@ nav {
   font-size: 1.5vh;
   text-align: center;
   color: white;
-  padding: 2vh;
+  padding: 2.5vh;
 }
 
 @font-face {
