@@ -57,12 +57,17 @@ body {
 .communities {
   background-color: #fab50f;
   padding: 8vw;
-  border-radius: 5vw;
+  border-radius: 4vw;
 }
 .recentskill {
   background-color: #fab50f;
   padding: 8vw;
-  border-radius: 5vw;
+  border-radius: 4vw;
+}
+.yt {
+  background-color: #fab50f;
+  padding: 8vw;
+  border-radius: 4vw;
 }
 
 img {
