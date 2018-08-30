@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-size: 2vw;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+
 }
 .sidebar {
     height: 100%;
@@ -40,7 +40,7 @@ body {
 #nav {
     position: fixed;
     width: 100%;
-    background: #ff7373;
+    background: blue;
     text-align: center;
     top: 0;
 }
