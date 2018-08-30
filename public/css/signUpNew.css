@@ -15,14 +15,9 @@
   background-color: #f5324a;
 }
 
-#login_div{
-  margin: 10em;
-  text-align: center;
-
-
-}
 #section{
   overflow: hidden;
+  position: relative;
    height: 100vh;
    background-color: #07cdb2;
    margin-top: 2vh;
@@ -30,7 +25,42 @@
    text-align: center;
 }
 
-#loginBtn{
+#content{
+  margin-top: 5vh;
+}
+#signUp{
+  display: inline-block;
+  position: absolute;
+  left: 15%;
+}
+
+#login{
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  right: 15%;
+  height: 100%;
+}
+#otherlog{
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#otherlog img{
+  display: inline-block;
+  padding: 0.4em;
+  height: 20%;
+  width: 20%;
+  margin: 0.2em;
+  border: solid white 0.2em;
+  border-radius: 1vw;
+}
+
+#signUpBtn{
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.5em;
@@ -39,7 +69,7 @@
   background-color: #fab50f;
   text-decoration: none;
   color: white;
-  border: none;
+
   border-radius: 1vw;
 }
 
@@ -49,29 +79,32 @@
   right: 0;
 }
 
-#signUpBtn{
-  font-family: CenturyGothic, Helvetica, sans-serif;
+#loginBtn{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.5vw;
-  padding-left: 2em;
-  padding-right: 2em;
-  background-color: #f5324a;
+  padding: 1vw;
+  background-color: #fab50f;
   text-decoration: none;
   color: white;
-  height: 100%;
-  margin: 0.19em;
-  border: solid white 0.1em;
+  border: none;
   border-radius: 1vw;
-  transition: all 0.2s ease;
-  padding-bottom: 0.1em;
 }
-#signUpBtn:hover{
-  border-color: #f5324a;
-  color: white;
+
+.vl {
+  z-index: -1;
+  border-left: 0.4em dashed white;
+   height: 100%;
+   position: absolute;
+   left: 50%;
+   margin-left: -3px;
+   top: 0;
 }
 
 input{
  display: block;
- width: 20%;
+ width: 50%;
  height: 4vh;
  padding: 0.3em;
  margin-left: auto;
