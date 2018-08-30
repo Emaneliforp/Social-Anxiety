@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    cursor: default;
+    cursor: auto;
     user-select: none;
     border: 0;
     z-index: 0;
@@ -15,7 +15,6 @@ body{
 nav {
     width: 100%;
     background: #f5324a;
-    text-align: left;
     margin-left: 0%;
     height: 6vh;
     overflow: hidden;
@@ -29,10 +28,10 @@ nav {
         font-size: 1.5vw;
         color: white;
         margin:0;
+        height: 100%;
         padding-left: 1em;
         padding-right: 1em;
         line-height: 100%;
-
         font-family: CenturyGothic, Helvetica, sans-serif;
     }
     nav a:hover{
@@ -41,28 +40,39 @@ nav {
 
     nav button{
       display: inline-block;
-      float: right;
-      margin-left: 30vh;
       font-family: CenturyGothic, Helvetica, sans-serif;
       font-size: 1.5vw;
       padding-left: 2em;
       padding-right: 2em;
+      padding-bottom: 0.1em;
       background-color: #f5324a;
       text-decoration: none;
       color: white;
-      border: solid white 0.2em;
+      height: 100%;
+      margin: 0.19em;
+      border: solid white 0.1em;
       border-radius: 1vw;
-      margin: 0.1em;
       transition: all 0.2s ease;
-
     }
     nav button:hover {
-  background: white;
-  color: #f5324a;
+      border-color: #f5324a;
+      color: white;
+      cursor: pointer;
 
 }
 
+#leftNav{
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+  margin: 0;
+}
 
+#rightNav{
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
 .section{
   overflow: hidden;
    height: 100vh;
@@ -120,12 +130,13 @@ nav {
   border: none;
   transition: all 0.2s ease;
   border-radius: 1vw;
+
 }
 #signup:hover{
   background: #07cdb2;
   color: white;
   border: white solid 0.2em;
-
+  cursor: pointer;
 
 }
 #section2{

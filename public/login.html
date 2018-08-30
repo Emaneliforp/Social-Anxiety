@@ -1,40 +1,37 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Firebase Login</title>
-    <link href=https://fonts.googleapis.com/css?family=Nunito:400,700: rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
-    <link rel="stylesheet" href="css/Login.css"/>
-    <script src="js/login.js" defer></script>
-
-  </head>
-  <body>
-    <div id="topHeader">
-      <div class="flex-container">
-        <div><img id="logo1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Y__KOvXxJNqeQBRHD-53W9XXEqTppRAtT1G_tY162JDQyOcq" width="75"></div>
-        <div id="welcomeToWay"><h4>Welcome to Way</h4></div>
-        <div id="signDiv"><button id="signUpBtn"><a href="signUp.html">Sign Up</a></button></div>
-       </div>
-     </div>
-     <div id="login_div" class="main-div">
-        <h1>Welcome to Way</h1>
-        <h2>Where we learn to communicate</h2>
-        <input type="email" placeholder="Email...." id="email_field"/>
-        <input type="password" placeholder="Password" id="password_field"/>
-        <button id = "loginBtn">Login to Account</button>
-     </div>
-     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-
-     <script>
-       // Initialize Firebase
-       var config = {
-         apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
-         authDomain: "social-anxiety.firebaseapp.com",
-         databaseURL: "https://social-anxiety.firebaseio.com",
-         projectId: "social-anxiety",
-         storageBucket: "social-anxiety.appspot.com",
-         messagingSenderId: "321965462198"
-       };
-       firebase.initializeApp(config);
-     </script>
-  </body>
+<head>
+<title>Sign Up for WAY!</title>
+<script src="js/login.js" defer></script>
+<link rel = "stylesheet" href="css/loginNew.css">
+</head>
+<body>
+<div id = "bar">
+  <h6>welcome to WAY!</h6>
+  <div id = wrapper>
+  <button id = "signUpBtn">sign up</button>
+</div>
+</div>
+<div id = "section">
+<div id = "login_div">
+  <img src="https://dcnetworks.ie/wp/wp-content/uploads/2017/11/placeholder-logo-2.png">
+  <input type="email" placeholder="email..." id="email_field"/>
+  <input type ="password" placeholder = "password..." id="password_field"/>
+  <button id = "loginBtn">login</button>
+<div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+    authDomain: "social-anxiety.firebaseapp.com",
+    databaseURL: "https://social-anxiety.firebaseio.com",
+    projectId: "social-anxiety",
+    storageBucket: "social-anxiety.appspot.com",
+    messagingSenderId: "321965462198"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
 </html>
