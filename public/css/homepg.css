@@ -56,37 +56,40 @@ body {
 }
 .communities {
   display: flex;
+  flex-flow: row wrap;
   background-color: #07cdb2;
   padding: 2vw;
   border-radius: 4vw;
-  max-width: 90%
+  max-width: 70%
 }
 .recentskill {
   display: flex;
+  flex-flow: row wrap;
   background-color: #07cdb2;
   padding: 2vw;
   border-radius: 4vw;
-  max-width: 90%;
 }
 .comicon {
   flex: 1;
   justify-content: center;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: 1vw;
   padding: 1vh;
   max-width: 25%;
+  max-height: 25%;
   background-color: #fff;
   border-radius: 1vh;
+  box-sizing: border-box;
 }
 .skillicon {
   flex: 1;
   justify-content: center;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: 1vw;
   padding: 1vh;
   max-width: 25%;
+  max-height: 25%;
   background-color: #fff;
   border-radius: 1vh;
+  box-sizing: border-box;
 }
 
 img {
