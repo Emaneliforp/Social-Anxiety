@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign Up for WAY!</title>
+<link rel = "stylesheet" href="css/signUpNew.css">
+</head>
+<body>
+<div id = "bar">
+  <h6>welcome to WAY!</h6>
+</div>
+<div id = "section">
+  <div id="content">
+  <div class="vl"></div>
+  <div id ="signUp">
+  <img src="https://dcnetworks.ie/wp/wp-content/uploads/2017/11/placeholder-logo-2.png">
+  <input type = "text" placeholder = "name..." id = "signname_field">
+  <input type = "number" placeholder = "grade..." id = "signage_field">
+  <input type="email" placeholder="email..." id="signemail_field"/>
+  <input type ="password" placeholder = "password..." id="signpassword_field"/>
+  <input type ="password" placeholder = "re-enter password" id="signrepassword_field"/>
+  <button id = "signUpBtn">create account</button>
+</div>
+  <div id = "login">
+    <img src="https://dcnetworks.ie/wp/wp-content/uploads/2017/11/placeholder-logo-2.png">
+    <input type="email" placeholder="email..." id="logemail_field"/>
+    <input type ="password" placeholder = "password..." id="logpassword_field"/>
+    <div id = "otherlog">
+      <img src = "images/google-logo.png">
+      <img src = "images/twitter.png">
+      <img src = "images/facebook.png">
+  </div>
+    <!-- <button id = "loginBtn">login</button> -->
+  </div>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+    authDomain: "social-anxiety.firebaseapp.com",
+    databaseURL: "https://social-anxiety.firebaseio.com",
+    projectId: "social-anxiety",
+    storageBucket: "social-anxiety.appspot.com",
+    messagingSenderId: "321965462198"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/signUp.js" defer></script>
+</body>
+</html>
