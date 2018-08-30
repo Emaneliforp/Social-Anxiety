@@ -52,17 +52,41 @@ body {
 }
 .section {
   font-family: Gafata;
-  text-shadow: 0.5vh 0.5vh #07cdb2;
+  text-shadow: 0vh 0.5vh 2vh #fab50f;
 }
 .communities {
-  background-color: #fab50f;
-  padding: 8vw;
+  display: flex;
+  background-color: #07cdb2;
+  padding: 2vw;
   border-radius: 4vw;
+  max-width: 90%
 }
 .recentskill {
-  background-color: #fab50f;
-  padding: 8vw;
+  display: flex;
+  background-color: #07cdb2;
+  padding: 2vw;
   border-radius: 4vw;
+  max-width: 90%;
+}
+.comicon {
+  flex: 1;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding: 1vh;
+  max-width: 25%;
+  background-color: #fff;
+  border-radius: 1vh;
+}
+.skillicon {
+  flex: 1;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding: 1vh;
+  max-width: 25%;
+  background-color: #fff;
+  border-radius: 1vh;
 }
 
 img {
