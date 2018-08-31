@@ -1,6 +1,6 @@
 /* blue: #07cdb2; red: #f5324a; yellow: #fab50f; white*/
 p {
-  font-family: "Arial";
+  font-family: "Century Gothic";
 }
 body {
   margin: 0vw;
@@ -11,6 +11,7 @@ body {
   grid-template-columns: auto auto;
   grid-row-gap: 2vh;
   grid-column-gap: 2vw;
+  font-family: "Century Gothic"
 }
 .sidebar{
   height: 100%;
@@ -23,7 +24,7 @@ body {
   overflow-x: hidden;
   padding-top: 8vh;
   transition: 0.5s;
-  font-family: Gafata;
+  font-family: "Century Gothic";
 }
 .sidebar a{
   padding: 0vw 0vw 2vw 2vw;
@@ -51,16 +52,18 @@ body {
   font-size: 2vw;
 }
 .section {
-  font-family: Gafata;
-  text-shadow: 0vh 0.5vh 2vh #fab50f;
+  font-family: "Century Gothic";
+  color: #f5324a;
+  text-decoration: underline;
+  text-decoration-color: #fab50f;
 }
 .communities {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row wrap;;
   background-color: #07cdb2;
   padding: 2vw;
   border-radius: 4vw;
-  max-width: 70%
+  max-width: 80%
 }
 .recentskill {
   display: flex;
@@ -68,6 +71,7 @@ body {
   background-color: #07cdb2;
   padding: 2vw;
   border-radius: 4vw;
+  max-width: 80%;
 }
 .comicon {
   flex: 1;
@@ -111,7 +115,7 @@ img {
   clear:both;
 }
 .mySlides {
-  width: 100%;
+  width: 75%;
 }
 .caption{
   position: absolute;
@@ -141,9 +145,13 @@ img {
 .buttonr{
   position: absolute;
   top: 50%;
-  right: 0%;
+  right: 25%;
   transform: translate(0%, -50%);
 }
+.newsname {
+
+}
+
 .youtube {
     background-color: #f5324a;
     width: auto;
@@ -153,7 +161,7 @@ img {
 }
 .youtube div{
     font-size: 2vw;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Century Gothic", Arial, Helvetica, sans-serif;
     color: white;
     margin-left: 45%;
     margin-top: 1vh;
