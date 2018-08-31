@@ -25,3 +25,13 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
   c[slideIndex-1].style.display = "block";
 }
+let phw = document.getElementById('phw');
+let pmodal = document.getElementById('pmodal');
+let phwclose = document.getElementById('phwclose');
+
+phw.addEventListener('click', function () {
+    pmodal.style.display = 'block';
+});
+phwclose.addEventListener('click', function () {
+    pmodal.style.display = "none";
+})

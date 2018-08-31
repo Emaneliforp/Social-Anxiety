@@ -173,3 +173,76 @@ img {
     padding-left: 1vw;
     padding-top: 7vh;
 }
+#pmodal {
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+    z-index: 3; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: fixed;
+}
+
+#practice {
+    background-color: white;
+    margin: auto;
+    width: 80vh;
+    margin-top: 30vh;
+    z-index: 3;
+    border-radius: 1vw;
+    padding-bottom: 1vw;
+}
+
+#title {
+    text-align: center;
+    font-family: CenturyGothic, Helvetica, sans-serif;
+    font-size: 2vw;
+    padding: 0.5vw;
+    padding-bottom: 0;
+}
+
+#nav {
+    font-size: 2vw;
+    background-color: #FFC125;
+    padding-left: 1vw;
+    padding-bottom: 0.5vw;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+
+i {
+    border: solid white;
+    border-width: 0 0.2vw 0.2vw 0;
+    display: inline-block;
+    padding: 0.4vw;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+#descrp {
+    background-color: lightgray;
+    margin: 1vw;
+    border-radius: 0.5vw;
+    padding: 0.7vw;
+    font-family: CenturyGothic, Helvetica, sans-serif;
+}
+
+#op {
+    margin-left: 10vw;
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+}
+
+.ops {
+    background-color: #fa8072;
+    width: auto;
+    text-decoration: none;
+    color: white;
+    font-family: CenturyGothic, Helvetica, sans-serif;
+    font-size: 1.2vw;
+    padding: 0.7vw;
+    margin-left: 3vw;
+    border-radius: 0.5vw;
+}
