@@ -247,14 +247,16 @@ i {
     border-radius: 0.5vw;
 }
 .opc {
-    margin-left: auto;
     background-color: #fa8072;
-    width: auto;
-    text-decoration: none;
-    color: white;
-    font-family: CenturyGothic, Helvetica, sans-serif;
-    font-size: 1.2vw;
-    padding: 0.7vw;
-    margin-left: 3vw;
+    width: 5.5vw;
+    margin-left: 16vw;
+    padding: 0.5vw;
     border-radius: 0.5vw;
+    text-align: center;
 }
+    .opc a {
+        text-decoration: none;
+        color: white;
+        font-family: CenturyGothic, Helvetica, sans-serif;
+        font-size: 1.2vw;
+    }
