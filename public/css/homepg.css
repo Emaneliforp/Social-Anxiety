@@ -108,6 +108,8 @@ img {
 }
 .slidecontainer{
   position: relative;
+  display: grid;
+  margin-right: 25%;
 }
 .ccontainer: after, .ccontainer: before {
   content:none;
@@ -115,7 +117,7 @@ img {
   clear:both;
 }
 .mySlides {
-  width: 75%;
+  width: 100%;
 }
 .caption{
   position: absolute;
@@ -145,7 +147,7 @@ img {
 .buttonr{
   position: absolute;
   top: 50%;
-  right: 25%;
+  right: 0%;
   transform: translate(0%, -50%);
 }
 .newsname {
