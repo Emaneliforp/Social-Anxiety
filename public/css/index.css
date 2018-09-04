@@ -73,8 +73,9 @@ nav {
   position: absolute;
   right: 0;
 }
+
 .section{
-  overflow: hidden;
+  overflow: visible;
    height: 100vh;
    background-color: #07cdb2;
    margin-top: 2vh;
@@ -108,8 +109,7 @@ nav {
 
 #section1 {
     text-align: center;
-    padding-top: 20vh;
-    height: 68vh;
+
 
 
 }
@@ -170,6 +170,36 @@ nav {
   color: white;
   padding: 2.5vh;
 }
+
+.stuff{
+  padding-top: 3%;
+}
+.triangle-down {
+  position:relative;
+  z-index: 2;
+  left: 93vw;
+  top: 89vh;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 100px solid yellow;
+  /* transition: 0.3s all; */
+}
+
+#changeColor{
+  position:fixed;
+  z-index: 2;
+  right:2vw;
+  bottom: 0;
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid yellow;
+  transition: 0.3s all;
+}
+
 
 @font-face {
 font-family: CenturyGothic;

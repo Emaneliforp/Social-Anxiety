@@ -150,9 +150,6 @@ img {
   right: 0%;
   transform: translate(0%, -50%);
 }
-.newsname {
-
-}
 
 .youtube {
     background-color: #f5324a;
@@ -175,7 +172,7 @@ img {
     padding-left: 1vw;
     padding-top: 7vh;
 }
-#pmodal {
+.pmodal {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     display: none;
     z-index: 3; /* Sit on top */
@@ -184,7 +181,7 @@ img {
     position: fixed;
 }
 
-#practice {
+.practice {
     background-color: white;
     margin: auto;
     width: 80vh;
@@ -194,7 +191,7 @@ img {
     padding-bottom: 1vw;
 }
 
-#title {
+.title {
     text-align: center;
     font-family: CenturyGothic, Helvetica, sans-serif;
     font-size: 2vw;
@@ -202,7 +199,7 @@ img {
     padding-bottom: 0;
 }
 
-#nav {
+.nav {
     font-size: 2vw;
     background-color: #FFC125;
     padding-left: 1vw;
@@ -218,12 +215,12 @@ i {
     padding: 0.4vw;
 }
 
-.left {
+.close {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
 
-#descrp {
+.descrp {
     background-color: lightgray;
     margin: 1vw;
     border-radius: 0.5vw;
@@ -231,7 +228,7 @@ i {
     font-family: CenturyGothic, Helvetica, sans-serif;
 }
 
-#op {
+.op {
     margin-left: 10vw;
     margin-top: 3vh;
     margin-bottom: 1vh;
@@ -247,4 +244,18 @@ i {
     padding: 0.7vw;
     margin-left: 3vw;
     border-radius: 0.5vw;
+}
+.opc {
+    background-color: #fa8072;
+    width: 5.5vw;
+    margin-left: 16vw;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    text-align: center;
+}
+.opc a {
+        text-decoration: none;
+        color: white;
+        font-family: CenturyGothic, Helvetica, sans-serif;
+        font-size: 1.2vw;
 }
