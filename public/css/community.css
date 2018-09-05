@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    cursor: auto;
+    user-select: none;
+    border: 0;
+    z-index: 0;
+    overflow: hidden;
+    height: 100%;
+    font-family: CenturyGothic, Helvetica, sans-serif;
+}
+
+#bar{
+  width: 100%;
+  height: auto;
+  background-color: #f5324a;
+  text-align: center;
+}
+
+#arr{
+  overflow: visible;
+  text-align: left;
+  display: inline-block;
+}
+
+#arrow{
+  height: 2em;
+  width: 2em;
+  position: relative;
+  display: inline-block;
+  right:39vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.3em;
+}
+
+#arrow:hover{
+  cursor: pointer;
+}
+
+#section{
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  background-color: #07cdb2;
+  margin-top: 2vh;
+}
+
+.block{
+  background-color: #2e3a63;
+  display: inline-block;
+  border: solid 1px #2e3a63;
+  border-radius: 1em;
+  position: relative;
+  margin: 1.9em;
+}
+
+#yourComm{
+  text-align: center;
+  display: inline-block;
+  width: 60%;
+  height: 80%;
+
+}
+
+#searchComm{
+  text-align: center;
+  display: inline-block;
+  width: 30%;
+  height: 80%;
+  bottom: 0;
+}
+
+#searchComm input {
+text-align: left;
+ margin: 0.9em;
+ height: 10%;
+ width: 80%;
+ border: none;
+ font-size: 1em;
+ padding: 0.1em 0.3em 0.1em 0.3em;
+ border-radius: 1em;
+}
+
+.searchResult{
+  background-color: white;
+  text-align: left;
+  margin: 0.9em;
+  height: 10%;
+  width: 80%;
+  border: none;
+  font-size: 1em;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+  border-radius: 1em;
+}
+
+h6{
+  color: white;
+  position: relative;
+  display: inline-block;
+  font-size: 4vh;
+  font-weight: normal;
+  padding: 0.2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+font-family: CenturyGothic;
+src: url(CenturyGothic.ttf);
+}
