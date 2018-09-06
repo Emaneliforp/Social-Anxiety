@@ -100,16 +100,22 @@ img {
   border-style: none;
   vertical-align: middle;
 }
+.banner {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  background-color: #fab50f;
+}
 .slidecontent{
   margin: auto;
 }
 .slidecontent img{
   height: 60vh;
+  width: 150vh;
 }
 .slidecontainer{
   position: relative;
-  display: grid;
-  margin-right: 25%;
 }
 .ccontainer: after, .ccontainer: before {
   content:none;
