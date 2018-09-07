@@ -25,7 +25,7 @@ body {
   z-index: 2;
   top: 0;
   right: 0;
-  background-color: #f5324a;
+  background-color: #cf293e;
   overflow-x: hidden;
   padding-top: 8vh;
   transition: 0.5s;
@@ -59,8 +59,6 @@ body {
 .section {
   font-family: "Century Gothic";
   color: #fff;
-  text-decoration: underline;
-  text-decoration-color: #fab50f;
 }
 .communities {
   display: flex;
