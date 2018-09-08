@@ -15,8 +15,8 @@ body {
   font-family: "Century Gothic"
 }
 .mainborder {
-  border-top: 1vh solid #fff;
-  border-bottom: 1vh solid #fff;
+  border-top: 1.5vh solid #fff;
+  border-bottom: 1.5vh solid #fff;
 }
 .sidebar{
   height: 100%;
@@ -59,6 +59,7 @@ body {
 .section {
   font-family: "Century Gothic";
   color: #fff;
+  font-size: 3vw;
 }
 .communities {
   display: flex;
@@ -185,6 +186,7 @@ img {
     color: white;
     margin-top: 1vh;
     text-align:center;
+    position: sticky;
 }
 .youtube iframe{
     vertical-align: central;
