@@ -5,6 +5,7 @@
     user-select: none;
     border: 0;
     z-index: 0;
+    font-family: "Century Gothic", Helvetica, sans-serif;
 
 }
 
@@ -32,7 +33,7 @@ nav {
         padding-left: 1em;
         padding-right: 1em;
         line-height: 100%;
-        font-family: CenturyGothic, Helvetica, sans-serif;
+        font-family: "Century Gothic", Helvetica, sans-serif;
     }
     nav a:hover{
         background-color: #c41d30;
@@ -40,7 +41,7 @@ nav {
 
     nav button{
       display: inline-block;
-      font-family: CenturyGothic, Helvetica, sans-serif;
+      font-family: "Century Gothic", Helvetica, sans-serif;
       font-size: 1.5vw;
       padding-left: 2em;
       padding-right: 2em;
@@ -79,12 +80,12 @@ nav {
    height: 100vh;
    background-color: #07cdb2;
    margin-top: 2vh;
-   font-family: CenturyGothic, Helvetica, sans-serif;
+   font-family: "Century Gothic", Helvetica, sans-serif;
 
 }
 
 .info{
-  font-family: CenturyGothic, Arial, Helvetica, sans-serif;
+  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
   color:#ffffff;
   font-size: 1.5vw;
   padding-bottom: 4vh;
@@ -114,13 +115,13 @@ nav {
 
 }
 #section1 p{
-    font-family: CenturyGothic, Arial, Helvetica, sans-serif;
+    font-family: "Century Gothic", Arial, Helvetica, sans-serif;
     font-size: 7vw;
     color:#ffffff;
     line-height: 100%
 }
 #signup {
-  font-family: CenturyGothic, Helvetica, sans-serif;
+  font-family: "Century Gothic", Helvetica, sans-serif;
   font-size: 1.5vw;
   padding: 1vw;
   margin-left: 50vw;
@@ -141,12 +142,28 @@ nav {
 }
 #section2{
   background:#fab50f;
+  display: flex;
 }
-#section2 img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
+.imgrow{
+  position: absolute;
+  text-align: center;
+  padding-top: 20vh;
+}
+.imgbox{
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  width: 25%;
+  z-index: -1;
+}
+.skitpic {
+  position: absolute;
+  left: 0%;
+  width: 25%;
+  z-index: 1;
+  align-self: flex-end;
 }
 #section3 {
   text-align: center;
@@ -158,13 +175,16 @@ nav {
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-
+}
+.sec3txt{
+  color: white;
+  font-size: 7vw;
 }
 
 #credit{
   height: 5vh;
   background-color: black;
-  font-family: CenturyGothic, Helvetica, sans-serif;
+  font-family: "Century Gothic", Helvetica, sans-serif;
   font-size: 1.5vh;
   text-align: center;
   color: white;
