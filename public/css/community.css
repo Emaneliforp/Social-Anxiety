@@ -71,15 +71,70 @@
   height: auto;
 
 }
+
+#yourComm p{
+  height: auto;
+  margin: 1em;
+  font-size:100%;
+  font-weight: bold;
+  font-size: 140%;
+}
+
 #space{
   position: relative;
-  bottom: -5vh;
+  width: auto;
   background-color: white;
-  height: 80%;
+  height: 82%;
   border-radius: 1em;
   margin: 0.3em;
 
 }
+
+#space hr{
+  color:black;
+  border-width: 1em;
+}
+
+.commButtons{
+  padding: 0.4em;
+  display: inline-block;
+  color: white;
+  height: 30%;
+  width: auto;
+  margin:0.5em;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 150%;
+
+}
+
+
+
+#createComm{
+  background-color: #f5324a;
+}
+
+#joinNewComm{
+  background-color: #f5324a;
+}
+
+#recentComm{
+  background-color: #f5324a;
+  height: 40%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 1em;
+}
+#recentComm p{
+  color:white;
+  margin-top: 0.5em;
+  margin-bottom:0.5em;
+}
+
+
 
 #searchComm{
   text-align: center;
@@ -92,7 +147,7 @@
 }
 
 #searchComm img{
-  top: 4vh;
+  top: 3.3vh;
   position: relative;
   height: 8%;
   width: 9%;
@@ -102,15 +157,22 @@
 }
 
 #searchComm input {
-text-align: left;
- margin: 0.9em;
- margin-top: 0.4em;
- height: 8%;
- width: 72%;
- border: none;
- font-size: 1em;
- padding: 0.1em 0.3em 0.1em 0.3em;
- border-radius: 1em;
+  border: solid 0.1em #2e4c63;
+  text-align: left;
+  margin: 0.9em;
+  margin-top: 0.4em;
+  height: 8%;
+  width: 72%;
+  font-size: 1em;
+  padding: 0.1em 0.3em 0.1em 0.3em;
+  border-radius: 1em;
+  outline:none;
+  transition: border 0.2s ease-in;
+}
+
+#searchComm input:focus{
+  border: solid 0.1em #f5324a;
+  border-radius: 1em;
 }
 
 
@@ -125,11 +187,17 @@ text-align: left;
   min-height: 10%;
   max-height: 20%;
   width: 80%;
-  border: none;
+  border: solid 0.1em #2e4c63;
   font-size: 1em;
   padding: 0.1em 0.3em 0.1em 0.3em;
   border-radius: 1em;
   overflow: auto;
+  transition: border 0.2s ease-in;
+}
+
+.searchResult:active{
+    border: solid 0.1em #f5324a;
+      border-radius: 1em;
 }
 
 h6{
@@ -197,6 +265,10 @@ h6{
   border-bottom: 1em solid transparent;
   border-left: 1em solid white;
 }
+
+.arrow-right:hover{
+  cursor: pointer;
+}
 .arrow-left {
   display: inline-flex;
   width: 0;
@@ -207,6 +279,20 @@ h6{
   border-top: 1em solid transparent;
   border-bottom: 1em solid transparent;
   border-right:1em solid white;
+}
+
+.arrow-left:hover{
+  cursor: pointer;
+}
+
+.dot {
+  height: 6em;
+  width: 6em;
+  background-color:#fab50f;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.7em 0.9em 0 0.9em;
+
 }
 
 
