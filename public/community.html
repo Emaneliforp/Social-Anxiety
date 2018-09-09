@@ -2,8 +2,24 @@
 <head>
 <title>Communities</title>
 <link rel = "stylesheet" href ="css/community.css">
+<script src = "js/community.js" defer></script>
 </head>
 <body>
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close">&times;</span>
+  <h1>C R E A T E &#9734; C O M M U N I T Y</h1>
+  <input type ="text" placeholder = "name of community..." id ="commName">
+  <h3 id ="nameCount">Characters left: 18</h3>
+  <textarea placeholder = "description of community..." id ="commDesc"></textarea>
+  <h3 id="descCount">Characters left: 300</h3>
+  <button id="createCommBtn">Create</button>
+</div>
+
+</div>
   <div id = "bar">
     <div id = "arr">
       <img src = "images/arrow.png" id ="arrow">
@@ -14,8 +30,9 @@
     <div class = "block" id = "yourComm">
       <h6>YOUR COMMUNITY</h6>
       <div id ="space">
-        <p>Select one of your communities on the right to view<p>
+        <p>Select one of your communities on the right to view</p>
         <button id ="createComm" class ="commButtons">Create Community</button>
+
         <button id ="joinNewComm" class ="commButtons">Join a New Community</button>
         <hr>
         <div id = "recentComm">
@@ -54,6 +71,18 @@
     </div>
     </div>
   </div>
-<script src = "js/community.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+      authDomain: "social-anxiety.firebaseapp.com",
+      databaseURL: "https://social-anxiety.firebaseio.com",
+      projectId: "social-anxiety",
+      storageBucket: "social-anxiety.appspot.com",
+      messagingSenderId: "321965462198"
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 </html>
