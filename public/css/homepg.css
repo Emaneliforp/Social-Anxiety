@@ -234,6 +234,7 @@ i {
     border-width: 0 0.2vw 0.2vw 0;
     display: inline-block;
     padding: 0.4vw;
+    cursor: pointer;
 }
 
 .close {

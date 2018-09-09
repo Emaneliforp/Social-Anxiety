@@ -89,9 +89,10 @@ function bot() {
         botc.textContent = 'Yeah! The chips are really crunchy, like in a good way. Also...';
         botc.classList.add('bot');
         chatbox.appendChild(botc);
-        op1.textContent = '';
+        op1.textContent = '__________';
         op2.textContent = 'You and Skit hang out for the rest of the night. Overall, the experience was pretty positive for you.';
-        op3.textContent = '';
+        op3.textContent = '----------';
+        c = 1;
     }
     else if (x === 2 && y === 3) {
         botc.textContent = 'Oh, that sucks...Well, hope you have a better time for the rest of the party. See you at school tomorrow!';
