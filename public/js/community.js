@@ -7,22 +7,31 @@ document.getElementById("arrow").addEventListener("click", function(){
 })
 
 // Get the modal
-var modal = document.getElementById('myModal');
+var createModal = document.getElementById('myModalCreate');
+var searchModal = document.getElementById('myModalSearch');
 
 // Get the button that opens the modal
-var btn = document.getElementById("createComm");
-
+var createBtn = document.getElementById("createComm");
+var searchBtn = document.getElementById("joinNewComm")
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
+var createSpan = document.getElementById("createClose");
+var searchSpan = document.getElementById("searchClose");
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
+createBtn.onclick = function() {
+  createModal.style.display = "block";
+}
+searchBtn.onclick=function(){
+  searchModal.style.display="block";
+
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
+createSpan.onclick = function() {
+    createModal.style.display = "none";
+    searchModal.style.display="none";
+}
+searchSpan.onclick = function() {
+    searchModal.style.display="none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -94,3 +103,25 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     console.log("Created community successfully");
     }
 });
+
+//search js
+
+function search() {
+    // Declare variables
+    var input, filter, i, searchResults;
+    input = document.getElementById('searchBar');
+    filter = input.value.toUpperCase();
+    searchResults=document.getElementsByClassName("searchResult");
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < searchResults.length; i++) {
+      console.log(i);
+        a = searchResults[i].getElementsByTagName("h5")[0];
+        console.log(a);
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            searchResults[i].style.display = "block";
+        } else {
+            searchResults[i].style.display = "none";
+        }
+    }
+}

@@ -76,7 +76,7 @@ loginButton.addEventListener("click", function(){
   const PROMISE =FIREBASE_AUTH.signInWithEmailAndPassword(email, pass)
     .then(function(user){
       console.log("login successful");
-      // window.location.href = "homepg.html";
+      window.location.href = "homepg.html";
     }).catch(e => {
         console.log(e.message);
         document.getElementById("wrong").style.display = "block";

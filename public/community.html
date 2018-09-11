@@ -6,11 +6,21 @@
 </head>
 <body>
   <!-- The Modal -->
-<div id="myModal" class="modal">
+<div id="myModalSearch" class="modal">
 
 <!-- Modal content -->
-<div class="modal-content">
-  <span class="close">&times;</span>
+<div class="modal-content" id="modalSearch">
+  <span class="close" id="searchClose">&times;</span>
+  <h1>S E A R C H &#9734; C O M M U N I T Y</h1>
+  <input type ="text" placeholder = "search..." id ="searchNewCommBar">
+  <textarea placeholder = "description of community..." id ="commDesc"></textarea>
+  <div class ="searchResult">
+</div>
+</div>
+<div id="myModalCreate" class="modal">
+
+<div class="modal-content" id="modalCreate">
+  <span class="close" id="createClose">&times;</span>
   <h1>C R E A T E &#9734; C O M M U N I T Y</h1>
   <input type ="text" placeholder = "name of community..." id ="commName">
   <h3 id ="nameCount">Characters left: 18</h3>
@@ -18,7 +28,7 @@
   <h3 id="descCount">Characters left: 300</h3>
   <button id="createCommBtn">Create</button>
 </div>
-
+</div>
 </div>
   <div id = "bar">
     <div id = "arr">
@@ -27,6 +37,32 @@
     <h6>C O M M U N I T I E S</h6>
   </div>
   <div id = "section">
+    <div class = "block" id = "searchComm">
+      <img src ="images/search.png">
+      <input type = "text" onkeyup="search()" placeholder = "Search your communities..." id="searchBar">
+      <hr>
+      <div class = "searchResult">
+        <h5>art comm</h5>
+        <h4>created by</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
+      </div>
+      <div class = "searchResult">
+        <h5>science comm</h5>
+        <h4>created by</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
+      </div>
+      <div class = "searchResult">
+        <h5>comm name</h5>
+        <h4>created by</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
+      </div>
+
+    <div id ="navComm">
+      <div class = "arrow-left"></div>
+      <h3>pg 1</h3>
+      <div class ="arrow-right"></div>
+    </div>
+    </div>
     <div class = "block" id = "yourComm">
       <h6>YOUR COMMUNITY</h6>
       <div id ="space">
@@ -44,32 +80,7 @@
       </div>
     </div>
   </div>
-    <div class = "block" id = "searchComm">
-      <img src ="images/search.png">
-      <input type = "text" placeholder = "Search your communities...">
-      <hr>
-      <div class = "searchResult">
-        <h5>comm name</h5>
-        <h4>created by</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
-      </div>
-      <div class = "searchResult">
-        <h5>comm name</h5>
-        <h4>created by</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
-      </div>
-      <div class = "searchResult">
-        <h5>comm name</h5>
-        <h4>created by</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
-      </div>
 
-    <div id ="navComm">
-      <div class = "arrow-left"></div>
-      <h3>pg 1</h3>
-      <div class ="arrow-right"></div>
-    </div>
-    </div>
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
   <script>

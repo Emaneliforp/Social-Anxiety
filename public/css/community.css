@@ -344,7 +344,7 @@ hr{
 }
 /* The Modal (background) */
 .modal {
-    display:block; /* Hidden by default */
+    display:none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
     left: 0;
@@ -403,6 +403,7 @@ hr{
   border: solid 0.1em gray;
   padding: 0.4em;
   transition: border 0.2s ease-in;
+  border-radius: 0.3em;
 }
 
   input:focus{
@@ -440,6 +441,16 @@ textarea:focus{
   margin-top: 3.5em;
 }
 
+#modalSearch input{
+  display: block;
+  height: 10%;
+  width: 30%;
+  margin: 0.4em;
+  border: solid 0.1em gray;
+  padding: 0.4em;
+  transition: border 0.2s ease-in;
+  border-radius: 0.3em;
+}
 /* The Close Button */
 .close {
   float: right;
