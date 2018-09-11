@@ -7,6 +7,7 @@
     z-index: 0;
     font-family: CenturyGothic, Helvetica, sans-serif;
     overflow: hidden;
+    outline: none;
 }
 
 #bar{
@@ -54,7 +55,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 2vh;
-
+  margin-bottom:0.5em;
 
 }
 #otherlog img{
@@ -72,7 +73,7 @@
 #signUpBtn{
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0.6em;
+  margin-top: 0.4em;
   font-size: 1.5vw;
   padding: 1vw;
   background-color: #f5324a;
@@ -82,10 +83,21 @@
   border-radius: 1vw;
 }
 
+#signUpBtn:focus{
+  outline: none;
+}
+
 #wrapper{
   display: inline-block;
   position: absolute;
   right: 0;
+}
+
+h3{
+  font-size: 80%;
+  color: white;
+  display: none;
+  font-weight: normal;
 }
 
 #loginBtn{
@@ -131,6 +143,7 @@ transition: border 0.2s ease-in;
  }
 input:focus{
   border: solid 0.1em #f5324a;
+  outline: none;
 }
 
 button{

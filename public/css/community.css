@@ -1,13 +1,14 @@
 *{
-    margin: 0;
-    padding: 0;
-    cursor: auto;
-    user-select: none;
-    border: 0;
-    z-index: 0;
-    overflow: hidden;
-    height: 100%;
-    font-family: CenturyGothic, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  cursor: auto;
+  user-select: none;
+  border: 0;
+  z-index: 0;
+  overflow: hidden;
+  height: 100%;
+  font-family: CenturyGothic, Helvetica, sans-serif;
+
 }
 
 #bar{
@@ -73,6 +74,7 @@
 }
 
 #yourComm p{
+  width: auto;
   height: auto;
   margin: 1em;
   font-size:100%;
@@ -99,7 +101,7 @@
   padding: 0.4em;
   display: inline-block;
   color: white;
-  height: 30%;
+  height: 20%;
   width: auto;
   margin:0.5em;
   border: none;
@@ -108,7 +110,9 @@
 
 }
 
-
+.commButtons:hover{
+  cursor: pointer;
+}
 
 #createComm{
   background-color: #f5324a;
@@ -219,6 +223,10 @@ h6{
   text-decoration-color: #fab50f;
 }
 
+.searchResult h5:hover{
+  cursor:pointer;
+}
+
 .searchResult h4{
   padding: 0.1em;
   height: auto;
@@ -292,9 +300,11 @@ h6{
   border-radius: 50%;
   display: inline-block;
   margin: 0.7em 0.9em 0 0.9em;
-
 }
 
+.dot:hover{
+  cursor:pointer;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -331,4 +341,116 @@ hr{
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+}
+/* The Modal (background) */
+.modal {
+    display:block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 6% auto; /* 15% from the top and centered */
+  padding: 1.5em;
+  border: 1em solid #fab50f;
+  width: 70%; /* Could be more or less, depending on screen size */
+  height: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal h1{
+  color:black;
+  height: auto;
+  margin-bottom: 0.6em;
+}
+
+.modal h3{
+  color: gray;
+  font-size: 80%;
+  margin:0 0.4em 0.4em 0.4em;
+  height: auto;
+  width: auto;
+}
+
+.modal input{
+  display: block;
+  height: 10%;
+  width: 30%;
+  margin: 0.4em;
+  border: solid 0.1em gray;
+  padding: 0.4em;
+  transition: border 0.2s ease-in;
+}
+
+  input:focus{
+    outline:0;
+    border: solid 0.1em #f5324a;
+  }
+
+.modal textarea{
+  display: block;
+  height: 20%;
+  width: 30%;
+  margin: 2em 0.4em 0.2em 0.4em;
+  border: solid 0.1em gray;
+  padding: 0.4em;
+  transition: border 0.2s ease-in;
+  min-width: 30%;
+  max-width: 30%;
+  min-height: 20%;
+  max-height: 40%;
+}
+
+textarea:focus{
+  outline:0;
+  border: solid 0.1em #f5324a;
+}
+
+.modal-content button{
+  position: absolute;
+  height:10%;
+  width: 20%;
+  border-radius: 1em;
+  color: white;
+  background-color:#f5324a;
+  font-size: 140%;
+  margin-top: 3.5em;
+}
+
+/* The Close Button */
+.close {
+  float: right;
+  color: #aaa;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

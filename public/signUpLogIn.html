@@ -3,6 +3,7 @@
 <head>
 <title>Sign Up for WAY!</title>
 <link rel = "stylesheet" href="css/signUpNew.css">
+<script src ="js/signUp.js" defer></script>
 
 </head>
 <body>
@@ -19,10 +20,12 @@
 </div>
   <!-- <img src="https://dcnetworks.ie/wp/wp-content/uploads/2017/11/placeholder-logo-2.png"> -->
   <input type = "text" placeholder = "name..." id = "signname_field">
-  <input type = "number" placeholder = "grade..." id = "signage_field">
+  <input type = "number" placeholder = "grade..." id = "signgrade_field">
   <input type="email" placeholder="email..." id="signemail_field">
   <input type ="password" placeholder = "password..." id="signpassword_field">
   <input type ="password" placeholder = "re-enter password" id="signrepassword_field">
+  <h3 id="fillFields">*Please fill out all fields!*</h3>
+  <h3 id ="wrongPass">*Passwords do not match!*</h3>
   <button id = "signUpBtn" class ="hvr-sweep-to-right">create account</button>
 </div>
   <div id = "login">
@@ -37,7 +40,7 @@
       <img src = "images/twitter.png">
       <img src = "images/facebook.png">
   </div>
-
+    <h3 id="wrong">*Wrong email or password*</h3>
     <button id = "loginBtn" class ="hvr-sweep-to-right">login</button>
 
   </div>
@@ -56,6 +59,5 @@
   };
   firebase.initializeApp(config);
 </script>
-<script src ="js/signUp.js" defer></script>
 </body>
 </html>

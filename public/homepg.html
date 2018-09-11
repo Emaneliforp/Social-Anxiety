@@ -6,41 +6,60 @@
   <link href="https://fonts.googleapis.com/css?family=Gafata|Megrim|Century+Gothic" rel="stylesheet">
 </head>
 <body>
-    <!--practice/community-->
-    <div class="pmodal" id="pmodal">
+    <!--skills-->
+    <div class="pmodal" id="spmo">
         <div class="practice">
-            <div class="nav"><i class="close" id="close"></i></div>
-            <div class="info">
-                <div class="title">
-                    Homework
-                </div>
-                <div class="descrp">
-                    Mission: You are trying to ask for help from Skit to do your English homework assignment.
-                </div>
-                <div class="op">
-                    <a href="#" class="ops"> Practice</a>
-                    <a href="#" class="ops">A.I.</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="pmodal" id="pmodal1">
-        <div class="practice">
-            <div class="nav"><i class="close" id="close1"></i></div>
+            <div class="nav"><i class="close" id="spclose"></i></div>
             <div class="info">
                 <div class="title">
                     Party
                 </div>
                 <div class="descrp">
-                    Mission: You are trying to ask for help from Skit to do your English homework assignment.
+                    Scenario: You are at a party that many of your classmates are attending. You don't really know any of them, but would like to talk to them.
                 </div>
                 <div class="op">
-                    <a href="#" class="ops"> Practice</a>
+                    <a href="sim/sim-party.html" class="ops"> Practice</a>
                     <a href="#" class="ops">A.I.</a>
                 </div>
             </div>
         </div>
     </div>
+    <div class="pmodal" id="shwmo">
+        <div class="practice">
+            <div class="nav"><i class="close" id="shwclose"></i></div>
+            <div class="info">
+                <div class="title">
+                    Homework
+                </div>
+                <div class="descrp">
+                    Scenario: You are trying to ask for help from Skit to do your English homework assignment through a phone call.
+                </div>
+                <div class="op">
+                    <a href="sim/sim-hw.html" class="ops"> Practice</a>
+                    <a href="#" class="ops">A.I.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pmodal" id="sdmo">
+        <div class="practice">
+            <div class="nav"><i class="close" id="sdclose"></i></div>
+            <div class="info">
+                <div class="title">
+                    Debate
+                </div>
+                <div class="descrp">
+                    Scenario: You are trying to present your argument about whether talent influences success to Skit, a classmate.
+                </div>
+                <div class="op">
+                    <a href="sim/sim-debate.html" class="ops"> Practice</a>
+                    <a href="#" class="ops">A.I.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--communities-->
     <div class="pmodal" id="cmodal">
         <div class="practice">
             <div class="nav"><i class="close" id="closec"></i></div>
@@ -85,26 +104,27 @@
         <span style="cursor: pointer;" onclick="opennav()">&#9776;</span>
     </div>
     <!--this is the news/slideshow section-->
-    <div class= "banner">
-    <div class="slidecontent slidecontainer">
-        <div class="slidecontainer">
-            <img class="mySlides" src="images/tempbg1.png" style="display: block;">
-            <p class="ccontainer caption">Placeholder Text Here Here Text Placeholder abcdefghijklmnopqrstuvwxyz YEEEHAWWW </p>
+    <div class="banner">
+        <div class="slidecontent slidecontainer">
+            <div class="slidecontainer">
+                <img class="mySlides" src="images/tempbg1.png" style="display: block;">
+                <p class="ccontainer caption">Placeholder Text Here Here Text Placeholder abcdefghijklmnopqrstuvwxyz YEEEHAWWW </p>
+            </div>
+            <div class="slidecontainer">
+                <img class="mySlides" src="images/tempbg2.png" style="display: none;">
+                <p class="ccontainer caption" style="display: none;">Placeholder Text Here 2</p>
+            </div>
+            <div class="slidecontainer">
+                <img class="mySlides" src="images/tempbg3.png" style="display: none;">
+                <p class="ccontainer caption" style="display: none;">Placeholder 3</p>
+            </div>
+            <button class="slidecontainer button buttonl" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="slidecontainer button buttonr" onclick="plusDivs(1)">&#10095;</button>
         </div>
-        <div class="slidecontainer">
-            <img class="mySlides" src="images/tempbg2.png" style="display: none;">
-            <p class="ccontainer caption" style="display: none;">Placeholder Text Here 2</p>
-        </div>
-        <div class="slidecontainer">
-            <img class="mySlides" src="images/tempbg3.png" style="display: none;">
-            <p class="ccontainer caption" style="display: none;">Placeholder 3</p>
-        </div>
-        <button class="slidecontainer button buttonl" onclick="plusDivs(-1)">&#10094;</button>
-        <button class="slidecontainer button buttonr" onclick="plusDivs(1)">&#10095;</button>
+        <!--twitter embed-->
+        <a class="twitter-timeline" data-width="250" data-height="375" data-theme="light" data-link-color="#07cdb2" href="https://twitter.com/WAY4cac?ref_src=twsrc%5Etfw">Tweets by WAY66266233</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <!--twitter embed-->
-<a class="twitter-timeline" data-width="250" data-height="375" data-theme="light" data-link-color="#07cdb2" href="https://twitter.com/WAY4cac?ref_src=twsrc%5Etfw">Tweets by WAY66266233</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
     <!--main content idk how to do back end-->
     <div class="main mainborder">
         <p class="section"> Communities You're In </p>
@@ -116,11 +136,11 @@
             <div class="comicon">Community4</div>
         </div>
         <div class="recentskill">
-            <div class="skillicon" id="phw">SkillLink1</div>
-            <div class="skillicon" id="phw1">SkillLink2</div>
-            <div class="skillicon" id="phw2">SkillLink3</div>
-            <div class="skillicon" id="phw3">SkillLink4</div>
-            <div class="skillicon" id="phw4">SkillLink5</div>
+            <div class="skillicon" id="sp">Party</div>
+            <div class="skillicon" id="shw">Homework</div>
+            <div class="skillicon" id="sd">Debate</div>
+            <div class="skillicon" id="phw4">SkillLink4</div>
+            <div class="skillicon" id="phw5">SkillLink5</div>
         </div>
     </div>
 
@@ -138,5 +158,5 @@
         <iframe width="300" height="200" src="https://www.youtube.com/embed/YqM-17Iw_2k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <iframe width="300" height="200" src="https://www.youtube.com/embed/dBZyFMd6La4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-  </body>
+</body>
 </html>

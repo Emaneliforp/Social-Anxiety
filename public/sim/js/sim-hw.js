@@ -1,14 +1,3 @@
-let ham = document.getElementById('ham');
-let close = document.getElementById('close');
-
-ham.addEventListener('click', function () {
-    document.getElementById("sidenav").style.width = "15vw";
-});
-
-close.addEventListener('click', function () {
-    document.getElementById('sidenav').style.width = '0vw';
-});
-
 let chatbox = document.getElementById('chatbox');
 let option = document.getElementById('option');
 let op1 = document.getElementById('op1');
@@ -20,35 +9,45 @@ var botc = document.createElement('div');
 var x = 0; //stage #
 var y = 0; //respond #
 var z = 0;
+var c = 0;
+
 
 op1.addEventListener('click', opt1);
 op2.addEventListener('click', opt2);
 op3.addEventListener('click', opt3);
 
+
 //pick option
 function opt1() {
-    var chat = document.createElement('div');
-    chat.textContent = op1.textContent;
-    chatbox.appendChild(chat);
-    y = 1;
-    bot();
-}
+    if (c < 1) {
+        var chat = document.createElement('div');
+        chat.classList.add('user');
+        chat.textContent = op1.textContent;
+        chatbox.appendChild(chat);
+        y = 1;
+        bot();
+    }
+    }
 function opt2() {
-    var chat = document.createElement('div');
-    chat.textContent = op2.textContent;
-    chatbox.appendChild(chat);
-    y = 2;
-    bot();
-
-}
+    if (c < 1) {
+        var chat = document.createElement('div');
+        chat.classList.add('user');
+        chat.textContent = op2.textContent;
+        chatbox.appendChild(chat);
+        y = 2;
+        bot();
+    }
+    }
 function opt3() {
-    var chat = document.createElement('div');
-    chat.textContent = op3.textContent;
-    chatbox.appendChild(chat);
-    y = 3;
-    bot();
+    if (c < 1) {
+        var chat = document.createElement('div');
+        chat.classList.add('user');
+        chat.textContent = op3.textContent;
+        chatbox.appendChild(chat);
+        y = 3;
+        bot();
+    }
 }
-
 //bot respond
 /*function bot() {
     x += 1;
@@ -178,8 +177,18 @@ function bot() {
         botc.textContent = "No problem. Goodbye.";
         botc.classList.add('bot');
         chatbox.appendChild(botc);
-        op1.textContent = '';
+        op1.textContent = '__________ ';
         op2.textContent = "Well done!";
-        op3.textContent = "";
+        op3.textContent = "---------- ";
+        c = 1;
     }
 }
+
+/*var height = 0;
+$('div').each(function (i, value) {
+    height += parseInt($(this).height());
+});
+
+height += '';
+
+$('div').animate({ scrollTop: height });*/

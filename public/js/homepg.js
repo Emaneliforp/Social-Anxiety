@@ -25,28 +25,42 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
   c[slideIndex-1].style.display = "block";
 }
-let phw = document.getElementById('phw');
-let phw1 = document.getElementById('phw1');
+//skills modal control
+let sp = document.getElementById('sp');
+let shw = document.getElementById('shw');
+let sof = document.getElementById('sof');
+let sd = document.getElementById('sd');
 
-let pmodal = document.getElementById('pmodal');
-let pmodal1 = document.getElementById('pmodal1');
+let spmo = document.getElementById('spmo');
+let shwmo = document.getElementById('shwmo');
+let sdmo = document.getElementById('sdmo');
 
-let close = document.getElementById('close');
-let close1 = document.getElementById('close1');
+let spclose = document.getElementById('spclose');
+let shwclose = document.getElementById('shwclose');
+let sdclose = document.getElementById('sdclose');
 
-phw.addEventListener('click', function () {
-    pmodal.style.display = 'block';
+sp.addEventListener('click', function () {
+    spmo.style.display = 'block';
 });
-close.addEventListener('click', function () {
-    pmodal.style.display = "none";
-});
-phw1.addEventListener('click', function () {
-    pmodal1.style.display = 'block';
-});
-close1.addEventListener('click', function () {
-    pmodal1.style.display = "none";
+spclose.addEventListener('click', function () {
+    spmo.style.display = "none";
 });
 
+shw.addEventListener('click', function () {
+    shwmo.style.display = 'block';
+});
+shwclose.addEventListener('click', function () {
+    shwmo.style.display = "none";
+});
+
+sd.addEventListener('click', function () {
+    sdmo.style.display = 'block';
+});
+sdclose.addEventListener('click', function () {
+    sdmo.style.display = "none";
+});
+
+//community modal control
 let c = document.getElementById('c');
 let c1 = document.getElementById('c1');
 

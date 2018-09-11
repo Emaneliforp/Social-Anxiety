@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-size: 2vw;
+    font-family: CenturyGothic, Helvetica, sans-serif;
+    background-color: #f5324a;
+}
+#nav {
+    position: fixed;
+    width: 100%;
+    background: blue;
+    text-align: center;
+    top: 0;
+}
+#title{
+    color: white;
+}
+.sidebarbtn {
+    float: right;
+    top: 1vw;
+    font-size: 2vw;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+#gamebar {
+    float: left;
+    width: 19.5vw;
+    background-color: #07cdb2;
+    height: 93vh;
+    color: white;
+    text-align: center;
+    overflow: scroll;
+    -ms-overflow-style: none;
+}
+    #gamebar img {
+        width: 15vw;
+        margin-top: 5vh;
+        border-radius: 2vw;
+        border: 0.3vw solid #ffc125;
+    }
+#gamebar::-webkit-scrollbar {
+    display: none;
+}
+#chatbox {
+    height: 75vh;
+    margin-left: 20vw;
+    margin-top: 0vh;
+    padding: 2vw;
+    z-index: 1;
+    background-color: white;
+    width: 80%;
+    align-items: flex-start;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+    #chatbox div {
+        font-size: 1.5vw;
+        padding: 0.5vw;
+        margin-bottom: 1vw;
+        color: white;
+    }
+
+.bot {
+    background-color: #07cdb2;
+    align-self: flex-end;
+    border-radius: 1vw;
+    margin-left: 3vw;
+}
+
+.user {
+    background-color: crimson;
+    border-radius: 1vw;
+    margin-right: 3vw;
+}
+
+#option {
+    background-color: #f69191;
+    bottom: 0;
+    position: fixed;
+    width: 80%;
+    margin-left: 20%;
+    font-size: 1.25vw;
+    height: 20vh;
+}
+
+    #option div {
+        width: 100%;
+        color: white;
+        padding: 0.5vw;
+        text-align: center;
+    }
+
+        #option div:hover {
+            background-color: darkred;
+        }
+.nav {
+    font-size: 2vw;
+    background-color: #FFC125;
+    padding-left: 1vw;
+    padding-bottom: 0.5vw;
+    width: 100%;
+    text-align: center;
+}
+
+i {
+    border: solid white;
+    border-width: 0 0.2vw 0.2vw 0;
+    display: inline-block;
+    padding: 0.4vw;
+    margin-top: 2vh;
+    float:left;
+}
+
+.close {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    cursor: pointer;
+}
+

@@ -1,93 +1,85 @@
+window.onload = function(){
 
 const FIREBASE_DATABASE = firebase.database();
 const FIREBASE_AUTH = firebase.auth();
+
+//initialize firebase variables
 let signUpButton = document.getElementById("signUpBtn");
 let loginButton =document.getElementById("loginBtn");
 
-
-loginButton.addEventListener("click", function(){
-  window.location.href = "login.html";
-});
-
 signUpButton.addEventListener("click", e=> {
   //variables for input
-  let signtName = document.getElementById("name_field").value;
-  let signtGrade = document.getElementById("grade_field").value;
-  let signtEmail = document.getElementById("email_field").value;
-  let signtPassword = document.getElementById("password_field").value;
-  let signtRePassword = document.getElementById("repassword_field").value;
+  let signtName = document.getElementById("signname_field").value;
+  let signtGrade = document.getElementById("signgrade_field").value;
+  let signtEmail = document.getElementById("signemail_field").value;
+  let signtPassword = document.getElementById("signpassword_field").value;
+  let signtRePassword = document.getElementById("signrepassword_field").value;
 
   let signUpButton = document.getElementById("signUpBtn");
   let loginButton =document.getElementById("loginBtn");
-  //if fields are empty, then stop from creating account
+
+// TODO: check if email exists
+
+  //makes sure that values aren't empty
   if ((signtName) && (signtEmail) && (signtPassword) && (signtGrade) && (signtRePassword)){
-    const EMAIL = signtEmail.value;
-    const PASSWORD = signtPassword.value;
+    //for createUserWithEmailAndPassword
+    const EMAIL = document.getElementById("signemail_field").value;
+    const PASSWORD = document.getElementById("signpassword_field").value;
+    //user object
     const USERACC = {
-      name: signtName.value,
-      grade: signtGrade.value
+      name: document.getElementById("signname_field").value,
+      grade: document.getElementById("signgrade_field").value
     };
     //create account and add to database
     if (signtPassword.value == signtRePassword.value){
-      FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function(){
-        let id = createId();
-        FIREBASE_DATABASE.ref("users/" + id).set(USERACC).then(
-        function(){
-              console.log("created");
+      const promise = FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function(user) {
+        console.log(user);
+        //pushes user account into database
+        FIREBASE_DATABASE.ref('users').push(USERACC).then(
+              function() {
+                  console.log('User data successfully stored')
+              }).catch(function(error) {
+                  console.log(error);
+              });
+      	});
+        //catches errors
+      	promise.catch(e => alert(e.message));
+      	promise.then(function(v) {
+          window.location.href = "homepg.html";
+          var user = firebase.auth().currentUser;
+          console.log(user);
         });
-      });
-      window.location.href = "homepg.html";
-    }
+      }
 
     else{
-      alert("Passwords don't match.");
+      //prevents users from proceeding without matching passwords
+      document.getElementById("wrongPass").style.display="block";
       signtPassword.value = "";
       signtRePassword.value = "";
     }
   }
+    //if fields are empty, then stop from creating account
   else{
-    alert("Please fill out all fields.");
-
-}
+    document.getElementById("fillFields").style.display="block";
+  }
 });
 
+//login
 
-function createId(){
-  let id = Math.floor(Math.random() * 10001);
-  // allUsers = [];
-  // FIREBASE_DATABASE.ref("users").once("value")
-  //   .then((snapshot) => {
-  //     let val = snapshot.val();
-  //     for (let key in val){
-  //       allUsers.push(key);
-  //     }
-  // for (let i = 0; i < allUsers.length; i++){
-  //   if (allUsers[i] == id)
-  //   {
-  //     id = Math.floor(Math.random() * 10001);
-  //     break;
-  //   }
-  // }
-  //     console.log(id);
-      return id;
-  // });
-}
-
-function myFunction(){
-  signtName = this.value;
-}
-//login stuff
-
-let logtEmail = document.getElementById("email_field");
-let logtPassword = document.getElementById("password_field");
+let logtEmail = document.getElementById("logemail_field");
+let logtPassword = document.getElementById("logpassword_field");
 
 loginButton.addEventListener("click", function(){
   const email = logtEmail.value;
   const pass = logtPassword.value;
 
-  FIREBASE_AUTH.signInWithEmailAndPassword(email, pass)
-    .then(function(){
+  const PROMISE =FIREBASE_AUTH.signInWithEmailAndPassword(email, pass)
+    .then(function(user){
       console.log("login successful");
       // window.location.href = "homepg.html";
+    }).catch(e => {
+        console.log(e.message);
+        document.getElementById("wrong").style.display = "block";
     });
 });
+}
