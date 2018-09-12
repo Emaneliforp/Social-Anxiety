@@ -8,7 +8,7 @@
   overflow: hidden;
   height: 100%;
   font-family: CenturyGothic, Helvetica, sans-serif;
-
+  outline: none;
 }
 
 #bar{
@@ -450,6 +450,11 @@ textarea:focus{
   padding: 0.4em;
   transition: border 0.2s ease-in;
   border-radius: 0.3em;
+}
+
+#modalSearch input:focus{
+  outline:0;
+  border: solid 0.1em #f5324a;
 }
 /* The Close Button */
 .close {
