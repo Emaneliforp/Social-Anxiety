@@ -440,7 +440,9 @@ textarea:focus{
   font-size: 140%;
   margin-top: 3.5em;
 }
-
+#modalSearch{
+  overflow: auto;
+}
 #modalSearch input{
   display: block;
   height: 10%;
@@ -455,6 +457,61 @@ textarea:focus{
 #modalSearch input:focus{
   outline:0;
   border: solid 0.1em #f5324a;
+}
+
+
+.modalSearchResult{
+  display: inline-block;
+  height: 25%;
+  width:25%;
+  min-height: 25%;
+  margin: 1.45em;
+  border: solid 0.4em #f5324a;
+  border-radius: 1em;
+  padding:0.5em;
+  overflow: auto;
+
+}
+
+#modalSearchh5 {
+  width: auto;
+  font-size: 110%;
+  padding: 0.1em;
+  height: auto;
+  text-decoration: underline;
+  text-decoration-color: #fab50f;
+  font-weight: bold;
+}
+
+#modalSearchh5:hover{
+  cursor:pointer;
+}
+
+#modalSearchh4{
+  display: block;
+  padding: 0.1em;
+  height: auto;
+  font-size: 70%;
+  font-weight: bold;
+  width:auto;
+}
+
+#modalSearchParagraph{
+  display: block;
+  text-indent: 5%;
+  padding: 0.3em;
+  height: auto;
+}
+
+
+/* Handle */
+.modal ::-webkit-scrollbar-thumb {
+    background: #f5324a;
+}
+
+/* Handle on hover */
+.modal ::-webkit-scrollbar-thumb:hover {
+    background: #f5324a;
 }
 /* The Close Button */
 .close {

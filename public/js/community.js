@@ -1,5 +1,7 @@
 const FIREBASE_DATABASE=firebase.database();
 const FIREBASE_AUTH = firebase.auth();
+var user = FIREBASE_AUTH.currentUser;
+console.log(user);
 
 //redirect to page
 document.getElementById("arrow").addEventListener("click", function(){
@@ -22,7 +24,10 @@ createBtn.onclick = function() {
 }
 searchBtn.onclick=function(){
   searchModal.style.display="block";
-
+  FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
+    console.log(snapshot.val());
+    displayCommInSearch(snapshot.val());
+  });
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -38,6 +43,12 @@ searchSpan.onclick = function() {
 window.onclick = function(event) {
     if (event.target == createModal) {
         createModal.style.display = "none";
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target == searchModal) {
+        searchModal.style.display = "none";
     }
 }
 
@@ -98,11 +109,16 @@ console.log(nameField.value);
     alert("Brevity is the soul of wit, but please include more information");
   }
   else{
+    var user = FIREBASE_AUTH.currentUser;
+    console.log(user);
+
     const COMMUNITY = {
       name: nameField.value,
+      creator: userName,
       desc: descField.value
     }
     FIREBASE_DATABASE.ref("communities/" + nameField.value).set(COMMUNITY);
+
     console.log("Created community successfully");
     }
 });
@@ -128,30 +144,29 @@ function search() {
     }
 }
 
-function insertAllComm(){
-
-  function displayAnnouncement(announcement) {
+function displayCommInSearch(community){
+  var searchResults=[];
+  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
+    .then((snapshot) => {
+      let val = snapshot.val();
+      for (let key in val) {
+        searchResults.push(key);
+      }
+    })
   	let div = document.createElement('div');
-    //eventually - display organization's profile pic to the LEFT of the announcement title
-    let domString = `<div class="saveable">
-  		<span><img class="logo" src="${announcement.userProfileImg}" /></span>
-  		<span class="announcement">
-  				${announcement.message}
-  		</span>
+    let domString = `<div class="modalSearchResult">
+  		<div id ="modalSearchh5">${community.name}</div>
+  		<div id ="modalSearchParagraph">
+  				${community.desc}
+  		</div>
   	</div>`;
     div.innerHTML = domString;
 
-  	let announceDiv = div.firstChild;
+  	let communityDiv = div.firstChild;
+    var modalSearchDiv =document.getElementById("modalSearchArea");
+    modalSearchDiv.appendChild(communityDiv);
 
-}
 
-  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
-  	.then((snapshot) => {
-  		let val = snapshot.val();
-  		for (let key in val) {
-  			searchResults.push(key);
-  		}
-    })
 }
 
 function searchAllComm(){
@@ -160,12 +175,7 @@ function searchAllComm(){
   input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
   var searchResults =[];
-  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
-  	.then((snapshot) => {
-  		let val = snapshot.val();
-  		for (let key in val) {
-  			searchResults.push(key);
-  		}
+
 console.log(searchResults);
   // Loop through all list items, and hide those who don't match the search query
   // for (i = 0; i < searchResults.length; i++) {
@@ -178,5 +188,5 @@ console.log(searchResults);
   //         searchResults[i].style.display = "none";
   //     }
   // }
-})
+
 }

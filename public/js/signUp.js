@@ -10,6 +10,7 @@ let loginButton =document.getElementById("loginBtn");
 signUpButton.addEventListener("click", e=> {
   //variables for input
   let signtName = document.getElementById("signname_field").value;
+  let signtUsername = document.getElementById("signusername_field").value;
   let signtGrade = document.getElementById("signgrade_field").value;
   let signtEmail = document.getElementById("signemail_field").value;
   let signtPassword = document.getElementById("signpassword_field").value;
@@ -21,13 +22,14 @@ signUpButton.addEventListener("click", e=> {
 // TODO: check if email exists
 
   //makes sure that values aren't empty
-  if ((signtName) && (signtEmail) && (signtPassword) && (signtGrade) && (signtRePassword)){
+  if ((signtName) && (signtUsername) && (signtEmail) && (signtPassword) && (signtGrade) && (signtRePassword)){
     //for createUserWithEmailAndPassword
     const EMAIL = document.getElementById("signemail_field").value;
     const PASSWORD = document.getElementById("signpassword_field").value;
     //user object
     const USERACC = {
       name: document.getElementById("signname_field").value,
+      username: document.getElementById("signusername_field").value,
       grade: document.getElementById("signgrade_field").value
     };
     //create account and add to database
@@ -75,8 +77,11 @@ loginButton.addEventListener("click", function(){
 
   const PROMISE =FIREBASE_AUTH.signInWithEmailAndPassword(email, pass)
     .then(function(user){
+      var user = FIREBASE_AUTH.currentUser;
+      console.log(user);
+
       console.log("login successful");
-      window.location.href = "homepg.html";
+      // window.location.href = "homepg.html";
     }).catch(e => {
         console.log(e.message);
         document.getElementById("wrong").style.display = "block";
