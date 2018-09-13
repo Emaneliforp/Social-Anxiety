@@ -12,10 +12,11 @@
 <div class="modal-content" id="modalSearch">
   <span class="close" id="searchClose">&times;</span>
   <h1>S E A R C H &#9734; C O M M U N I T Y</h1>
-  <input type ="text" placeholder = "search..." id ="searchNewCommBar">
-  <textarea placeholder = "description of community..." id ="commDesc"></textarea>
-  <div class ="searchResult">
+  <input type ="text" onkeyup="searchAllComm()" placeholder = "search..." id ="searchNewCommBar">
+  <div id = "modalSearchArea">
+
 </div>
+  </div>
 </div>
 <div id="myModalCreate" class="modal">
 
@@ -29,7 +30,7 @@
   <button id="createCommBtn">Create</button>
 </div>
 </div>
-</div>
+
   <div id = "bar">
     <div id = "arr">
       <img src = "images/arrow.png" id ="arrow">
