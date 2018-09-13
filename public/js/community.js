@@ -10,6 +10,7 @@ var username;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     username = FIREBASE_AUTH.currentUser.displayName;
+    
     console.log(user);
   } else {
     console.log("none");
