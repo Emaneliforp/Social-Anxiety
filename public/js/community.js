@@ -1,8 +1,20 @@
 const FIREBASE_DATABASE=firebase.database();
 const FIREBASE_AUTH = firebase.auth();
-var user = FIREBASE_AUTH.currentUser;
-console.log(user);
 
+FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
+  console.log(snapshot.val());
+  displayCommInSearch(snapshot.val());
+});
+
+var username;
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    username = FIREBASE_AUTH.currentUser.displayName;
+    console.log(user);
+  } else {
+    console.log("none");
+  }
+});
 //redirect to page
 document.getElementById("arrow").addEventListener("click", function(){
   window.location.href = "homepg.html";
@@ -24,10 +36,7 @@ createBtn.onclick = function() {
 }
 searchBtn.onclick=function(){
   searchModal.style.display="block";
-  FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
-    console.log(snapshot.val());
-    displayCommInSearch(snapshot.val());
-  });
+
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -77,6 +86,7 @@ descField.onkeyup = function () {
       charCountSendDesc=false;
   }
   else {
+      item.style.color="gray";
     charCountSendDesc=true;
   }
   item.innerHTML = "Characters left: " + (charRemain);
@@ -94,6 +104,7 @@ nameField.onkeyup = function () {
       charCountSendName=false;
   }
   else {
+    item.style.color="gray";
     charCountSendName=true;
   }
   item.innerHTML = "Characters left: " + (charRemain);
@@ -108,19 +119,26 @@ console.log(nameField.value);
   if (nameField.value.length<=4 || descField.value.length<=10){
     alert("Brevity is the soul of wit, but please include more information");
   }
-  else{
-    var user = FIREBASE_AUTH.currentUser;
-    console.log(user);
 
+  else{
+    //get the username of user
+    FIREBASE_DATABASE.ref('/users').once('value') //using once b/c we are taking a snapshot once daily
+      .then((snapshot) => {
+        let val = snapshot.val();
+        for (let key in val) {
+          searchResults.push(key);
+        }
+      })
     const COMMUNITY = {
       name: nameField.value,
-      creator: userName,
+      creator: username,
       desc: descField.value
     }
     FIREBASE_DATABASE.ref("communities/" + nameField.value).set(COMMUNITY);
 
     console.log("Created community successfully");
     }
+    createModal.style.display = "none";
 });
 
 //search js for main page
@@ -156,6 +174,7 @@ function displayCommInSearch(community){
   	let div = document.createElement('div');
     let domString = `<div class="modalSearchResult">
   		<div id ="modalSearchh5">${community.name}</div>
+      <div id = "modalSearchh4">${"created by: "+community.creator}</div>
   		<div id ="modalSearchParagraph">
   				${community.desc}
   		</div>

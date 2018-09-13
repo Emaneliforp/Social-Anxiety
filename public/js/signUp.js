@@ -29,12 +29,21 @@ signUpButton.addEventListener("click", e=> {
     //user object
     const USERACC = {
       name: document.getElementById("signname_field").value,
-      username: document.getElementById("signusername_field").value,
       grade: document.getElementById("signgrade_field").value
     };
     //create account and add to database
     if (signtPassword.value == signtRePassword.value){
       const promise = FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function(user) {
+        var usser = firebase.auth().currentUser;
+        usser.updateProfile({
+            displayName: document.getElementById("signusername_field").value
+          }).then(function() {
+            console.log("Success");
+            // Update successful.
+          }).catch(function(error) {
+            // An error happened.
+            console.log("Error");
+          });
         console.log(user);
         //pushes user account into database
         FIREBASE_DATABASE.ref('users').push(USERACC).then(
@@ -81,7 +90,7 @@ loginButton.addEventListener("click", function(){
       console.log(user);
 
       console.log("login successful");
-      // window.location.href = "homepg.html";
+      window.location.href = "homepg.html";
     }).catch(e => {
         console.log(e.message);
         document.getElementById("wrong").style.display = "block";

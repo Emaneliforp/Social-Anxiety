@@ -464,7 +464,7 @@ textarea:focus{
   display: inline-block;
   height: 25%;
   width:25%;
-  min-height: 25%;
+  min-height: 20%;
   margin: 1.45em;
   border: solid 0.4em #f5324a;
   border-radius: 1em;
@@ -526,4 +526,32 @@ textarea:focus{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.successModal {
+    display:none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.successModal-content {
+  background-color: #fefefe;
+  margin: 6% auto; /* 15% from the top and centered */
+  padding: 1.5em;
+  border: 1em solid #fab50f;
+  width: 40%; /* Could be more or less, depending on screen size */
+  height: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
