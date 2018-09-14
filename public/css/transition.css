@@ -1,0 +1,49 @@
+#transition{
+  height: 100%;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  animation-name: bodyTalk;
+  animation-duration: 0.9s;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+#preloader{
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  padding: 0;
+  background-color: #fff;
+  text-align: center;
+  font-family: "Century Gothic";
+  overflow: visible;
+}
+#transition h1{
+  display: block;
+  color: #07cdb2;
+  font-size: 7vw;
+  font-weight: bold;
+  margin: auto;
+  padding-top: 33%;
+  animation-name: dropIn;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+@keyframes dropIn{
+    from{transform: scale(10);}
+    to{transform: none;}
+}
+
+@keyframes bodyTalk{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(5);
+        opacity: 0;
+        display: block;
+        padding-top: 5vh;
+    }
+}

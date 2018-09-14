@@ -1,6 +1,21 @@
 const FIREBASE_DATABASE=firebase.database();
 const FIREBASE_AUTH = firebase.auth();
 
+FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
+  console.log(snapshot.val());
+  displayCommInSearch(snapshot.val());
+});
+
+var username;
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    username = FIREBASE_AUTH.currentUser.displayName;
+    
+    console.log(user);
+  } else {
+    console.log("none");
+  }
+});
 //redirect to page
 document.getElementById("arrow").addEventListener("click", function(){
   window.location.href = "homepg.html";
@@ -41,6 +56,12 @@ window.onclick = function(event) {
     }
 }
 
+window.onclick = function(event) {
+    if (event.target == searchModal) {
+        searchModal.style.display = "none";
+    }
+}
+
 //character count
 var charCountSendName=true;
 var nameField=document.getElementById("commName");
@@ -66,6 +87,7 @@ descField.onkeyup = function () {
       charCountSendDesc=false;
   }
   else {
+      item.style.color="gray";
     charCountSendDesc=true;
   }
   item.innerHTML = "Characters left: " + (charRemain);
@@ -83,6 +105,7 @@ nameField.onkeyup = function () {
       charCountSendName=false;
   }
   else {
+    item.style.color="gray";
     charCountSendName=true;
   }
   item.innerHTML = "Characters left: " + (charRemain);
@@ -97,14 +120,26 @@ console.log(nameField.value);
   if (nameField.value.length<=4 || descField.value.length<=10){
     alert("Brevity is the soul of wit, but please include more information");
   }
+
   else{
+    //get the username of user
+    FIREBASE_DATABASE.ref('/users').once('value') //using once b/c we are taking a snapshot once daily
+      .then((snapshot) => {
+        let val = snapshot.val();
+        for (let key in val) {
+          searchResults.push(key);
+        }
+      })
     const COMMUNITY = {
       name: nameField.value,
+      creator: username,
       desc: descField.value
     }
     FIREBASE_DATABASE.ref("communities/" + nameField.value).set(COMMUNITY);
+
     console.log("Created community successfully");
     }
+    createModal.style.display = "none";
 });
 
 //search js for main page
@@ -128,30 +163,30 @@ function search() {
     }
 }
 
-function insertAllComm(){
-
-  function displayAnnouncement(announcement) {
+function displayCommInSearch(community){
+  var searchResults=[];
+  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
+    .then((snapshot) => {
+      let val = snapshot.val();
+      for (let key in val) {
+        searchResults.push(key);
+      }
+    })
   	let div = document.createElement('div');
-    //eventually - display organization's profile pic to the LEFT of the announcement title
-    let domString = `<div class="saveable">
-  		<span><img class="logo" src="${announcement.userProfileImg}" /></span>
-  		<span class="announcement">
-  				${announcement.message}
-  		</span>
+    let domString = `<div class="modalSearchResult">
+  		<div id ="modalSearchh5">${community.name}</div>
+      <div id = "modalSearchh4">${"created by: "+community.creator}</div>
+  		<div id ="modalSearchParagraph">
+  				${community.desc}
+  		</div>
   	</div>`;
     div.innerHTML = domString;
 
-  	let announceDiv = div.firstChild;
+  	let communityDiv = div.firstChild;
+    var modalSearchDiv =document.getElementById("modalSearchArea");
+    modalSearchDiv.appendChild(communityDiv);
 
-}
 
-  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
-  	.then((snapshot) => {
-  		let val = snapshot.val();
-  		for (let key in val) {
-  			searchResults.push(key);
-  		}
-    })
 }
 
 function searchAllComm(){
@@ -160,12 +195,7 @@ function searchAllComm(){
   input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
   var searchResults =[];
-  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
-  	.then((snapshot) => {
-  		let val = snapshot.val();
-  		for (let key in val) {
-  			searchResults.push(key);
-  		}
+
 console.log(searchResults);
   // Loop through all list items, and hide those who don't match the search query
   // for (i = 0; i < searchResults.length; i++) {
@@ -178,5 +208,5 @@ console.log(searchResults);
   //         searchResults[i].style.display = "none";
   //     }
   // }
-})
+
 }

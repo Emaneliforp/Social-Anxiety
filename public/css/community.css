@@ -115,6 +115,7 @@
 }
 
 #createComm{
+
   background-color: #f5324a;
 }
 
@@ -368,7 +369,9 @@ hr{
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.4s
+  animation-duration: 0.6s
+  overflow:hidden;
+
 }
 /* Add Animation */
 @-webkit-keyframes animatetop {
@@ -438,9 +441,13 @@ textarea:focus{
   color: white;
   background-color:#f5324a;
   font-size: 140%;
-  margin-top: 3.5em;
-}
+  margin-top: 2.2em;
 
+}
+#modalSearch{
+
+  overflow: hidden;
+}
 #modalSearch input{
   display: block;
   height: 10%;
@@ -456,6 +463,80 @@ textarea:focus{
   outline:0;
   border: solid 0.1em #f5324a;
 }
+
+
+.modalSearchResult{
+  display: inline-block;
+  height: 22%;
+  width:25%;
+  min-height: 21%;
+  margin: 1.45em;
+  border: solid 0.4em #f5324a;
+  border-radius: 1em;
+  padding:0.5em;
+  overflow: auto;
+  background-color: white;
+}
+
+#modalSearchArea{
+  background-color:#ffefdb;
+  overflow: auto;
+  height: 73%;
+  margin-top: 0.3em;
+}
+
+#modalSearchh5 {
+  width: auto;
+  font-size: 110%;
+  padding: 0.1em;
+  height: auto;
+  text-decoration: underline;
+  text-decoration-color: #fab50f;
+  font-weight: bold;
+}
+
+#modalSearchh5:hover{
+  cursor:pointer;
+}
+
+#modalSearchh4{
+  display: block;
+  padding: 0.1em;
+  height: auto;
+  font-size: 70%;
+  font-weight: bold;
+  width:auto;
+}
+
+#modalSearchParagraph{
+  display: block;
+  text-indent: 5%;
+  padding: 0.3em;
+  height: auto;
+}
+
+
+/* Handle */
+.modal ::-webkit-scrollbar-thumb {
+    background: #f5324a;
+}
+
+/* Handle on hover */
+.modal ::-webkit-scrollbar-thumb:hover {
+    background: #f5324a;
+}
+
+#modalSearchArea ::-webkit-scrollbar-thumb {
+    background:#ffdbe0;
+}
+
+/* Handle on hover */
+#modalSearchArea ::-webkit-scrollbar-thumb:hover {
+    background: #ffdbe0;
+}
+.modal ::-webkit-scrollbar {
+    width: 0.5vw;
+}
 /* The Close Button */
 .close {
   float: right;
@@ -469,4 +550,32 @@ textarea:focus{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.successModal {
+    display:none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.successModal-content {
+  background-color: #fefefe;
+  margin: 6% auto; /* 15% from the top and centered */
+  padding: 1.5em;
+  border: 1em solid #fab50f;
+  width: 40%; /* Could be more or less, depending on screen size */
+  height: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
