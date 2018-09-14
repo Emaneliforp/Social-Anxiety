@@ -10,7 +10,7 @@ var username;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     username = FIREBASE_AUTH.currentUser.displayName;
-    
+
     console.log(user);
   } else {
     console.log("none");
@@ -24,6 +24,7 @@ document.getElementById("arrow").addEventListener("click", function(){
 // Get the modal
 var createModal = document.getElementById("myModalCreate");
 var searchModal = document.getElementById("myModalSearch");
+var successModal = document.getElementById("successModal");
 
 // Get the button that opens the modal
 var createBtn = document.getElementById("createComm");
@@ -31,6 +32,7 @@ var searchBtn = document.getElementById("joinNewComm")
 // Get the <span> element that closes the modal
 var createSpan = document.getElementById("createClose");
 var searchSpan = document.getElementById("searchClose");
+var successSpan = document.getElementById("successClose");
 // When the user clicks on the button, open the modal
 createBtn.onclick = function() {
   createModal.style.display = "block";
@@ -44,9 +46,17 @@ searchBtn.onclick=function(){
 createSpan.onclick = function() {
     createModal.style.display = "none";
     searchModal.style.display="none";
+      successModal.style.display="none";
 }
 searchSpan.onclick = function() {
-    searchModal.style.display="none";
+  createModal.style.display = "none";
+  searchModal.style.display="none";
+    successModal.style.display="none";
+  }
+successSpan.onclick=function(){
+  createModal.style.display = "none";
+  searchModal.style.display="none";
+    successModal.style.display="none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -59,6 +69,11 @@ window.onclick = function(event) {
 window.onclick = function(event) {
     if (event.target == searchModal) {
         searchModal.style.display = "none";
+    }
+}
+window.onclick = function(event) {
+    if (event.target == searchModal) {
+        successModalc.style.display = "none";
     }
 }
 
@@ -122,14 +137,7 @@ console.log(nameField.value);
   }
 
   else{
-    //get the username of user
-    FIREBASE_DATABASE.ref('/users').once('value') //using once b/c we are taking a snapshot once daily
-      .then((snapshot) => {
-        let val = snapshot.val();
-        for (let key in val) {
-          searchResults.push(key);
-        }
-      })
+
     const COMMUNITY = {
       name: nameField.value,
       creator: username,
@@ -138,8 +146,13 @@ console.log(nameField.value);
     FIREBASE_DATABASE.ref("communities/" + nameField.value).set(COMMUNITY);
 
     console.log("Created community successfully");
-    }
     createModal.style.display = "none";
+    var successModal = document.getElementById("successModal");
+    var successModalcontent = document.getElementById("successModal-content");
+    successModal.style.display="block";
+    successModalcontent.style.display="block";
+    }
+
 });
 
 //search js for main page
