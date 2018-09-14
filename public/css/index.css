@@ -17,7 +17,7 @@ nav {
     width: 100%;
     background: #f5324a;
     margin-left: 0%;
-    height: 6vh;
+    height: 6.5vh;
     overflow: hidden;
 
 }
@@ -57,7 +57,8 @@ nav {
     }
     nav button:hover {
       border-color: #f5324a;
-      color: white;
+      background-color: #fff;
+      color: #f5324a;
       cursor: pointer;
 
 }

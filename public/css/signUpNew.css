@@ -5,7 +5,7 @@
     user-select: none;
     border: 0;
     z-index: 0;
-    font-family: CenturyGothic, Helvetica, sans-serif;
+    font-family: "Century Gothic", Helvetica, sans-serif;
     overflow: hidden;
     outline: none;
 }
@@ -22,7 +22,7 @@
    height: 100vh;
    background-color: #07cdb2;
    margin-top: 2vh;
-   font-family: CenturyGothic, Helvetica, sans-serif;
+   font-family: "Century Gothic", Helvetica, sans-serif;
    text-align: center;
 }
 
