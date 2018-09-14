@@ -40,7 +40,7 @@ body {
   transition: 0.3s;
 }
 .sidebar a:hover{
-  color: #f1f1f1;
+  color: #c29ea3;
 }
 .sidebar .closebtn {
   position: absolute;
@@ -65,7 +65,7 @@ body {
   display: flex;
   flex-flow: row wrap;;
   background-color: #fff;
-  padding: 1vw;
+  padding: 0.5vw;
   border-radius: 2vw;
   max-width: 80%;
 }
@@ -73,7 +73,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   background-color: #fff;
-  padding: 1vw;
+  padding: 0.5vw;
   border-radius: 2vw;
   max-width: 80%;
 }
@@ -187,6 +187,7 @@ img {
     margin-top: 1vh;
     text-align:center;
     position: sticky;
+    display: block;
 }
 .youtube iframe{
     vertical-align: central;
