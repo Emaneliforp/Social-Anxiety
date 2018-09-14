@@ -60,6 +60,8 @@ body {
   font-family: "Century Gothic";
   color: #fff;
   font-size: 3vw;
+  margin-top: 1vh;
+  margin-bottom: 0;
 }
 .communities {
   display: flex;
@@ -147,7 +149,7 @@ img {
   margin: auto;
 }
 .slidecontent img{
-  height: 60vh;
+  height: 50vh;
   width: 150vh;
 }
 .slidecontainer{

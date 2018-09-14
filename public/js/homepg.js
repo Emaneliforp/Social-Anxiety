@@ -85,8 +85,6 @@ let addSkill = document.getElementById("addSkill");
 let searchmo = document.getElementById("searchmo");
 let searchmoc = document.getElementById('searchmoc');
 
-<<<<<<< HEAD
-=======
 addSkill.addEventListener('click', function () {
     searchmo.style.display = "block";
 });
@@ -124,7 +122,6 @@ function sppcs() {
     });
 }
 
->>>>>>> 1fea5e81cef8974f32aa60481434394a18003a85
 var communityNavBtn = document.getElementById("communityNav");
 communityNavBtn.addEventListener("click", function(){
   window.location.href="community.html";
