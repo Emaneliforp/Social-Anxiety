@@ -6,6 +6,29 @@
   <link href="https://fonts.googleapis.com/css?family=Gafata|Megrim|Century+Gothic" rel="stylesheet">
 </head>
 <body>
+    <div class="pmodalf" id="searchmo">
+        <div class="practice">
+            <div class="nav"><i class="close" id="searchmoc"></i></div>
+            <div class="info">
+                <div class="searchSkill">
+                    <input id="searchBar" onkeyup="search()" placeholder="Search for skills name" />
+                </div>
+                <div class="descrp">
+                    <div class="tags">
+                        <div class="searchResult" onclick="spm()"><span>Party</span></div>
+                        <div class="searchResult" onclick="shwm()"><span>Homework</span></div>
+                        <div class="searchResult" onclick="sdm()"><span>Debate</span></div>
+                        <div class="searchResult" onclick="spm()"><span>School</span></div>
+                        <div class="searchResult" onclick="spm()"><span>Airport</span></div>
+                        <div class="searchResult" onclick="spm()"><span>Bus</span></div>
+                        <div class="searchResult" onclick="spm()"><span>Presenting</span></div>
+                        <div class="searchResult" onclick="spm()"><span>Group project</span></div>
+                        <div class="searchResult" onclick="spm()"><span>Shopping</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--skills-->
     <div class="pmodal" id="spmo">
         <div class="practice">
@@ -18,7 +41,7 @@
                     Scenario: You are at a party that many of your classmates are attending. You don't really know any of them, but would like to talk to them.
                 </div>
                 <div class="op">
-                    <a href="sim/sim-party.html" class="ops"> Practice</a>
+                    <a href="sim/sim-party.html" class="ops" onclick="sppcs()"> Practice</a>
                     <a href="#" class="ops">A.I.</a>
                 </div>
             </div>
@@ -35,7 +58,7 @@
                     Scenario: You are trying to ask for help from Skit to do your English homework assignment through a phone call.
                 </div>
                 <div class="op">
-                    <a href="sim/sim-hw.html" class="ops"> Practice</a>
+                    <a href="sim/sim-hw.html" class="ops" id="shwp"> Practice</a>
                     <a href="#" class="ops">A.I.</a>
                 </div>
             </div>
@@ -52,7 +75,7 @@
                     Scenario: You are trying to present your argument about whether talent influences success to Skit, a classmate.
                 </div>
                 <div class="op">
-                    <a href="sim/sim-debate.html" class="ops"> Practice</a>
+                    <a href="sim/sim-debate.html" class="ops" id="sdp"> Practice</a>
                     <a href="#" class="ops">A.I.</a>
                 </div>
             </div>
@@ -136,11 +159,10 @@
             <div class="comicon">Community4</div>
         </div>
         <div class="recentskill">
-            <div class="skillicon" id="sp">Party</div>
-            <div class="skillicon" id="shw">Homework</div>
-            <div class="skillicon" id="sd">Debate</div>
-            <div class="skillicon" id="phw4">SkillLink4</div>
-            <div class="skillicon" id="phw5">SkillLink5</div>
+            <div class="skillicon" onclick="spm()">Party</div>
+            <div class="skillicon" onclick="shwm()">Homework</div>
+            <div class="skillicon" onclick="sdm()">Debate</div>
+            <div id="addSkill">+</div>
         </div>
     </div>
 
@@ -158,5 +180,18 @@
         <iframe width="300" height="200" src="https://www.youtube.com/embed/YqM-17Iw_2k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <iframe width="300" height="200" src="https://www.youtube.com/embed/dBZyFMd6La4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+            authDomain: "social-anxiety.firebaseapp.com",
+            databaseURL: "https://social-anxiety.firebaseio.com",
+            projectId: "social-anxiety",
+            storageBucket: "social-anxiety.appspot.com",
+            messagingSenderId: "321965462198"
+        };
+        firebase.initializeApp(config);
+    </script>
 </body>
 </html>

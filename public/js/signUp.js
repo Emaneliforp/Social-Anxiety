@@ -72,14 +72,25 @@ let logtPassword = document.getElementById("logpassword_field");
 loginButton.addEventListener("click", function(){
   const email = logtEmail.value;
   const pass = logtPassword.value;
+    firebase.auth().signInWithEmailAndPassword(email, pass).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+    });
+    var user = firebase.auth().currentUser;
+    window.location.href = "homepg.html";
 
+    console.log(user);
+/**
   const PROMISE =FIREBASE_AUTH.signInWithEmailAndPassword(email, pass)
     .then(function(user){
-      console.log("login successful");
-      window.location.href = "homepg.html";
+        console.log("login successful");
+        console.log(user);
     }).catch(e => {
         console.log(e.message);
         document.getElementById("wrong").style.display = "block";
     });
+    */
 });
 }
