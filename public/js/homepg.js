@@ -25,37 +25,34 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";
   c[slideIndex-1].style.display = "block";
 }
+//search control
+function spm() {
+    spmo.style.display = 'block';
+}
+function shwm() {
+    shwmo.style.display = 'block';
+}
+function sdm() {
+    sdmo.style.display = 'block';
+}
+
 //skills modal control
 let sp = document.getElementById('sp');
 let shw = document.getElementById('shw');
-let sof = document.getElementById('sof');
 let sd = document.getElementById('sd');
-
-let spmo = document.getElementById('spmo');
-let shwmo = document.getElementById('shwmo');
-let sdmo = document.getElementById('sdmo');
 
 let spclose = document.getElementById('spclose');
 let shwclose = document.getElementById('shwclose');
 let sdclose = document.getElementById('sdclose');
 
-sp.addEventListener('click', function () {
-    spmo.style.display = 'block';
-});
 spclose.addEventListener('click', function () {
     spmo.style.display = "none";
 });
 
-shw.addEventListener('click', function () {
-    shwmo.style.display = 'block';
-});
 shwclose.addEventListener('click', function () {
     shwmo.style.display = "none";
 });
 
-sd.addEventListener('click', function () {
-    sdmo.style.display = 'block';
-});
 sdclose.addEventListener('click', function () {
     sdmo.style.display = "none";
 });
@@ -83,13 +80,47 @@ closec1.addEventListener('click', function () {
     cmodal1.style.display = "none";
 });
 
+//add skill
+let addSkill = document.getElementById("addSkill");
+let searchmo = document.getElementById("searchmo");
+let searchmoc = document.getElementById('searchmoc');
 
+addSkill.addEventListener('click', function () {
+    searchmo.style.display = "block";
+});
+searchmoc.addEventListener('click', function () {
+    searchmo.style.display = "none";
+})
 
+function search() {
+    // Declare variables
+    var input, filter, i, searchResults;
+    input = document.getElementById('searchBar');
+    filter = input.value.toUpperCase();
+    searchResults = document.getElementsByClassName("searchResult");
 
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < searchResults.length; i++) {
+        a = searchResults[i].getElementsByTagName("span")[0];
 
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            searchResults[i].style.display = "block";
+        } else {
+            searchResults[i].style.display = "none";
+        }
+    }
+}
+const FIREBASE_DATABASE = firebase.database();
+const FIREBASE_AUTH = firebase.auth();
 
+var user = firebase.auth().currentUser;
+console.log(user);
 
-
+function sppcs() {
+    FIREBASE_DATABASE.ref('/users/' + userId).set({
+        currentSkill: "spp"
+    });
+}
 
 var communityNavBtn = document.getElementById("communityNav");
 communityNavBtn.addEventListener("click", function(){

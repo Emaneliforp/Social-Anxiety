@@ -105,13 +105,33 @@ body {
   color: #fff;
   border-radius: 1vh;
   box-sizing: border-box;
+  display: none;
 }
 .skillicon:hover {
   color: white;
   background-color: #07cdb2;
   cursor: pointer;
 }
-
+#addSkill {
+    background-color: lightgray;
+    color: white;
+    border-radius: 1vw;
+    flex: 1;
+    justify-content: center;
+    margin: 1vw;
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 1vh;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5vw;
+}
+#addSkill:hover {
+    color: white;
+    background-color: #07cdb2;
+    cursor: pointer;
+}
 img {
   border-style: none;
   vertical-align: middle;
@@ -202,12 +222,20 @@ img {
     height: 100%; /* Full height */
     position: fixed;
 }
+.pmodalf {
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none;
+    z-index: 3; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: fixed;
+}
 
 .practice {
     background-color: white;
     margin: auto;
     width: 80vh;
-    margin-top: 30vh;
+    margin-top: 20vh;
     z-index: 3;
     border-radius: 1vw;
     padding-bottom: 1vw;
@@ -249,8 +277,13 @@ i {
     border-radius: 0.5vw;
     padding: 0.7vw;
     font-family: CenturyGothic, Helvetica, sans-serif;
+    max-height: 30vh;
+    overflow-y: scroll;
+    content: "";
+    display: table;
+    clear: both;
+    width: 36vw;
 }
-
 .op {
     margin-left: 10vw;
     margin-top: 3vh;
@@ -282,3 +315,34 @@ i {
         font-family: CenturyGothic, Helvetica, sans-serif;
         font-size: 1.2vw;
 }
+.searchSkill {
+    padding-left: 1.2vw;
+    padding-top: 1vw;
+}
+    .searchSkill input {
+        width: 36vw;
+        height: 3vh;
+        font-size: 1vw;
+        border: 0.1vw solid #ffc125;
+        padding: 0.5vw;
+    }
+.searchResult {
+    flex: 1;
+    justify-content: center;
+    padding: 2vh;
+    margin-bottom: 1.5vh;
+    margin-right: 1vw;
+    max-width: 25%;
+    max-height: 25%;
+    background-color: #fab50f;
+    color: #fff;
+    border-radius: 1vh;
+    box-sizing: border-box;
+    float: left;
+}
+
+    .searchResult:hover {
+        color: white;
+        background-color: #07cdb2;
+        cursor: pointer;
+    }
