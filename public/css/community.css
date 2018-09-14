@@ -552,8 +552,8 @@ textarea:focus{
     cursor: pointer;
 }
 
-.successModal {
-    display:none; /* Hidden by default */
+#successModal {
+    display:block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
     left: 0;
@@ -563,19 +563,32 @@ textarea:focus{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
 }
 
 /* Modal Content/Box */
-.successModal-content {
+#successModal-content {
+  display: block;
   background-color: #fefefe;
-  margin: 6% auto; /* 15% from the top and centered */
+  margin: 15% auto; /* 15% from the top and centered */
   padding: 1.5em;
   border: 1em solid #fab50f;
   width: 40%; /* Could be more or less, depending on screen size */
-  height: 20%;
+  height: 10%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s
+  text-align: center;
+}
+
+#successModal-content h2{
+  height: auto;
+  font-size: 200%;
+  margin-bottom:0.5em;
+}
+#successModal-content h4{
+  height: auto;
+  margin-bottom: 2em;
 }
