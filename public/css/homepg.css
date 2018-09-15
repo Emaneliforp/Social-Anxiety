@@ -40,7 +40,7 @@ body {
   transition: 0.3s;
 }
 .sidebar a:hover{
-  color: #f1f1f1;
+  color: #c29ea3;
 }
 .sidebar .closebtn {
   position: absolute;
@@ -60,12 +60,14 @@ body {
   font-family: "Century Gothic";
   color: #fff;
   font-size: 3vw;
+  margin-top: 1vh;
+  margin-bottom: 0;
 }
 .communities {
   display: flex;
   flex-flow: row wrap;;
   background-color: #fff;
-  padding: 1vw;
+  padding: 0.5vw;
   border-radius: 2vw;
   max-width: 80%;
 }
@@ -73,7 +75,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   background-color: #fff;
-  padding: 1vw;
+  padding: 0.5vw;
   border-radius: 2vw;
   max-width: 80%;
 }
@@ -147,7 +149,7 @@ img {
   margin: auto;
 }
 .slidecontent img{
-  height: 60vh;
+  height: 50vh;
   width: 150vh;
 }
 .slidecontainer{
@@ -208,6 +210,7 @@ img {
     margin-top: 1vh;
     text-align:center;
     position: sticky;
+    display: block;
 }
 .youtube iframe{
     vertical-align: central;

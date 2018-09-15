@@ -121,7 +121,6 @@ function sppcs() {
         currentSkill: "spp"
     });
 }
-
 var communityNavBtn = document.getElementById("communityNav");
 communityNavBtn.addEventListener("click", function(){
   window.location.href="community.html";
@@ -136,7 +135,7 @@ logoutBtn.addEventListener("click", function(){
   .catch(function(error) {
     // An error happened
   });
-  
+
   console.log(user);
-  // window.location.href="index.html";
+  window.location.href="index.html";
 });
