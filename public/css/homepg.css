@@ -197,7 +197,8 @@ img {
     background-color: #f5324a;
     width: auto;
     height: 38vh;
-    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
 }
 .youtube div{
