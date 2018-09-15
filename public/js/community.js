@@ -218,14 +218,14 @@ function searchAllComm(){
   filter = input.value.toUpperCase();
   var searchResults =[];
 
-console.log(searchResults);
+searchResults = document.getElementsByClassName("modalSearchResult");
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < searchResults.length; i++) {
     console.log(i);
-      a = searchResults[i].getElementsByClassName("modalSearchResults")[0];
+      a = searchResults[i].innerHTML;
       console.log(a);
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-          searchResults[i].style.display = "block";
+      if (a.toUpperCase().indexOf(filter) > -1) {
+          searchResults[i].style.display = "inline-block";
       } else {
           searchResults[i].style.display = "none";
       }
