@@ -121,7 +121,6 @@ function sppcs() {
         currentSkill: "spp"
     });
 }
-
 var communityNavBtn = document.getElementById("communityNav");
 communityNavBtn.addEventListener("click", function(){
   window.location.href="community.html";
@@ -139,4 +138,11 @@ logoutBtn.addEventListener("click", function(){
 
   console.log(user);
   window.location.href="index.html";
+});
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user);
+  } else {
+    // No user is signed in.
+  }
 });

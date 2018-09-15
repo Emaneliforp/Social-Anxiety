@@ -1,30 +1,22 @@
 const FIREBASE_DATABASE=firebase.database();
 const FIREBASE_AUTH = firebase.auth();
 
-FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
-  console.log(snapshot.val());
-  displayCommInSearch(snapshot.val());
-});
-
-var username;
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    username = FIREBASE_AUTH.currentUser.displayName;
-
-    console.log(user);
-  } else {
-    console.log("none");
-  }
-});
 //redirect to page
 document.getElementById("arrow").addEventListener("click", function(){
   window.location.href = "homepg.html";
 })
 
+//get all communities in database
+FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
+  console.log(snapshot.val());
+  displayCommInSearch(snapshot.val());
+});
+
+
 // Get the modal
 var createModal = document.getElementById("myModalCreate");
 var searchModal = document.getElementById("myModalSearch");
-var successModal = document.getElementById("successModal");
+var successModal = document.getElementById("myModalSuccess");
 
 // Get the button that opens the modal
 var createBtn = document.getElementById("createComm");
@@ -33,47 +25,54 @@ var searchBtn = document.getElementById("joinNewComm")
 var createSpan = document.getElementById("createClose");
 var searchSpan = document.getElementById("searchClose");
 var successSpan = document.getElementById("successClose");
+
 // When the user clicks on the button, open the modal
 createBtn.onclick = function() {
   createModal.style.display = "block";
 }
 searchBtn.onclick=function(){
   searchModal.style.display="block";
-
 }
 
 // When the user clicks on <span> (x), close the modal
 createSpan.onclick = function() {
-    createModal.style.display = "none";
-    searchModal.style.display="none";
-      successModal.style.display="none";
+  createModal.style.display = "none";
+  searchModal.style.display="none";
+  successModal.style.display="none";
 }
 searchSpan.onclick = function() {
   createModal.style.display = "none";
   searchModal.style.display="none";
-    successModal.style.display="none";
+  successModal.style.display="none";
   }
 successSpan.onclick=function(){
   createModal.style.display = "none";
   searchModal.style.display="none";
-    successModal.style.display="none";
+  successModal.style.display="none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == createModal) {
         createModal.style.display = "none";
+        searchModal.style.display = "none";
+        successModal.style.display = "none";
+
     }
 }
 
 window.onclick = function(event) {
     if (event.target == searchModal) {
-        searchModal.style.display = "none";
+      createModal.style.display = "none";
+      searchModal.style.display = "none";
+      successModal.style.display = "none";
     }
 }
 window.onclick = function(event) {
-    if (event.target == searchModal) {
-        successModalc.style.display = "none";
+    if (event.target == successModal) {
+      createModal.style.display = "none";
+      searchModal.style.display = "none";
+      successModal.style.display = "none";
     }
 }
 
@@ -137,6 +136,16 @@ console.log(nameField.value);
   }
 
   else{
+    //retrieve username of current user
+    var username;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        username = FIREBASE_AUTH.currentUser.displayName;
+        console.log(user);
+      } else {
+        console.log("none");
+      }
+    });
 
     const COMMUNITY = {
       name: nameField.value,
@@ -205,21 +214,21 @@ function displayCommInSearch(community){
 function searchAllComm(){
   // Declare variables
   var input, filter, i, searchResults;
-  input = document.getElementById('searchBar');
+  input = document.getElementById("searchNewCommBar");
   filter = input.value.toUpperCase();
   var searchResults =[];
 
-console.log(searchResults);
+searchResults = document.getElementsByClassName("modalSearchResult");
   // Loop through all list items, and hide those who don't match the search query
-  // for (i = 0; i < searchResults.length; i++) {
-  //   console.log(i);
-  //     a = searchResults[i].getElementsByTagName("h5")[0];
-  //     console.log(a);
-  //     if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-  //         searchResults[i].style.display = "block";
-  //     } else {
-  //         searchResults[i].style.display = "none";
-  //     }
-  // }
+  for (i = 0; i < searchResults.length; i++) {
+    console.log(i);
+      a = searchResults[i].innerHTML;
+      console.log(a);
+      if (a.toUpperCase().indexOf(filter) > -1) {
+          searchResults[i].style.display = "inline-block";
+      } else {
+          searchResults[i].style.display = "none";
+      }
+  }
 
 }

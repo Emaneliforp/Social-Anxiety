@@ -315,11 +315,13 @@ h6{
 /* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    border-radius: 10em;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #fab50f;
+    border-radius: 0.2em;
 }
 
 /* Handle on hover */
@@ -359,6 +361,7 @@ hr{
 
 /* Modal Content/Box */
 .modal-content {
+  border-radius: 1em;
   background-color: #fefefe;
   margin: 6% auto; /* 15% from the top and centered */
   padding: 1.5em;
@@ -479,6 +482,7 @@ textarea:focus{
 }
 
 #modalSearchArea{
+  border-radius: 1em;
   background-color:#ffefdb;
   overflow: auto;
   height: 73%;
@@ -519,11 +523,17 @@ textarea:focus{
 /* Handle */
 .modal ::-webkit-scrollbar-thumb {
     background: #f5324a;
+    border-radius: 0.2em;
 }
 
 /* Handle on hover */
 .modal ::-webkit-scrollbar-thumb:hover {
     background: #f5324a;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
 }
 
 #modalSearchArea ::-webkit-scrollbar-thumb {
@@ -543,6 +553,7 @@ textarea:focus{
   color: #aaa;
   font-size: 2em;
   font-weight: bold;
+  margin-bottom: 2em;
 }
 
 .close:hover,
@@ -552,8 +563,8 @@ textarea:focus{
     cursor: pointer;
 }
 
-#successModal {
-    display:block; /* Hidden by default */
+#myModalSuccess {
+    display:none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
     left: 0;
@@ -567,8 +578,8 @@ textarea:focus{
 }
 
 /* Modal Content/Box */
-#successModal-content {
-  display: block;
+#modalSuccess {
+  display:none;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 1.5em;
@@ -583,12 +594,12 @@ textarea:focus{
   text-align: center;
 }
 
-#successModal-content h2{
+#modalSuccess h2{
   height: auto;
   font-size: 200%;
   margin-bottom:0.5em;
 }
-#successModal-content h4{
+#modalSuccess h4{
   height: auto;
   margin-bottom: 2em;
 }
