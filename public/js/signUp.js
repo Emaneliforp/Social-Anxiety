@@ -44,11 +44,12 @@ signUpButton.addEventListener("click", e=> {
             // An error happened.
             console.log("Error");
           });
-        console.log(user);
+          console.log(user);
+          let userId = FIREBASE_AUTH.currentUser.uid;
         //pushes user account into database
-        FIREBASE_DATABASE.ref('users').push(USERACC).then(
+        FIREBASE_DATABASE.ref('users/'+ userId).set(USERACC).then(
               function() {
-                  console.log('User data successfully stored')
+                  console.log('User data successfully stored');
               }).catch(function(error) {
                   console.log(error);
               });

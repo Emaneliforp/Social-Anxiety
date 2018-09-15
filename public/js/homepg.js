@@ -113,14 +113,6 @@ function search() {
 const FIREBASE_DATABASE = firebase.database();
 const FIREBASE_AUTH = firebase.auth();
 
-var user = firebase.auth().currentUser;
-console.log(user);
-
-function sppcs() {
-    FIREBASE_DATABASE.ref('/users/' + userId).set({
-        currentSkill: "spp"
-    });
-}
 var communityNavBtn = document.getElementById("communityNav");
 communityNavBtn.addEventListener("click", function(){
   window.location.href="community.html";
@@ -139,10 +131,50 @@ logoutBtn.addEventListener("click", function(){
   console.log(user);
   window.location.href="index.html";
 });
+var currentSkill = [];
+let userId="";
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    console.log(user);
-  } else {
-    // No user is signed in.
-  }
+      console.log(user);
+       userId = FIREBASE_AUTH.currentUser.uid;
+      
+
+      FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
+          currentSkill.push(snapshot.val().currentSkill);
+          console.log(currentSkill);
+      });
+
+
+        
+    } else {
+        wwindow.location.href = "index.html";
+    }
 });
+
+function sppcs() {
+    currentSkill.push("spp");
+    console.log(currentSkill);
+    FIREBASE_DATABASE.ref('/users/' + userId).set({
+        currentSkill: currentSkill
+    });
+}
+function shwcs() {
+    currentSkill.push("shw");
+    console.log(currentSkill);
+    FIREBASE_DATABASE.ref('/users/' + userId).set({
+        currentSkill: currentSkill
+    });
+}
+
+let rsp = document.getElementById("rsp");
+let rshw = document.getElementById("rshw");
+let rsd = document.getElementById("rsd");
+
+for (var i = 0; i <= currentSkill[0].length; i++) {
+    if (currentSkill[0][i] === "spp") {
+        rsp.style.display = "block";
+    }
+    if (currentSkill[0][i] === "rshw") {
+        rshw.style.display = "block";
+    }
+}
