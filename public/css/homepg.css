@@ -173,7 +173,7 @@ img {
   z-index: 0;
   color: white;
   padding: 3vw;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .button{
   color: #fff!important;
@@ -202,6 +202,7 @@ img {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    padding-bottom: 2vh;
 }
 .youtube div{
     font-size: 2vw;
@@ -344,8 +345,28 @@ i {
     float: left;
 }
 
-    .searchResult:hover {
-        color: white;
-        background-color: #07cdb2;
-        cursor: pointer;
-    }
+.searchResult:hover {
+    color: white;
+    background-color: #07cdb2;
+    cursor: pointer;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 0.5vw;
+    position: absolute;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10em;
+    position: relative;
+  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fab50f;
+    border-radius: 0.2em;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fab50f;
+}
