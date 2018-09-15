@@ -121,10 +121,6 @@ function sppcs() {
         currentSkill: "spp"
     });
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 401516cc97fc9d5d359e1f801384e2c34d1155e5
 var communityNavBtn = document.getElementById("communityNav");
 communityNavBtn.addEventListener("click", function(){
   window.location.href="community.html";
