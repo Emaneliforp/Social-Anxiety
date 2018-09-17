@@ -8,7 +8,6 @@ document.getElementById("arrow").addEventListener("click", function(){
 
 //get all communities in database
 FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
-  console.log(snapshot.val());
   displayCommInSearch(snapshot.val());
 });
 
@@ -97,7 +96,6 @@ descField.onkeyup = function () {
   //change text to red if over chara limit
   if (charRemain<0){
       item.style.color = "red";
-      console.log("hi");
       charCountSendDesc=false;
   }
   else {
@@ -115,7 +113,7 @@ nameField.onkeyup = function () {
   //change text to red if over chara limit
   if (charRemain<0){
       item.style.color = "red";
-      console.log("hi");
+
       charCountSendName=false;
   }
   else {
@@ -138,32 +136,73 @@ console.log(nameField.value);
   else{
     //retrieve username of current user
     var username;
-    firebase.auth().onAuthStateChanged(function(user) {
+    var commName = nameField.value;
+    FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
-        username = FIREBASE_AUTH.currentUser.displayName;
-        console.log(user);
+      console.log(user);
+      username = FIREBASE_AUTH.currentUser.displayName;
+      console.log(username);
       } else {
+        var username = "error";
         console.log("none");
       }
     });
 
     const COMMUNITY = {
-      name: nameField.value,
-      creator: username,
+      name: commName,
+      creator: FIREBASE_AUTH.currentUser.displayName,
       desc: descField.value
     }
-    FIREBASE_DATABASE.ref("communities/" + nameField.value).set(COMMUNITY);
+    FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
 
     console.log("Created community successfully");
     createModal.style.display = "none";
-    var successModal = document.getElementById("successModal");
-    var successModalcontent = document.getElementById("successModal-content");
+    var successModal = document.getElementById("myModalSuccess");
+    var successModalContent = document.getElementById("modalSuccess");
+    console.log(successModal);
+    console.log(successModalContent);
     successModal.style.display="block";
-    successModalcontent.style.display="block";
+    successModalContent.style.display="block";
     }
 
 });
+//
+// //file upload
+// //// TODO: THIS DOESN'T WORK AAAAA
+// var fileBtn = document.getElementById("fileUploadBtn");
+// fileUploadBtn.addEventListener("click", function(e){
+//   var commName = nameField.value;
+//   if(commName=="" || commName==null)
+//     alert("Please enter your community name first.");
+//   const file = document.querySelector('#photo').files[0];
+//   var storageRef = firebase.storage().ref("/communities/" + commName +"/image");
+//
+//   ref.put(file).then(function(snapshot) {
+//   console.log('Uploaded a blob or file!');
+//   var preview=document.getElementById("preview");
+//   FIREBASE_STORAGE.ref("/communities/" + commName +"/image").on('child_added', function (snapshot) {
+//       console.log(snapshot.val());
+//       preview = snapshot.val();
+//   });
+//
+// // });
+// const ref = firebase.storage().ref();
+// const file = document.querySelector('fileUploadBtn').files[0]
+// const name = (+new Date()) + '-' + file.name;
+// const metadata = {
+//   contentType: file.type
+// };
+// const task = ref.child(name).put(file, metadata);
+// task
+//   .then(snapshot => snapshot.ref.getDownloadURL())
+//   .then((url) => {
+//     console.log(url);
+//     document.querySelector('#someImageTagID').src = url;
+//   })
+//   .catch(console.error);
+// });
 
+//functions
 //search js for main page
 
 function search() {
@@ -197,6 +236,7 @@ function displayCommInSearch(community){
   	let div = document.createElement('div');
     let domString = `<div class="modalSearchResult">
   		<div id ="modalSearchh5">${community.name}</div>
+      <img id = "plusbtn" src= "../images/plus.png">
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
   		<div id ="modalSearchParagraph">
   				${community.desc}
@@ -221,14 +261,11 @@ function searchAllComm(){
 searchResults = document.getElementsByClassName("modalSearchResult");
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < searchResults.length; i++) {
-    console.log(i);
       a = searchResults[i].innerHTML;
-      console.log(a);
       if (a.toUpperCase().indexOf(filter) > -1) {
           searchResults[i].style.display = "inline-block";
       } else {
           searchResults[i].style.display = "none";
       }
   }
-
 }
