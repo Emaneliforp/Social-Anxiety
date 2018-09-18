@@ -132,15 +132,17 @@ logoutBtn.addEventListener("click", function(){
   window.location.href="index.html";
 });
 var currentSkill = [];
-let userId="";
+let userId = "";
+let grade = "";
+let name = "";
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       console.log(user);
-       userId = FIREBASE_AUTH.currentUser.uid;
-      
-
+      userId = FIREBASE_AUTH.currentUser.uid;
       FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
-          currentSkill.push(snapshot.val().currentSkill);
+          currentSkill = snapshot.val().currentSkill;
+          grade = snapshot.val().grade;
+          name = snapshot.val().grade;
           console.log(currentSkill);
       });
 
@@ -151,11 +153,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+
 function sppcs() {
     currentSkill.push("spp");
     console.log(currentSkill);
     FIREBASE_DATABASE.ref('/users/' + userId).set({
-        currentSkill: currentSkill
+        currentSkill: currentSkill,
+        grade: grade,
+        name: name
     });
 }
 function shwcs() {
@@ -170,11 +175,11 @@ let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
 
-for (var i = 0; i <= currentSkill[0].length; i++) {
+/*for (var i = 0; i <= currentSkill[0].length; i++) {
     if (currentSkill[0][i] === "spp") {
         rsp.style.display = "block";
     }
     if (currentSkill[0][i] === "rshw") {
         rshw.style.display = "block";
     }
-}
+}*/

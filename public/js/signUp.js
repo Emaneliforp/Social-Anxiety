@@ -15,6 +15,7 @@ signUpButton.addEventListener("click", e=> {
   let signtEmail = document.getElementById("signemail_field").value;
   let signtPassword = document.getElementById("signpassword_field").value;
   let signtRePassword = document.getElementById("signrepassword_field").value;
+  let currentSKill = ['hi'];
 
   let signUpButton = document.getElementById("signUpBtn");
   let loginButton =document.getElementById("loginBtn");
@@ -29,7 +30,8 @@ signUpButton.addEventListener("click", e=> {
     //user object
     const USERACC = {
       name: document.getElementById("signname_field").value,
-      grade: document.getElementById("signgrade_field").value
+      grade: document.getElementById("signgrade_field").value,
+      currentSkill: currentSKill
     };
     //create account and add to database
     if (signtPassword.value == signtRePassword.value){
