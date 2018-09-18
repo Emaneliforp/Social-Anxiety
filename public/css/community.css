@@ -123,6 +123,27 @@
   background-color: #f5324a;
 }
 
+#modalCreate img{
+  display: inline-block;
+  height: 70%;
+  width: 32%;
+  position: relative;
+  bottom: 32vh;
+  left: 40vw;
+  border-radius:0.4em;
+}
+#fileUploadBtn{
+  padding: 0.3em 0.4em 0.8em 0.4em;
+  font-size: 90%;
+  background-color: #f5324a;
+  border-radius: 1em;
+  height: 10%;
+  width: 10%;
+  position: relative;
+  left: 17.5vw;
+  bottom: 25vh;
+}
+
 #recentComm{
   background-color: #f5324a;
   height: 40%;
@@ -470,10 +491,10 @@ textarea:focus{
 
 .modalSearchResult{
   display: inline-block;
-  height: 22%;
+  height: 26%;
   width:25%;
   min-height: 21%;
-  margin: 1.45em;
+  margin: 1.2em;
   border: solid 0.4em #f5324a;
   border-radius: 1em;
   padding:0.5em;
@@ -490,6 +511,7 @@ textarea:focus{
 }
 
 #modalSearchh5 {
+  display: inline-block;
   width: auto;
   font-size: 110%;
   padding: 0.1em;
@@ -519,6 +541,12 @@ textarea:focus{
   height: auto;
 }
 
+#plusbtn{
+  display: inline-block;
+  height: 3.8vh;
+  width: 3.8vh;
+  cursor: pointer;
+}
 
 /* Handle */
 .modal ::-webkit-scrollbar-thumb {

@@ -24,8 +24,8 @@
   <input type ="text" onkeyup="searchAllComm()" placeholder = "search..." id ="searchNewCommBar">
   <div id = "modalSearchArea">
 
-</div>
   </div>
+</div>
 </div>
 <div id="myModalCreate" class="modal">
 
@@ -37,6 +37,8 @@
   <textarea placeholder = "description of community..." id ="commDesc"></textarea>
   <h3 id="descCount">Characters left: 300</h3>
   <button id="createCommBtn">Create</button>
+  <img id ="preview" src = "images/defaultimage.png" />
+  <button id = "fileUploadBtn">Upload image</button>
 </div>
 </div>
 
@@ -76,7 +78,7 @@
     <div class = "block" id = "yourComm">
       <h6>YOUR COMMUNITY</h6>
       <div id ="space">
-        <p>Select one of your communities on the right to view</p>
+        <p>Select one of your communities on the left to view</p>
         <button id ="createComm" class ="commButtons">Create Community</button>
 
         <button id ="joinNewComm" class ="commButtons">Search for New Communities</button>
