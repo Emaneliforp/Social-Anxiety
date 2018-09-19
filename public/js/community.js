@@ -43,7 +43,7 @@ searchSpan.onclick = function() {
   createModal.style.display = "none";
   searchModal.style.display="none";
   successModal.style.display="none";
-  }
+}
 successSpan.onclick=function(){
   createModal.style.display = "none";
   searchModal.style.display="none";
@@ -52,27 +52,27 @@ successSpan.onclick=function(){
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == createModal) {
-        createModal.style.display = "none";
-        searchModal.style.display = "none";
-        successModal.style.display = "none";
+  if (event.target == createModal) {
+    createModal.style.display = "none";
+    searchModal.style.display = "none";
+    successModal.style.display = "none";
 
-    }
+  }
 }
 
 window.onclick = function(event) {
-    if (event.target == searchModal) {
-      createModal.style.display = "none";
-      searchModal.style.display = "none";
-      successModal.style.display = "none";
-    }
+  if (event.target == searchModal) {
+    createModal.style.display = "none";
+    searchModal.style.display = "none";
+    successModal.style.display = "none";
+  }
 }
 window.onclick = function(event) {
-    if (event.target == successModal) {
-      createModal.style.display = "none";
-      searchModal.style.display = "none";
-      successModal.style.display = "none";
-    }
+  if (event.target == successModal) {
+    createModal.style.display = "none";
+    searchModal.style.display = "none";
+    successModal.style.display = "none";
+  }
 }
 
 //character count
@@ -83,7 +83,7 @@ var descField=document.getElementById("commDesc")
 document.getElementById('commName').onkeyup = function () {
   var item  = document.getElementById('nameCount');
   if (item.length<=0){
-     item.value = item.value.substring(0, 18);
+    item.value = item.value.substring(0, 18);
   }
   item.innerHTML = "Characters left: " + (18 - this.value.length);
 };
@@ -95,11 +95,11 @@ descField.onkeyup = function () {
   charRemain = 300-this.value.length;
   //change text to red if over chara limit
   if (charRemain<0){
-      item.style.color = "red";
-      charCountSendDesc=false;
+    item.style.color = "red";
+    charCountSendDesc=false;
   }
   else {
-      item.style.color="gray";
+    item.style.color="gray";
     charCountSendDesc=true;
   }
   item.innerHTML = "Characters left: " + (charRemain);
@@ -112,9 +112,9 @@ nameField.onkeyup = function () {
   charRemain = 18-this.value.length;
   //change text to red if over chara limit
   if (charRemain<0){
-      item.style.color = "red";
+    item.style.color = "red";
 
-      charCountSendName=false;
+    charCountSendName=false;
   }
   else {
     item.style.color="gray";
@@ -124,11 +124,11 @@ nameField.onkeyup = function () {
 };
 
 document.getElementById("createCommBtn").addEventListener("click",function(){
-//check for character limit
+  //check for character limit
   if (!charCountSendName || !charCountSendDesc)
-    alert("You are over the character limit");
-//if desc/name is too short, prevent from sending (to prevent spam communities)
-console.log(nameField.value);
+  alert("You are over the character limit");
+  //if desc/name is too short, prevent from sending (to prevent spam communities)
+  console.log(nameField.value);
   if (nameField.value.length<=4 || descField.value.length<=10){
     alert("Brevity is the soul of wit, but please include more information");
   }
@@ -139,9 +139,9 @@ console.log(nameField.value);
     var commName = nameField.value;
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
-      console.log(user);
-      username = FIREBASE_AUTH.currentUser.displayName;
-      console.log(username);
+        console.log(user);
+        username = FIREBASE_AUTH.currentUser.displayName;
+        console.log(username);
       } else {
         var username = "error";
         console.log("none");
@@ -163,9 +163,42 @@ console.log(nameField.value);
     console.log(successModalContent);
     successModal.style.display="block";
     successModalContent.style.display="block";
-    }
+  }
 
 });
+
+
+
+
+//timeout to prevent length=0
+setTimeout(function(){
+  //make array with all plusbtns
+  let plusBtnArr = document.getElementsByClassName("plusbtn");
+  //loop through all and attach event listeners
+  console.log(plusBtnArr);
+
+  //loop through all and attach event listeners
+  for (let i = 0; i < plusBtnArr.length; i++) {
+    plusBtnArr[i].addEventListener("click", function(){
+      //get title of community clicked
+      let title=(plusBtnArr[i].parentElement.getElementsByTagName("div")[0].innerHTML);
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          const USERACC={
+              username: user.displayName,
+              id: user.uid
+          }
+          FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.displayName).set(USERACC);
+          console.log("user inputted");
+        } else {
+          console.log("error")
+        }
+      });
+
+    });
+  }
+
+}, 1000);
 //
 // //file upload
 // //// TODO: THIS DOESN'T WORK AAAAA
@@ -206,47 +239,47 @@ console.log(nameField.value);
 //search js for main page
 
 function search() {
-    // Declare variables
-    var input, filter, i, searchResults;
-    input = document.getElementById('searchBar');
-    filter = input.value.toUpperCase();
-    searchResults=document.getElementsByClassName("searchResult");
+  // Declare variables
+  var input, filter, i, searchResults;
+  input = document.getElementById('searchBar');
+  filter = input.value.toUpperCase();
+  searchResults=document.getElementsByClassName("searchResult");
 
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < searchResults.length; i++) {
-        a = searchResults[i].getElementsByTagName("h5")[0];
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < searchResults.length; i++) {
+    a = searchResults[i].getElementsByTagName("h5")[0];
 
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            searchResults[i].style.display = "block";
-        } else {
-            searchResults[i].style.display = "none";
-        }
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      searchResults[i].style.display = "block";
+    } else {
+      searchResults[i].style.display = "none";
     }
+  }
 }
 
 function displayCommInSearch(community){
   var searchResults=[];
   FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
-    .then((snapshot) => {
-      let val = snapshot.val();
-      for (let key in val) {
-        searchResults.push(key);
-      }
-    })
-  	let div = document.createElement('div');
-    let domString = `<div class="modalSearchResult">
-  		<div id ="modalSearchh5">${community.name}</div>
-      <img id = "plusbtn" src= "../images/plus.png">
-      <div id = "modalSearchh4">${"created by: "+community.creator}</div>
-  		<div id ="modalSearchParagraph">
-  				${community.desc}
-  		</div>
-  	</div>`;
-    div.innerHTML = domString;
+  .then((snapshot) => {
+    let val = snapshot.val();
+    for (let key in val) {
+      searchResults.push(key);
+    }
+  })
+  let div = document.createElement('div');
+  let domString = `<div class="modalSearchResult">
+  <div id ="modalSearchh5">${community.name}</div>
+  <img class = "plusbtn" src= "../images/plus.png">
+  <div id = "modalSearchh4">${"created by: "+community.creator}</div>
+  <div id ="modalSearchParagraph">
+  ${community.desc}
+  </div>
+  </div>`;
+  div.innerHTML = domString;
 
-  	let communityDiv = div.firstChild;
-    var modalSearchDiv =document.getElementById("modalSearchArea");
-    modalSearchDiv.appendChild(communityDiv);
+  let communityDiv = div.firstChild;
+  var modalSearchDiv =document.getElementById("modalSearchArea");
+  modalSearchDiv.appendChild(communityDiv);
 
 
 }
@@ -258,14 +291,14 @@ function searchAllComm(){
   filter = input.value.toUpperCase();
   var searchResults =[];
 
-searchResults = document.getElementsByClassName("modalSearchResult");
+  searchResults = document.getElementsByClassName("modalSearchResult");
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < searchResults.length; i++) {
-      a = searchResults[i].innerHTML;
-      if (a.toUpperCase().indexOf(filter) > -1) {
-          searchResults[i].style.display = "inline-block";
-      } else {
-          searchResults[i].style.display = "none";
-      }
+    a = searchResults[i].innerHTML;
+    if (a.toUpperCase().indexOf(filter) > -1) {
+      searchResults[i].style.display = "inline-block";
+    } else {
+      searchResults[i].style.display = "none";
+    }
   }
 }

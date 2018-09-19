@@ -59,7 +59,7 @@ signUpButton.addEventListener("click", e=> {
         //catches errors
       	promise.catch(e => alert(e.message));
       	promise.then(function(v) {
-          // window.location.href = "homepg.html";
+          window.location.href = "homepg.html";
           var user = firebase.auth().currentUser;
           console.log(user);
         });
