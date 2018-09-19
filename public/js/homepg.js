@@ -6,24 +6,55 @@ function closenav(){
 }
 
 var slideIndex = 1;
-showDivs(slideIndex);
+  showDivs(slideIndex);
 
 function plusDivs(n) {
   showDivs(slideIndex += n);
+}
+
+function currentDiv(n){
+  showDivs(slideIndex = n);
 }
 
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
   var c = document.getElementsByClassName("caption");
+  var dots = document.getElementsByClassName("badge");
   if (n > x.length) {slideIndex = 1};
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
      c[i].style.display = "none";
   }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" badgewhite", "");
+  }
   x[slideIndex-1].style.display = "block";
   c[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " badgewhite";
+}
+//auto slideshow
+carousel();
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var c = document.getElementsByClassName("caption");
+    var dots = document.getElementsByClassName("badge");
+
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+       c[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" badgewhite", "");
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
+      c[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " badgewhite";
+    setTimeout(carousel, 6000); // Change image every 2 seconds
 }
 //search control
 function spm() {
@@ -137,7 +168,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
       console.log(user);
        userId = FIREBASE_AUTH.currentUser.uid;
-      
+
 
       FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
           currentSkill.push(snapshot.val().currentSkill);
@@ -145,7 +176,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       });
 
 
-        
+
     } else {
         wwindow.location.href = "index.html";
     }
