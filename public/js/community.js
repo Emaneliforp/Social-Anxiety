@@ -136,35 +136,38 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
   else{
     //retrieve username of current user
     var username;
+    var id;
     var commName = nameField.value;
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
         console.log(user);
         username = FIREBASE_AUTH.currentUser.displayName;
-        console.log(username);
+        id = user.uid;
+        const COMMUNITY = {
+          name: commName,
+          creator: FIREBASE_AUTH.currentUser.displayName,
+          desc: descField.value
+        }
+        FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+        const USERACC={
+          username: username,
+          permission: "owner"
+        }
+        FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
+
+        console.log("Created community successfully");
+        createModal.style.display = "none";
+        var successModal = document.getElementById("myModalSuccess");
+        var successModalContent = document.getElementById("modalSuccess");
+        console.log(successModal);
+        console.log(successModalContent);
+        successModal.style.display="block";
+        successModalContent.style.display="block";
       } else {
-        var username = "error";
-        console.log("none");
+        console.log("error")
       }
     });
-
-    const COMMUNITY = {
-      name: commName,
-      creator: FIREBASE_AUTH.currentUser.displayName,
-      desc: descField.value
-    }
-    FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
-
-    console.log("Created community successfully");
-    createModal.style.display = "none";
-    var successModal = document.getElementById("myModalSuccess");
-    var successModalContent = document.getElementById("modalSuccess");
-    console.log(successModal);
-    console.log(successModalContent);
-    successModal.style.display="block";
-    successModalContent.style.display="block";
   }
-
 });
 
 
@@ -185,10 +188,10 @@ setTimeout(function(){
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           const USERACC={
-              username: user.displayName,
-              id: user.uid
+            username: user.displayName,
+            permission: "regular"
           }
-          FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.displayName).set(USERACC);
+          FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.uid).set(USERACC);
           console.log("user inputted");
         } else {
           console.log("error")
