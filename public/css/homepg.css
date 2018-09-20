@@ -5,6 +5,7 @@ p {
 body {
   margin: 0vw;
   background-color: #07cdb2;
+  outline: none;
 }
 .main{
   padding: 0% 3% 3% 3%;
@@ -154,6 +155,7 @@ img {
 }
 .slidecontainer{
   position: relative;
+  text-align: center;
 }
 .ccontainer: after, .ccontainer: before {
   content:none;
@@ -177,10 +179,11 @@ img {
 }
 .button{
   color: #fff!important;
-  background-color: #000!important;
+  background-color: transparent;
   border: none;
   padding: 2vh;
   position: relative;
+  outline: none;
 }
 .buttonl{
   position: absolute;
@@ -193,6 +196,25 @@ img {
   top: 50%;
   right: 0%;
   transform: translate(0%, -50%);
+}
+.badge{
+  height: 1vw;
+  width: 1vw;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+  border: 0.25vh solid;
+  border-color: #fff;
+  z-index: 2;
+}
+.bigbadge{
+  padding-top: 2vh;
+}
+.badgecolor{
+  background-color: transparent;
+}
+.badgewhite{
+  background-color: #fff;
 }
 
 .youtube {

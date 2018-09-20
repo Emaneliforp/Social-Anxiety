@@ -163,6 +163,9 @@ a{
   color: white;
   text-decoration: none;
 }
+a:hover{
+  color: #c29ea3;
+}
 
 h6{
   color: white;

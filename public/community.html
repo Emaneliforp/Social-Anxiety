@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <head>
-<title>Communities</title>
-<link rel = "stylesheet" href ="css/community.css">
-<script src = "js/community.js" defer></script>
+  <title>Communities</title>
+  <link rel = "stylesheet" href ="css/community.css">
 </head>
 <body>
 
-<div id = "myModalSuccess" class="modal">
-<div class = "modal-content" id="modalSuccess">
-  <span class="close" id="successClose">&times;</span>
-  <h2>Success!</h2>
-  <h4>Your community has been created.</h4>
-</div>
-</div>
+  <div id = "myModalSuccess" class="modal">
+    <div class = "modal-content" id="modalSuccess">
+      <span class="close" id="successClose">&times;</span>
+      <h2>Success!</h2>
+      <h4>Your community has been created.</h4>
+    </div>
+  </div>
 
   <!-- The Modal -->
-<div id="myModalSearch" class="modal">
+  <div id="myModalSearch" class="modal">
 
-<!-- Modal content -->
-<div class="modal-content" id="modalSearch">
-  <span class="close" id="searchClose">&times;</span>
-  <h1>S E A R C H &#9734; C O M M U N I T Y</h1>
-  <input type ="text" onkeyup="searchAllComm()" placeholder = "search..." id ="searchNewCommBar">
-  <div id = "modalSearchArea">
+    <!-- Modal content -->
+    <div class="modal-content" id="modalSearch">
+      <span class="close" id="searchClose">&times;</span>
+      <h1>S E A R C H &#9734; C O M M U N I T Y</h1>
+      <input type ="text" onkeyup="searchAllComm()" placeholder = "search..." id ="searchNewCommBar">
+      <div id = "modalSearchArea">
 
+      </div>
+    </div>
   </div>
-</div>
-</div>
-<div id="myModalCreate" class="modal">
+  <div id="myModalCreate" class="modal">
 
-<div class="modal-content" id="modalCreate">
-  <span class="close" id="createClose">&times;</span>
-  <h1>C R E A T E &#9734; C O M M U N I T Y</h1>
-  <input type ="text" placeholder = "name of community..." id ="commName">
-  <h3 id ="nameCount">Characters left: 18</h3>
-  <textarea placeholder = "description of community..." id ="commDesc"></textarea>
-  <h3 id="descCount">Characters left: 300</h3>
-  <button id="createCommBtn">Create</button>
-  <img id ="preview" src = "images/defaultimage.png" />
-  <button id = "fileUploadBtn">Upload image</button>
-</div>
-</div>
+    <div class="modal-content" id="modalCreate">
+      <span class="close" id="createClose">&times;</span>
+      <h1>C R E A T E &#9734; C O M M U N I T Y</h1>
+      <input type ="text" placeholder = "name of community..." id ="commName">
+      <h3 id ="nameCount">Characters left: 18</h3>
+      <textarea placeholder = "description of community..." id ="commDesc"></textarea>
+      <h3 id="descCount">Characters left: 300</h3>
+      <button id="createCommBtn">Create</button>
+      <img id ="preview" src = "images/defaultimage.png" />
+      <button id = "fileUploadBtn">Upload image</button>
+    </div>
+  </div>
 
   <div id = "bar">
     <div id = "arr">
@@ -69,17 +68,17 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Interdum varius sit amet mattis. Pretium fusce id velit ut tortor pretium viverra suspendisse. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices.</p>
       </div>
 
-    <div id ="navComm">
-      <div class = "arrow-left"></div>
-      <h3>pg 1</h3>
-      <div class ="arrow-right"></div>
-    </div>
+      <div id ="navComm">
+        <div class = "arrow-left"></div>
+        <h3>pg 1</h3>
+        <div class ="arrow-right"></div>
+      </div>
     </div>
     <div class = "block" id = "yourComm">
       <h6>YOUR COMMUNITY</h6>
       <div id ="space">
         <p>Select one of your communities on the left to view</p>
-        <button id ="createComm" class ="commButtons">Create Community</button>
+        <button id ="createComm" class ="commButtons" class =".hvr-underline-from-center">Create Community</button>
 
         <button id ="joinNewComm" class ="commButtons">Search for New Communities</button>
         <hr>
@@ -89,23 +88,25 @@
           <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
+        </div>
       </div>
     </div>
-  </div>
 
   </div>
   <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
   <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
-      authDomain: "social-anxiety.firebaseapp.com",
-      databaseURL: "https://social-anxiety.firebaseio.com",
-      projectId: "social-anxiety",
-      storageBucket: "social-anxiety.appspot.com",
-      messagingSenderId: "321965462198"
-    };
-    firebase.initializeApp(config);
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+    authDomain: "social-anxiety.firebaseapp.com",
+    databaseURL: "https://social-anxiety.firebaseio.com",
+    projectId: "social-anxiety",
+    storageBucket: "social-anxiety.appspot.com",
+    messagingSenderId: "321965462198"
+  };
+  firebase.initializeApp(config);
   </script>
+  <script src = "js/community.js" defer></script>
+
 </body>
 </html>

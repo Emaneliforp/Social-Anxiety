@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -37,6 +41,7 @@ nav {
     }
     nav a:hover{
         background-color: #c41d30;
+        cursor: pointer;
     }
 
     nav button{
@@ -88,7 +93,7 @@ nav {
 .info{
   font-family: "Century Gothic", Arial, Helvetica, sans-serif;
   color:#ffffff;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   padding-bottom: 4vh;
   line-height: 180%;
 }

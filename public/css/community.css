@@ -222,8 +222,8 @@
 }
 
 .searchResult:active{
-    border: solid 0.1em #f5324a;
-      border-radius: 1em;
+  border: solid 0.1em #f5324a;
+  border-radius: 1em;
 }
 
 h6{
@@ -330,54 +330,54 @@ h6{
 
 /* width */
 ::-webkit-scrollbar {
-    width: 0.5vw;
+  width: 0.5vw;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10em;
+  background: #f1f1f1;
+  border-radius: 10em;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #fab50f;
-    border-radius: 0.2em;
+  background: #fab50f;
+  border-radius: 0.2em;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #fab50f;
+  background: #fab50f;
 }
 
 @font-face {
-font-family: CenturyGothic;
-src: url(CenturyGothic.ttf);
+  font-family: CenturyGothic;
+  src: url(CenturyGothic.ttf);
 }
 
 hr{
   display: block;
   height: 0.03em;
   background-color: #ffffff;
-    margin-top: 0.2em;
-    margin-bottom: 0.7em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
+  margin-top: 0.2em;
+  margin-bottom: 0.7em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
 }
 /* The Modal (background) */
 .modal {
-    display:none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display:none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -399,13 +399,13 @@ hr{
 }
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
 }
 
 .modal h1{
@@ -433,10 +433,10 @@ hr{
   border-radius: 0.3em;
 }
 
-  input:focus{
-    outline:0;
-    border: solid 0.1em #f5324a;
-  }
+input:focus{
+  outline:0;
+  border: solid 0.1em #f5324a;
+}
 
 .modal textarea{
   display: block;
@@ -541,7 +541,7 @@ textarea:focus{
   height: auto;
 }
 
-#plusbtn{
+.plusbtn{
   display: inline-block;
   height: 3.8vh;
   width: 3.8vh;
@@ -550,30 +550,30 @@ textarea:focus{
 
 /* Handle */
 .modal ::-webkit-scrollbar-thumb {
-    background: #f5324a;
-    border-radius: 0.2em;
+  background: #f5324a;
+  border-radius: 0.2em;
 }
 
 /* Handle on hover */
 .modal ::-webkit-scrollbar-thumb:hover {
-    background: #f5324a;
+  background: #f5324a;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: white;
+  background: white;
 }
 
 #modalSearchArea ::-webkit-scrollbar-thumb {
-    background:#ffdbe0;
+  background:#ffdbe0;
 }
 
 /* Handle on hover */
 #modalSearchArea ::-webkit-scrollbar-thumb:hover {
-    background: #ffdbe0;
+  background: #ffdbe0;
 }
 .modal ::-webkit-scrollbar {
-    width: 0.5vw;
+  width: 0.5vw;
 }
 /* The Close Button */
 .close {
@@ -586,23 +586,23 @@ textarea:focus{
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #myModalSuccess {
-    display:none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    text-align: center;
+  display:none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
 }
 
 /* Modal Content/Box */
@@ -630,4 +630,36 @@ textarea:focus{
 #modalSuccess h4{
   height: auto;
   margin-bottom: 2em;
+}
+
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #2098D1;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
 }
