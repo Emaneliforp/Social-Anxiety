@@ -153,14 +153,14 @@ var logoutBtn = document.getElementById("logoutNav");
 logoutBtn.addEventListener("click", function(){
   firebase.auth().signOut()
   .then(function() {
-    // Sign-out successful.
+  console.log("user signed out")
   })
   .catch(function(error) {
     // An error happened
   });
 
   console.log(user);
-  window.location.href="index.html";
+  // window.location.href="index.html";
 });
 var currentSkill = [];
 let userId = "";
@@ -181,7 +181,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
     } else {
-        wwindow.location.href = "index.html";
+        window.location.href = "index.html";
     }
 });
 
