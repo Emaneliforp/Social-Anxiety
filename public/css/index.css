@@ -38,6 +38,8 @@ nav {
         padding-right: 1em;
         line-height: 100%;
         font-family: "Century Gothic", Helvetica, sans-serif;
+        transition: all 0.2s ease-in;
+
     }
     nav a:hover{
         background-color: #c41d30;
