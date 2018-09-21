@@ -148,7 +148,7 @@ body{
 
 .users__note {
   line-height: 1.8vh;
-  color: #828697;
+  color: white;
   font-weight: 500;
   margin-left: 1.6vw;
 }
@@ -246,7 +246,7 @@ body{
 .message__head {
   display: flex;
   justify-content: space-between;
-  padding: 1.2vw 8vh 1vh 8.2vw;
+  padding: 0.7vw 8vh 1vh 4vw;
 }
 
 .message__note {
@@ -267,6 +267,7 @@ body{
 .message__avatar {}
 
 .message__text {
+  text-align: left;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -275,9 +276,11 @@ body{
   min-height: 4.3vh;
   background-color:#f53249;
   border-radius: 0.5vw;
-  padding: 1vw 2.5vw 2vh 2vw;
+  padding: 1vw 1vw 1.8vh 1vw;
   color: white;
   font-weight: 200;
+  margin-bottom: 1em;
+
 }
 .message__reply {
   box-sizing: border-box;
@@ -288,9 +291,10 @@ body{
   min-height: 4.3vh;
   background-color: #fab50f;
   border-radius: 9px;
-  padding: 1vw 2.5vw 2vh 2vw;
+  padding: 1vw 1vw 1.8vh 1vw;
   color: white;
   font-weight: 200;
+  margin-bottom: 1em;
 }
 
 .message__smiley {
@@ -391,6 +395,8 @@ body{
 }
 
 .enter__textarea {
+  font-family: CenturyGothic, Helvetica, sans-serif;
+
   padding-right: 50px;
 }
 

@@ -154,6 +154,7 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
           permission: "owner"
         }
         FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
+        FIREBASE_DATABASE.ref("users/" +username +"/communities/").set(commName);
 
         console.log("Created community successfully");
         createModal.style.display = "none";
@@ -192,6 +193,7 @@ setTimeout(function(){
             permission: "regular"
           }
           FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.uid).set(USERACC);
+          FIREBASE_DATABASE.ref("users/" +user.displayName +"/communities/").set(title);
           console.log("user inputted");
         } else {
           console.log("error")
