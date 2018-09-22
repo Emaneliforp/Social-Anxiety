@@ -9,6 +9,17 @@ document.getElementById("arrow").addEventListener("click", function(){
 //get all communities in database
 FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
   displayCommInSearch(snapshot.val());
+
+});
+FIREBASE_AUTH.onAuthStateChanged(function(user) {
+  if (user) {
+    console.log(user)
+    FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
+      displayCommInSearchMain(snapshot.val());
+    });
+  } else {
+    console.log("kms")
+  }
 });
 
 
@@ -189,7 +200,12 @@ setTimeout(function(){
   for (let i = 0; i < plusBtnArr.length; i++) {
     plusBtnArr[i].addEventListener("click", function(){
       //get title of community clicked
+
       let title=(plusBtnArr[i].parentElement.getElementsByTagName("div")[0].innerHTML);
+      let author =(plusBtnArr[i].parentElement.getElementsByTagName("div")[1].innerHTML);
+      author = author.slice(12);
+      let description = (plusBtnArr[i].parentElement.getElementsByTagName("div")[2].innerHTML);
+      description= description.slice(3);
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           const USERACC={
@@ -197,11 +213,14 @@ setTimeout(function(){
             permission: "regular"
           }
           const aaa={
-            communityName: title,
+            name: title,
+            creator: author,
+            desc: description,
             permission: "regular"
           }
+          console.log(user);
           FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.uid).set(USERACC);
-          FIREBASE_DATABASE.ref("users/" +user.displayName +"/communities/"+title).set(aaa);
+          FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+title).set(aaa);
           console.log("user inputted");
         } else {
           console.log("error")
@@ -241,6 +260,7 @@ function displayCommInSearch(community){
       searchResults.push(key);
     }
   })
+
   let div = document.createElement('div');
   let domString = `<div class="modalSearchResult">
   <div id ="modalSearchh5">${community.name}</div>
@@ -256,9 +276,40 @@ function displayCommInSearch(community){
   var modalSearchDiv =document.getElementById("modalSearchArea");
   modalSearchDiv.appendChild(communityDiv);
 
-
 }
 
+
+function displayCommInSearchMain(community){
+  var searchResults=[];
+  FIREBASE_AUTH.onAuthStateChanged(function(user) {
+  if (user) {
+      //gets the names of the communities that user is in
+      FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").once('value') //using once b/c we are taking a snapshot once daily
+      .then((snapshot) => {
+        let val = snapshot.val();
+        for (let key in val) {
+          searchResults.push(key);
+        }
+      })
+      let div = document.createElement('div');
+      let domString = `<div class="searchResult">
+      <div class ="searchResulth5">${community.name}</div>
+      <div id = "modalSearchh4">${"created by: "+community.creator}</div>
+      <div id ="modalSearchParagraph">
+      ${community.desc}
+      </div>
+      </div>`;
+      div.innerHTML = domString;
+
+      let communityDiv = div.firstChild;
+      var modalSearchDiv =document.getElementById("searchResultArea");
+      modalSearchDiv.appendChild(communityDiv);
+
+  } else {
+    console.log("perish");
+  }
+});
+}
 function searchAllComm(){
   // Declare variables
   var input, filter, i, searchResults;
