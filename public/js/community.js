@@ -153,8 +153,12 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
           username: username,
           permission: "owner"
         }
+        const aaa={
+          communityName: commName,
+          permission: "owner"
+        }
         FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
-        FIREBASE_DATABASE.ref("users/" +username +"/communities/").set(commName);
+        FIREBASE_DATABASE.ref("users/" +username +"/communities/"+commName).set(aaa);
 
         console.log("Created community successfully");
         createModal.style.display = "none";
@@ -192,8 +196,12 @@ setTimeout(function(){
             username: user.displayName,
             permission: "regular"
           }
+          const aaa={
+            communityName: title,
+            permission: "regular"
+          }
           FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.uid).set(USERACC);
-          FIREBASE_DATABASE.ref("users/" +user.displayName +"/communities/").set(title);
+          FIREBASE_DATABASE.ref("users/" +user.displayName +"/communities/"+title).set(aaa);
           console.log("user inputted");
         } else {
           console.log("error")
@@ -204,44 +212,6 @@ setTimeout(function(){
   }
 
 }, 1000);
-//
-// //file upload
-// //// TODO: THIS DOESN'T WORK AAAAA
-// var fileBtn = document.getElementById("fileUploadBtn");
-// fileUploadBtn.addEventListener("click", function(e){
-//   var commName = nameField.value;
-//   if(commName=="" || commName==null)
-//     alert("Please enter your community name first.");
-//   const file = document.querySelector('#photo').files[0];
-//   var storageRef = firebase.storage().ref("/communities/" + commName +"/image");
-//
-//   ref.put(file).then(function(snapshot) {
-//   console.log('Uploaded a blob or file!');
-//   var preview=document.getElementById("preview");
-//   FIREBASE_STORAGE.ref("/communities/" + commName +"/image").on('child_added', function (snapshot) {
-//       console.log(snapshot.val());
-//       preview = snapshot.val();
-//   });
-//
-// // });
-// const ref = firebase.storage().ref();
-// const file = document.querySelector('fileUploadBtn').files[0]
-// const name = (+new Date()) + '-' + file.name;
-// const metadata = {
-//   contentType: file.type
-// };
-// const task = ref.child(name).put(file, metadata);
-// task
-//   .then(snapshot => snapshot.ref.getDownloadURL())
-//   .then((url) => {
-//     console.log(url);
-//     document.querySelector('#someImageTagID').src = url;
-//   })
-//   .catch(console.error);
-// });
-
-//functions
-//search js for main page
 
 function search() {
   // Declare variables
