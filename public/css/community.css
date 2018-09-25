@@ -225,7 +225,10 @@
   border: solid 0.1em #f5324a;
   border-radius: 1em;
 }
-
+#searchResultArea{
+  overflow: auto;
+  height: 71%;
+}
 h6{
   color: white;
   position: relative;
@@ -237,7 +240,8 @@ h6{
   margin-right: auto;
 }
 
-.searchResult h5{
+.searchResulth5{
+    font-weight: bold;
   font-size: 110%;
   padding: 0.1em;
   height: auto;
@@ -245,17 +249,18 @@ h6{
   text-decoration-color: #fab50f;
 }
 
-.searchResult h5:hover{
+.searchResulth5:hover{
   cursor:pointer;
 }
 
-.searchResult h4{
+.searchResulth4{
+  font-weight: bold;
   padding: 0.1em;
   height: auto;
   font-size: 70%;
 }
 
-.searchResult p{
+.searchResultp{
   text-indent: 5%;
   padding: 0.3em;
   height: auto;
