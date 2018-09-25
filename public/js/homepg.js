@@ -207,14 +207,11 @@ let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
 
-/*for (var i = 0; i <= currentSkill[0].length; i++) {
+for (var i = 0; i <= currentSkill[0].length; i++) {
     if (currentSkill[0][i] === "spp") {
         rsp.style.display = "block";
     }
     if (currentSkill[0][i] === "rshw") {
         rshw.style.display = "block";
     }
-<<<<<<< HEAD
 }
-=======
-}*/

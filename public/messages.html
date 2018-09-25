@@ -5,247 +5,65 @@
   <link rel="stylesheet" type="text/css" href="css/messages.css">
   <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="messages.js"></script>
+  <script defer src="js/chat.js"></script>
 </head>
 <body>
-  <div class="modal">
-    <div class="modal__dialog">
-      <div class="modal__close">
-        <a href="#" class="modal__icon">
-          <i class="fa fa-times" aria-hidden="true"></i>
-        </a>
-        <span class="modal__note"></span>
-      </div>
-      <div class="modal__content chat">
-        <div class="modal__sidebar">
-          <div class="chat__users">
-            <ul class="users">
-              <li class="users__item users__item_group">
-                <div class="users__avatar avatar">
-                  <a href="#" class="avatar__wrap">
-                    M
-                  </a>
-                </div>
-                <span class="users__note">Me</span>
-
-              </li>
-              <li class="users__item">
-                <div class="users__avatar avatar avatar_online">
-                  <a href="#" class="avatar__wrap">
-                    <img class="avatar__img" src="https://i.pinimg.com/236x/a5/7e/88/a57e887ca4e32a0d65a016dc3edaadf4.jpg" width="35" height="35" alt="avatar image">
-                  </a>
-                </div>
-                <span class="users__note">Person 1</span>
-
-              </li>
-              <li class="users__item">
-                <div class="users__avatar avatar avatar_online">
-                  <a href="#" class="avatar__wrap">
-                    <img class="avatar__img" src="https://bloximages.chicago2.vip.townnews.com/tribdem.com/content/tncms/assets/v3/editorial/3/83/38384be2-3ba5-11e8-adec-bf48bc62810f/5acadc92f3c7d.image.jpg?resize=1200%2C1070" width="35" height="35" alt="avatar image">
-                  </a>
-                </div>
-                <span class="users__note">Person 2</span>
-
-              </li>
-              <li class="users__item">
-                <div class="users__avatar avatar avatar_online">
-                  <a href="#" class="avatar__wrap">
-                    <img class="avatar__img" src="https://vignette.wikia.nocookie.net/warhammerfb/images/1/12/Fire_breathing_dragon_by_sandara-d56vmyu.jpg/revision/latest?cb=20150612012606" width="35" height="35" alt="avatar image">
-                  </a>
-                </div>
-                <span class="users__note">Person 3</span>
-              </li>
-              <li class="users__item">
-                <div class="users__avatar avatar">
-                  <a href="#" class="avatar__wrap">
-                    <img class="avatar__img" src="http://placehold.it/35x35" width="35" height="35" alt="avatar image">
-                  </a>
-                </div>
-                <span class="users__note">Person 4</span>
-                <div class="counter"></div>
-              </li>
-              <li class="users__item">
-                <div class="users__avatar avatar avatar_online">
-                  <a href="#" class="avatar__wrap">
-                    <img class="avatar__img" src="https://galleryroulette.com/wp-content/uploads/2017/06/9709aad1-92c4-4a50-886b-b599d1dc19e3_560_420.jpg" width="35" height="35" alt="avatar image">
-                  </a>
-                </div>
-                <span class="users__note">Person 5</span>
-                <div class="counter"></div>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-        <div class="modal__main">
-          <div class="chatbox">
-            <div class="chatbox__row">
-              <div class="head">
-
-                <div class="head__title">(My Name)</div>
-              </div>
+    <div class="modal">
+        <div class="modal__dialog">
+            <div class="modal__close">
+                <a href="#" class="modal__icon">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
+                <span class="modal__note"></span>
             </div>
-            <div class="chatbox__row chatbox__row_fullheight">
-              <div class="chatbox__content">
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">Person 5</span>
-                    <span class="message__note">11:00 AM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://galleryroulette.com/wp-content/uploads/2017/06/9709aad1-92c4-4a50-886b-b599d1dc19e3_560_420.jpg" width="35" height="35" alt="avatar image">
-                      </a>
+            <div class="modal__content chat">
+                <div class="modal__sidebar">
+                    <div class="chat__users">
+                        <ul class="users">
+                            <li class="users__item users__item_group">
+                                <div class="users__avatar avatar">
+                                    <a href="#" class="avatar__wrap">
+                                        M
+                                    </a>
+                                </div>
+                                <span class="users__note">Me</span>
+
+                            </li>
+                            <li class="users__item">
+                                <div class="users__avatar avatar avatar_online">
+                                    <a href="#" class="avatar__wrap">
+                                        <img class="avatar__img" src="https://i.pinimg.com/236x/a5/7e/88/a57e887ca4e32a0d65a016dc3edaadf4.jpg" width="35" height="35" alt="avatar image">
+                                    </a>
+                                </div>
+                                <span class="users__note">Person 1</span>
+
+                        </ul>
                     </div>
-                    <div class="message__textbox">
-                      <span class="message__text">Hello, Bogdan! Yes, funny smiles</span>
-                    </div>
-                  </div>
                 </div>
-                <div class="message">
-                  <div class="message__head"><span class="message__note">(My Name)</span>
-                    <span class="message__note">11:10AM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://bloximages.chicago2.vip.townnews.com/tribdem.com/content/tncms/assets/v3/editorial/3/83/38384be2-3ba5-11e8-adec-bf48bc62810f/5acadc92f3c7d.image.jpg?resize=1200%2C1070" width="35" height="35" alt="avatar image">
-                      </a>
+                <div class="modal__main">
+                    <div class="chatbox">
+                        <div class="name"></div>
+                        <div class="mess"></div>
+                        <div class="enter__textarea">
+                            <textarea name="enterMessage" id="enterMessage" cols="30" rows="3" placeholder="Say message..."></textarea>
+                        </div>
                     </div>
-                    <div class="message__textbox">
-                      <span class="message__reply">How are you?</span>
-                    </div>
-                  </div>
                 </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">Person 5</span>
-                    <span class="message__note">11:12 AM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://galleryroulette.com/wp-content/uploads/2017/06/9709aad1-92c4-4a50-886b-b599d1dc19e3_560_420.jpg" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__text" id="chatlog1">Good. Nice to meet you!</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">(My Name)</span>
-                    <span class="message__note">11:30 AM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://bloximages.chicago2.vip.townnews.com/tribdem.com/content/tncms/assets/v3/editorial/3/83/38384be2-3ba5-11e8-adec-bf48bc62810f/5acadc92f3c7d.image.jpg?resize=1200%2C1070" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__reply" id="chatlog2">I am bored today. I am going to sleep.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">Person 5</span>
-                    <span class="message__note">11:32 AM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://galleryroulette.com/wp-content/uploads/2017/06/9709aad1-92c4-4a50-886b-b599d1dc19e3_560_420.jpg" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__text" id="chatlog3">Talk to me. I am bored also.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">Person 5</span>
-                    <span class="message__note">12:45AM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://galleryroulette.com/wp-content/uploads/2017/06/9709aad1-92c4-4a50-886b-b599d1dc19e3_560_420.jpg" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__text" id="chatlog4">Hello? Are you still here?</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">(My Name)</span>
-                    <span class="message__note">12:52PM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://bloximages.chicago2.vip.townnews.com/tribdem.com/content/tncms/assets/v3/editorial/3/83/38384be2-3ba5-11e8-adec-bf48bc62810f/5acadc92f3c7d.image.jpg?resize=1200%2C1070" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__reply" id="chatlog5">Yes, I am. What do you want to tank about?</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">Person 5</span>
-                    <span class="message__note">1:00 PM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://galleryroulette.com/wp-content/uploads/2017/06/9709aad1-92c4-4a50-886b-b599d1dc19e3_560_420.jpg" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__text" id="chatlog6">I don't know.</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="message__head">
-                    <span class="message__note">(My Name)</span>
-                    <span class="message__note">1:05PM</span>
-                  </div>
-                  <div class="message__base">
-                    <div class="message__avatar avatar">
-                      <a href="#" class="avatar__wrap">
-                        <img class="avatar__img" src="https://bloximages.chicago2.vip.townnews.com/tribdem.com/content/tncms/assets/v3/editorial/3/83/38384be2-3ba5-11e8-adec-bf48bc62810f/5acadc92f3c7d.image.jpg?resize=1200%2C1070" width="35" height="35" alt="avatar image">
-                      </a>
-                    </div>
-                    <div class="message__textbox">
-                      <span class="message__reply" id="chatlog7">Nevermind. I am going to leave.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-            <!--<div class="chatbox__row">
-            <div class="enter">
-            <div class="enter__submit">
-            <button>Enter</button>
-          </div>-->
-          <div class="enter__textarea">
-            <textarea name="enterMessage" id="enterMessage" cols="30" rows="3" placeholder="Say message..."></textarea>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
-</div>
-</div>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+            authDomain: "social-anxiety.firebaseapp.com",
+            databaseURL: "https://social-anxiety.firebaseio.com",
+            projectId: "social-anxiety",
+            storageBucket: "social-anxiety.appspot.com",
+            messagingSenderId: "321965462198"
+        };
+        firebase.initializeApp(config);
+    </script>
 </body>
 </html>
