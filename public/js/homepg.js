@@ -214,5 +214,4 @@ for (var i = 0; i <= currentSkill[0].length; i++) {
     if (currentSkill[0][i] === "rshw") {
         rshw.style.display = "block";
     }
-<<<<<<< HEAD
 }
