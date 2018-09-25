@@ -207,7 +207,7 @@ let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
 
-/*for (var i = 0; i <= currentSkill[0].length; i++) {
+for (var i = 0; i <= currentSkill[0].length; i++) {
     if (currentSkill[0][i] === "spp") {
         rsp.style.display = "block";
     }
@@ -215,21 +215,4 @@ let rsd = document.getElementById("rsd");
         rshw.style.display = "block";
     }
 <<<<<<< HEAD
-}
-=======
-}*/
-
-FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
-  showComm(snapshot.val());
-
-});
-function showComm(community){
-
-  let div = document.createElement('div');
-  let domString = `<div class ="comicon">${community.name}</div>`;
-  div.innerHTML = domString;
-
-  let communityDiv = div.firstChild;
-  var communityDivArea =document.getElementById("communities");
-  communityDivArea.appendChild(communityDiv);
 }
