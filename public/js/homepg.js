@@ -218,3 +218,18 @@ let rsd = document.getElementById("rsd");
 }
 =======
 }*/
+
+FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
+  showComm(snapshot.val());
+
+});
+function showComm(community){
+
+  let div = document.createElement('div');
+  let domString = `<div class ="comicon">${community.name}</div>`;
+  div.innerHTML = domString;
+
+  let communityDiv = div.firstChild;
+  var communityDivArea =document.getElementById("communities");
+  communityDivArea.appendChild(communityDiv);
+}
