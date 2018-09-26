@@ -121,7 +121,7 @@ addSkill.addEventListener('click', function () {
 });
 searchmoc.addEventListener('click', function () {
     searchmo.style.display = "none";
-})
+});
 
 function search() {
     // Declare variables
@@ -174,7 +174,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
           currentSkill = snapshot.val().currentSkill;
           grade = snapshot.val().grade;
-          name = snapshot.val().grade;
+          name = snapshot.val().name;
           console.log(currentSkill);
       });
 
@@ -207,6 +207,7 @@ let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
 
+firebase.auth().onAuthStateChanged(function (user) {
 for (var i = 0; i <= currentSkill[0].length; i++) {
     if (currentSkill[0][i] === "spp") {
         rsp.style.display = "block";
@@ -214,4 +215,5 @@ for (var i = 0; i <= currentSkill[0].length; i++) {
     if (currentSkill[0][i] === "rshw") {
         rshw.style.display = "block";
     }
-}
+    }
+});
