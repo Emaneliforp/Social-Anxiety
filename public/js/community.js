@@ -169,7 +169,7 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
           permission: "owner"
         }
         FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
-        FIREBASE_DATABASE.ref("users/" +username +"/communities/"+commName).set(aaa);
+        FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+commName).set(aaa);
 
         console.log("Created community successfully");
         createModal.style.display = "none";
