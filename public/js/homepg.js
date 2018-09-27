@@ -75,41 +75,41 @@ let sd = document.getElementById('sd');
 let spclose = document.getElementById('spclose');
 let shwclose = document.getElementById('shwclose');
 let sdclose = document.getElementById('sdclose');
+//
+// spclose.addEventListener('click', function () {
+//   spmo.style.display = "none";
+// });
+//
+// shwclose.addEventListener('click', function () {
+//   shwmo.style.display = "none";
+// });
+//
+// sdclose.addEventListener('click', function () {
+//   sdmo.style.display = "none";
+// });
 
-spclose.addEventListener('click', function () {
-  spmo.style.display = "none";
-});
-
-shwclose.addEventListener('click', function () {
-  shwmo.style.display = "none";
-});
-
-sdclose.addEventListener('click', function () {
-  sdmo.style.display = "none";
-});
-
-//community modal control
-let c = document.getElementById('c');
-let c1 = document.getElementById('c1');
-
-let cmodal = document.getElementById('cmodal');
-let cmodal1 = document.getElementById('cmodal1');
-
-let closec = document.getElementById('closec');
-let closec1 = document.getElementById('closec1');
-
-c.addEventListener('click', function () {
-  cmodal.style.display = 'block';
-});
-closec.addEventListener('click', function () {
-  cmodal.style.display = "none";
-});
-c1.addEventListener('click', function () {
-  cmodal1.style.display = 'block';
-});
-closec1.addEventListener('click', function () {
-  cmodal1.style.display = "none";
-});
+// //community modal control
+// let c = document.getElementById('c');
+// let c1 = document.getElementById('c1');
+//
+// let cmodal = document.getElementById('cmodal');
+// let cmodal1 = document.getElementById('cmodal1');
+//
+// let closec = document.getElementById('closec');
+// let closec1 = document.getElementById('closec1');
+//
+// c.addEventListener('click', function () {
+//   cmodal.style.display = 'block';
+// });
+// closec.addEventListener('click', function () {
+//   cmodal.style.display = "none";
+// });
+// c1.addEventListener('click', function () {
+//   cmodal1.style.display = 'block';
+// });
+// closec1.addEventListener('click', function () {
+//   cmodal1.style.display = "none";
+// });
 
 //add skill
 let addSkill = document.getElementById("addSkill");
@@ -235,7 +235,7 @@ function showComm(community){
   communityDivArea.appendChild(communityDiv);
 
   let div2=document.createElement("div");
-  let domString2= `<div class ="pmodal">
+  let domString2= `<div class ="cmodal">
   <div class ="practice">
   <div class = "nav"><i class="close"></i></div>
   <div class ="info">
@@ -249,18 +249,25 @@ function showComm(community){
   <a href="#">Enter</a>
   </div>
   </div>
-
+</div>
   </div>"`
   div2.innerHTML = domString2;
   let communityDivModal = div2.firstChild;
   let communityDivModalArea = document.getElementsByTagName("body")[0];
   communityDivModalArea.appendChild(communityDivModal);
 }
-
-let communitiesArr = [];
-communitiesArr= document.getElementsByClassName("comicon");
-for (let i = 0; i < communitiesArr.length; i++) {
-  communitiesArr[i].addEventListener("click", function(){
-    
-  });
-}
+setTimeout(function(){
+  let communitiesArr = [];
+  let cModalArr = [];
+  cModalArr = document.getElementsByClassName("cmodal");
+  console.log(cModalArr);
+  communitiesArr= document.getElementsByClassName("comicon");
+  console.log(communitiesArr.length);
+  for (let i = 0; i < communitiesArr.length; i++) {
+    console.log(i);
+    communitiesArr[i].addEventListener("click", function(){
+      console.log(cModalArr[i])
+    cModalArr[i].style.display = "block";
+    });
+  }
+}, 2500);

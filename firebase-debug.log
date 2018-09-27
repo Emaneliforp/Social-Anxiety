@@ -1,0 +1,28 @@
+[debug] [2018-09-26T00:29:28.129Z] ----------------------------------------------------------------------
+[debug] [2018-09-26T00:29:28.133Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\music\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-26T00:29:28.134Z] CLI Version:   4.2.1
+[debug] [2018-09-26T00:29:28.134Z] Platform:      win32
+[debug] [2018-09-26T00:29:28.134Z] Node Version:  v8.9.4
+[debug] [2018-09-26T00:29:28.136Z] Time:          Tue Sep 25 2018 17:29:28 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-09-26T00:29:28.136Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-26T00:29:28.160Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-26T00:29:28.161Z] > authorizing via signed-in user
+[debug] [2018-09-26T00:29:28.166Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-26T00:29:28.167Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-26T00:29:28.398Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-26T00:29:28.404Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-09-26T00:29:28.717Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-26T00:29:28.718Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-09-26T00:29:29.129Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\music\social anxiety\Social-Anxiety'...
+[info] 
+[debug] [2018-09-26T00:29:29.144Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-26T00:29:29.537Z] <<< HTTP RESPONSE 200
+[info] i  hosting[social-anxiety]: Serving hosting files from: public
+[info] +  hosting[social-anxiety]: Local server: http://localhost:5000

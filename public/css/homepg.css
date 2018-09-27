@@ -252,6 +252,15 @@ img {
   height: 100%; /* Full height */
   position: fixed;
 }
+.cmodal {
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none;
+  z-index: 5; /* Sit on top */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed;
+
+}
 .pmodalf {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   display: none;
