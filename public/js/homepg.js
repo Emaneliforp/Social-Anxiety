@@ -75,41 +75,6 @@ let sd = document.getElementById('sd');
 let spclose = document.getElementById('spclose');
 let shwclose = document.getElementById('shwclose');
 let sdclose = document.getElementById('sdclose');
-//
-// spclose.addEventListener('click', function () {
-//   spmo.style.display = "none";
-// });
-//
-// shwclose.addEventListener('click', function () {
-//   shwmo.style.display = "none";
-// });
-//
-// sdclose.addEventListener('click', function () {
-//   sdmo.style.display = "none";
-// });
-
-// //community modal control
-// let c = document.getElementById('c');
-// let c1 = document.getElementById('c1');
-//
-// let cmodal = document.getElementById('cmodal');
-// let cmodal1 = document.getElementById('cmodal1');
-//
-// let closec = document.getElementById('closec');
-// let closec1 = document.getElementById('closec1');
-//
-// c.addEventListener('click', function () {
-//   cmodal.style.display = 'block';
-// });
-// closec.addEventListener('click', function () {
-//   cmodal.style.display = "none";
-// });
-// c1.addEventListener('click', function () {
-//   cmodal1.style.display = 'block';
-// });
-// closec1.addEventListener('click', function () {
-//   cmodal1.style.display = "none";
-// });
 
 //add skill
 let addSkill = document.getElementById("addSkill");
@@ -120,7 +85,7 @@ addSkill.addEventListener('click', function () {
   searchmo.style.display = "block";
 });
 searchmoc.addEventListener('click', function () {
-    searchmo.style.display = "none";
+  searchmo.style.display = "none";
 });
 
 function search() {
@@ -169,21 +134,20 @@ let name = "";
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log(user);
-      
-      userId = FIREBASE_AUTH.currentUser.uid;
-      FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
-          currentSkill = snapshot.val().currentSkill;
-          grade = snapshot.val().grade;
-          name = snapshot.val().name;
-          console.log(currentSkill);
-      });
+
+    userId = FIREBASE_AUTH.currentUser.uid;
+    FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
+      currentSkill = snapshot.val().currentSkill;
+      grade = snapshot.val().grade;
+      name = snapshot.val().name;
+      console.log(currentSkill);
+    });
 
 
   } else {
     window.location.href = "index.html";
   }
 });
-
 
 function sppcs() {
   currentSkill.push("spp");
@@ -215,6 +179,7 @@ for (var i = 0; i <= currentSkill[0].length; i++) {
     }
 }
 
+//get database info
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
   if (user) {
     FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
@@ -224,8 +189,9 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
     console.log("no user entered");
   }
 });
+
 function showComm(community){
-    
+  //create communities tab using data from database
   let div = document.createElement('div');
   let domString = `<div class ="comicon">${community.name}</div>`;
   div.innerHTML = domString;
@@ -233,11 +199,10 @@ function showComm(community){
   let communityDiv = div.firstChild;
   var communityDivArea =document.getElementsByClassName("communities")[0];
   communityDivArea.appendChild(communityDiv);
-
   let div2=document.createElement("div");
   let domString2= `<div class ="cmodal">
   <div class ="practice">
-  <div class = "nav"><i class="close"></i></div>
+  <div class = "nav"><i class="closeC"></i></div>
   <div class ="info">
   <div class="title">
   ${community.name}
@@ -249,25 +214,34 @@ function showComm(community){
   <a href="#">Enter</a>
   </div>
   </div>
-</div>
+  </div>
   </div>"`
   div2.innerHTML = domString2;
   let communityDivModal = div2.firstChild;
   let communityDivModalArea = document.getElementsByTagName("body")[0];
   communityDivModalArea.appendChild(communityDivModal);
 }
+
+//for communities tab
 setTimeout(function(){
   let communitiesArr = [];
   let cModalArr = [];
+  let closeArr=[];
   cModalArr = document.getElementsByClassName("cmodal");
-  console.log(cModalArr);
   communitiesArr= document.getElementsByClassName("comicon");
-  console.log(communitiesArr.length);
+  closeArr=document.getElementsByClassName("closeC");
+
+  //goes through html elements and attaches event listeners
   for (let i = 0; i < communitiesArr.length; i++) {
-    console.log(i);
     communitiesArr[i].addEventListener("click", function(){
       console.log(cModalArr[i])
-    cModalArr[i].style.display = "block";
+      cModalArr[i].style.display = "block";
+    });
+    console.log(closeArr[i]);
+    closeArr[i].addEventListener("click", function(){
+      console.log(closeArr[i])
+      cModalArr[i].style.display = "none";
     });
   }
-}, 2500);
+
+}, 3500);
