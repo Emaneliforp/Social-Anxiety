@@ -1,4 +1,24 @@
 /* blue: #07cdb2; red: #f5324a; yellow: #fab50f; white*/
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
 p {
   font-family: "Century Gothic";
 }
@@ -6,6 +26,7 @@ body {
   margin: 0vw;
   background-color: #07cdb2;
   outline: none;
+  height: 100%;
 }
 .main{
   padding: 0% 3% 3% 3%;
@@ -252,6 +273,17 @@ img {
   height: 100%; /* Full height */
   position: fixed;
 }
+.cmodal {
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none;
+  z-index: 5; /* Sit on top */
+  width: 100%; /* Full width */
+  height: 131%; /* Full height */
+  position: absolute;
+  top: 0;
+
+
+}
 .pmodalf {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   display: none;
@@ -272,7 +304,7 @@ img {
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
-  animation-duration: 0.6s
+  animation-duration: 0.4s
 }
 
 .title {
@@ -301,6 +333,10 @@ i {
 }
 
 .close {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.closeC {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }

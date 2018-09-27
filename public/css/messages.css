@@ -16,6 +16,7 @@ body {
 
 #title {
     color: white;
+    margin-top: 1vh;
 }
 
 .sidebarbtn {
@@ -52,6 +53,10 @@ body {
     overflow: scroll;
     -ms-overflow-style: none;
     padding-top: 2vh;
+}
+.chatmem:hover{
+  color: #c29ea3;
+  transition: 0.2s;
 }
 #gamebar div{
     border-bottom: 0.2vw solid white;
@@ -150,10 +155,13 @@ i {
     -webkit-transform: rotate(135deg);
     cursor: pointer;
 }
-#enterMessage {
-    width: 77vw;
-    height: 15vh;
-    margin: 1vw;
-    padding-left: 0;
-    padding-top: 0;
+#enterMessage{
+    width: 95%;
+    overflow: hidden;
+    border-radius: 2vh;
+    border: none;
+    outline: none;
+    margin-top: 4vh;
+    margin-left: 2vw;
+    padding: 1vh;
 }
