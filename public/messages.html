@@ -1,70 +1,44 @@
-<!DOCTYPEhtml>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Messages</title>
-  <link rel="stylesheet" type="text/css" href="css/messages.css">
-  <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script defer src="js/chat.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/messages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="modal">
-        <div class="modal__dialog">
-            <div class="modal__close">
-                <a href="#" class="modal__icon">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-                <span class="modal__note"></span>
-            </div>
-            <div class="modal__content chat">
-                <div class="modal__sidebar">
-                    <div class="chat__users">
-                        <ul class="users">
-                            <li class="users__item users__item_group">
-                                <div class="users__avatar avatar">
-                                    <a href="#" class="avatar__wrap">
-                                        M
-                                    </a>
-                                </div>
-                                <span class="users__note">Me</span>
-
-
-                            </li>
-                            <li class="users__item">
-                                <div class="users__avatar avatar avatar_online">
-                                    <a href="#" class="avatar__wrap">
-                                        <img class="avatar__img" src="https://i.pinimg.com/236x/a5/7e/88/a57e887ca4e32a0d65a016dc3edaadf4.jpg" width="35" height="35" alt="avatar image">
-                                    </a>
-                                </div>
-                                <span class="users__note">Person 1</span>
-
-                        </ul>
-                    </div>
-                </div>
-                <div class="modal__main">
-                    <div class="chatbox">
-                        <div class="name"></div>
-                        <div class="mess"></div>
-                        <div class="enter__textarea">
-                            <textarea name="enterMessage" id="enterMessage" cols="30" rows="3" placeholder="Say message..."></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="nav">
+        <a href="homepg.html"><i class="close" id="close"></i></a>
+        <span id="title">Presentation</span>
+    </div>
+    <span id="gamebar">
+        <div class= "chatmem">Name 1</div>
+        <div class= "chatmem">Name 1</div>
+    </span>
+    <div id="bg">
+        <div id="chatbox">
+            <div class="bot">What is your view on how much talent influences success?</div>
+        </div>
+        <div id="option">
+            <input id="enterMessage" placeholder="Enter a message...">
         </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
-            authDomain: "social-anxiety.firebaseapp.com",
-            databaseURL: "https://social-anxiety.firebaseio.com",
-            projectId: "social-anxiety",
-            storageBucket: "social-anxiety.appspot.com",
-            messagingSenderId: "321965462198"
-        };
-        firebase.initializeApp(config);
-    </script>
+<script src="js/sim-debate.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDEUNut2Vm_yyUxu9fYcAQS1RzA-8iMp8A",
+        authDomain: "social-anxiety.firebaseapp.com",
+        databaseURL: "https://social-anxiety.firebaseio.com",
+        projectId: "social-anxiety",
+        storageBucket: "social-anxiety.appspot.com",
+        messagingSenderId: "321965462198"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="js/community.js" defer></script>
 </body>
 </html>

@@ -9,8 +9,11 @@
   height: 100%;
   font-family: CenturyGothic, Helvetica, sans-serif;
   outline: none;
+  text-decoration: none;
 }
-
+a{
+    color:black;
+}
 #bar{
   width: 100%;
   height: auto;
@@ -679,4 +682,7 @@ textarea:focus{
 .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
   right: 0;
   cursor: pointer;
+}
+.none{
+    display:none;
 }

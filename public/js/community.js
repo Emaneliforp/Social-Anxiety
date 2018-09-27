@@ -292,13 +292,13 @@ function displayCommInSearchMain(community){
         }
       })
       let div = document.createElement('div');
-      let domString = `<div class="searchResult">
+      let domString = `<a href = "messages.html"><div class="searchResult">
       <div class ="searchResulth5">${community.name}</div>
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
       <div id ="modalSearchParagraph">
       ${community.desc}
       </div>
-      </div>`;
+      </div></a>`;
       div.innerHTML = domString;
 
       let communityDiv = div.firstChild;
@@ -328,3 +328,26 @@ function searchAllComm(){
     }
   }
 }
+let enterMessage = document.getElementById("enterMessage");
+let token = [];
+let x = 0;
+FIREBASE_AUTH.onAuthStateChanged(function (user) {
+    if (user) {
+        
+
+        let name = user.displayName;
+        
+        
+        enterMessage.addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                console.log(enterMessage.value);
+                mess = document.getElementById("enterMessage").value;
+                token = [name, mess];
+                FIREBASE_DATABASE.ref('/communities/testing/chat/' + x).set({
+                    token: token
+                });
+            }
+        });
+    }
+});

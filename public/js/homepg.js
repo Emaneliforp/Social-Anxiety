@@ -120,8 +120,8 @@ addSkill.addEventListener('click', function () {
   searchmo.style.display = "block";
 });
 searchmoc.addEventListener('click', function () {
-  searchmo.style.display = "none";
-})
+    searchmo.style.display = "none";
+});
 
 function search() {
   // Declare variables
@@ -169,15 +169,14 @@ let name = "";
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log(user);
-
-    userId = FIREBASE_AUTH.currentUser.uid;
-    FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
-      currentSkill = snapshot.val().currentSkill;
-      grade = snapshot.val().grade;
-      name = snapshot.val().grade;
-      console.log(currentSkill);
-    });
-
+      
+      userId = FIREBASE_AUTH.currentUser.uid;
+      FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
+          currentSkill = snapshot.val().currentSkill;
+          grade = snapshot.val().grade;
+          name = snapshot.val().name;
+          console.log(currentSkill);
+      });
 
 
   } else {
@@ -203,18 +202,19 @@ function shwcs() {
   });
 }
 
-// let rsp = document.getElementById("rsp");
-// let rshw = document.getElementById("rshw");
-// let rsd = document.getElementById("rsd");
-//
-// for (var i = 0; i <= currentSkill[0].length; i++) {
-//     if (currentSkill[0][i] === "spp") {
-//         rsp.style.display = "block";
-//     }
-//     if (currentSkill[0][i] === "rshw") {
-//         rshw.style.display = "block";
-//     }
-// }
+let rsp = document.getElementById("rsp");
+let rshw = document.getElementById("rshw");
+let rsd = document.getElementById("rsd");
+
+for (var i = 0; i <= currentSkill[0].length; i++) {
+    if (currentSkill[0][i] === "spp") {
+        rsp.style.display = "block";
+    }
+    if (currentSkill[0][i] === "rshw") {
+        rshw.style.display = "block";
+    }
+}
+
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
   if (user) {
     FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
@@ -225,7 +225,7 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
   }
 });
 function showComm(community){
-
+    
   let div = document.createElement('div');
   let domString = `<div class ="comicon">${community.name}</div>`;
   div.innerHTML = domString;
