@@ -3,6 +3,7 @@ body {
     font-size: 2vw;
     font-family: CenturyGothic, Helvetica, sans-serif;
     background-color: #f5324a;
+    overflow: hidden;
 }
 
 #nav {
@@ -37,7 +38,6 @@ body {
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
-
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
         background: #555;
