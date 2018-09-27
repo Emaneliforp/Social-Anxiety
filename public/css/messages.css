@@ -65,12 +65,14 @@ body {
     overflow: auto;
     padding-top: 1vh;
     padding-bottom: 1vh;
+    z-index: 1;
 }
     #gamebar img {
         width: 15vw;
         margin-top: 5vh;
         border-radius: 2vw;
         border: 0.3vw solid #ffc125;
+        z-index: 1;
     }
 
     #gamebar::-webkit-scrollbar {
@@ -119,6 +121,7 @@ body {
     margin-left: 20%;
     font-size: 1.5vw;
     height: 20vh;
+    z-index: -1;
 }
 
     #option div {
