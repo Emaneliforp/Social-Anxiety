@@ -7,11 +7,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gafata|Megrim|Century+Gothic" rel="stylesheet">
 </head>
 <body>
     <div class="nav">
         <a href="homepg.html"><i class="close" id="close"></i></a>
-        <span id="title">Presentation</span>
+        <span id="title">Placeholder</span>
     </div>
     <span id="gamebar">
         <div class= "chatmem">Name 1</div>
@@ -19,10 +20,11 @@
     </span>
     <div id="bg">
         <div id="chatbox">
-            <div class="bot">What is your view on how much talent influences success?</div>
+            <div class="bot">Hey, what do you want to talk about?</div>
         </div>
         <div id="option">
             <input id="enterMessage" placeholder="Enter a message...">
+            <button class = "enterbtn" onclick="r()"> Send! </button>
         </div>
     </div>
 <script src="js/sim-debate.js"></script>
@@ -39,6 +41,6 @@
     };
     firebase.initializeApp(config);
 </script>
-<script src="js/community.js" defer></script>
+<script src="js/chat.js" defer></script>
 </body>
 </html>
