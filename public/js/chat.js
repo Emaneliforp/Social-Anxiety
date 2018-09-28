@@ -20,13 +20,14 @@ firebase.auth().onAuthStateChanged(function (user) {
         name = user.displayName;
         FIREBASE_DATABASE.ref("communities/" + chat).once('value').then(function (snapshot) {
             pm = snapshot.val().m;
+            m = snapshot.val().m;
             
-            for (var i = 0; i <= pm.lenght; i++) {
+            for (var i = 0; i <= pm.length; i++) {
                 console.log('hi');
                 var pc = document.createElement('div');
                 pc.classList.add('bot');
                 pc.textContent = pm[i];
-                chatbox.appendChild(chat);
+                chatbox.appendChild(pc);
                 console.log(pm);
             }
         });
