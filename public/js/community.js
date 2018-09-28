@@ -294,7 +294,7 @@ function displayCommInSearchMain(community){
                   }
               });
       let div = document.createElement('div');
-      let domString = `<a href = "#" onclick="chat()"><div class="searchResult">
+      let domString = `<a href = "messages.html" onclick="chat()"><div class="searchResult">
       <div class ="searchResulth5" >${community.name}</div>
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
       <div id ="modalSearchParagraph">
