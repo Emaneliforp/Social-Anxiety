@@ -128,56 +128,57 @@ logoutBtn.addEventListener("click", function(){
   // window.location.href="index.html";
 });
 var currentSkill = [];
-let userId = "";
-let grade = "";
-let name = "";
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     console.log(user);
 
     userId = FIREBASE_AUTH.currentUser.uid;
-    FIREBASE_DATABASE.ref('/users/' + userId).once('value').then(function (snapshot) {
-      currentSkill = snapshot.val().currentSkill;
-      grade = snapshot.val().grade;
-      name = snapshot.val().name;
-      console.log(currentSkill);
+    FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").on('child_added', function(snapshot, prevChildKey) {
+      var snapshot =  snapshot.val().currentSkill;
+      if (snapshot){
+        currentSkill = snapshot;
+        console.log("logged")
+      }
     });
-
-
   } else {
     window.location.href = "index.html";
   }
+  console.log(currentSkill);
+
 });
 
 function sppcs() {
   currentSkill.push("spp");
-  console.log(currentSkill);
-  FIREBASE_DATABASE.ref('/users/' + userId).set({
-    currentSkill: currentSkill,
-    grade: grade,
-    name: name
-  });
+  FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").set(currentSkill);
 }
 function shwcs() {
   currentSkill.push("shw");
-  console.log(currentSkill);
-  FIREBASE_DATABASE.ref('/users/' + userId).set({
-    currentSkill: currentSkill
-  });
+  FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").set(currentSkill);
 }
 
 let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
+//
+// for (var i = 0; i <= currentSkill[0].length; i++) {
+//   if (currentSkill[0][i] === "spp") {
+//     rsp.style.display = "block";
+//   }
+//   if (currentSkill[0][i] === "rshw") {
+//     rshw.style.display = "block";
+//   }
+// }
 
-for (var i = 0; i <= currentSkill[0].length; i++) {
-    if (currentSkill[0][i] === "spp") {
-        rsp.style.display = "block";
-    }
-    if (currentSkill[0][i] === "rshw") {
-        rshw.style.display = "block";
-    }
-}
+//put skills u practiced onto homepg
+
+FIREBASE_AUTH.onAuthStateChanged(function(user) {
+  if (user) {
+    currentSkillArr=[];
+
+  } else {
+
+  }
+});
 
 //get database info
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
@@ -233,13 +234,14 @@ setTimeout(function(){
 
   //goes through html elements and attaches event listeners
   for (let i = 0; i < communitiesArr.length; i++) {
+    cModalArr[i].addEventListener("click", function(){
+      cModalArr[i].style.display="none";
+    });
     communitiesArr[i].addEventListener("click", function(){
-      console.log(cModalArr[i])
       cModalArr[i].style.display = "block";
     });
     console.log(closeArr[i]);
     closeArr[i].addEventListener("click", function(){
-      console.log(closeArr[i])
       cModalArr[i].style.display = "none";
     });
   }

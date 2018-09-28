@@ -15,7 +15,7 @@ window.onload = function(){
     let signtEmail = document.getElementById("signemail_field").value;
     let signtPassword = document.getElementById("signpassword_field").value;
     let signtRePassword = document.getElementById("signrepassword_field").value;
-    let currentSKill = ['hi'];
+
 
     let signUpButton = document.getElementById("signUpBtn");
     let loginButton =document.getElementById("loginBtn");
@@ -31,14 +31,15 @@ window.onload = function(){
       const USERACC = {
         name: document.getElementById("signname_field").value,
         grade: document.getElementById("signgrade_field").value,
-        currentSkill: currentSKill
+
       };
       //create account and add to database
       if (signtPassword.value == signtRePassword.value){
         const promise = FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function(user) {
-          firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+              console.log(document.getElementById("signusername_field").value);
               var usser = firebase.auth().currentUser;
+              let userId = usser.uid;
               usser.updateProfile({
                 displayName: document.getElementById("signusername_field").value
               }).then(function() {
@@ -48,8 +49,8 @@ window.onload = function(){
                 // An error happened.
                 console.log("Error");
               });
-              console.log(usser);
-              let userId = FIREBASE_AUTH.currentUser.uid;
+              console.log(user);
+
               //pushes user account into database
               FIREBASE_DATABASE.ref('users/'+ userId).set(USERACC).then(
                 function() {
@@ -60,13 +61,12 @@ window.onload = function(){
               } else {
                 // No user is signed in.
               }
-            });
 
           });
           //catches errors
           promise.catch(e => alert(e.message));
           promise.then(function(v) {
-            window.location.href = "homepg.html";
+            // window.location.href = "homepg.html";
             var user = firebase.auth().currentUser;
             console.log(user);
           });
