@@ -15,23 +15,23 @@ let nm = "";
 
 let chatbox = document.getElementById('chatbox');
 
-const lm = FIREBASE_DATABASE.ref("communities/" + chat).child('m');
+const lm = FIREBASE_DATABASE.ref("communities/" + chat + '/chat').child('m');
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);
         name = user.displayName;
-        FIREBASE_DATABASE.ref("communities/" + chat).once('value').then(function (snapshot) {
-            pm = snapshot.val().m;
+        FIREBASE_DATABASE.ref("communities/" + chat +'/chat').once('value').then(function (snapshot) {
+            /*pm = snapshot.val().m;*/
             m = snapshot.val().m;
             
-            for (var i = 0; i < pm.length; i++) {
+            /*for (var i = 0; i < pm.length; i++) {
                 var pc = document.createElement('div');
                 pc.classList.add('bot');
                 pc.textContent = pm[i];
                 chatbox.appendChild(pc);
                 console.log(pm);
-            }
+            }*/
         });
         enterMessage.addEventListener("keyup", function (event) {
             event.preventDefault();
@@ -40,7 +40,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                 mess = document.getElementById("enterMessage").value;
                 m.push(name + ':' + mess);
                 console.log(m);
-                FIREBASE_DATABASE.ref('communities/' + chat).set({
+                FIREBASE_DATABASE.ref('communities/' + chat + '/chat').set({
                     m
                 });
                 enterMessage.value = "";

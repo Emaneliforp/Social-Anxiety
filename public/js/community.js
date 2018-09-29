@@ -149,7 +149,7 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     var username;
     var id;
       var commName = nameField.value;
-      var m = ["Skit: Hi"];
+      var m = ["Skit: Hi", "Welcome"];
     
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
@@ -160,11 +160,9 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
           name: commName,
           creator: FIREBASE_AUTH.currentUser.displayName,
           desc: descField.value,
+          chat: m
         }
           FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
-          FIREBASE_DATABASE.ref('communities/' + commName).set({
-              m
-          });
         const USERACC={
           username: username,
           permission: "owner"
