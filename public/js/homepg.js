@@ -119,41 +119,63 @@ logoutBtn.addEventListener("click", function(){
   firebase.auth().signOut()
   .then(function() {
     console.log("user signed out")
+    window.location.href("index.html");
   })
   .catch(function(error) {
     // An error happened
   });
 
   console.log(user);
-  // window.location.href="index.html";
+  window.location.href="index.html";
 });
-var currentSkill = [];
-firebase.auth().onAuthStateChanged(function(user) {
+var currentSkill =[];
+var userId;
+FIREBASE_AUTH.onAuthStateChanged(function(user) {
   if (user) {
-    console.log(user);
-
+    console.log(user)
     userId = FIREBASE_AUTH.currentUser.uid;
-    FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").on('child_added', function(snapshot, prevChildKey) {
-      var snapshot =  snapshot.val().currentSkill;
-      if (snapshot){
-        currentSkill = snapshot;
-        console.log("logged")
-      }
+    console.log(userId)
+    FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").on('child_added', function(snapshot, prevChildKey) {
+      displaySkills(snapshot.val(),userId);
     });
-  } else {
-    window.location.href = "index.html";
   }
-  console.log(currentSkill);
-
 });
+FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").on('value', function(snapshot) {
+    console.log(snapshotToArray(snapshot));
+});
+function snapshotToArray(snapshot) {
+    var returnArr = [];
 
+    snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.val();
+        item.key = childSnapshot.key;
+        console.log(item)
+        returnArr.push(item);
+    });
+
+    return returnArr;
+};
+
+function displaySkills(skill,userId){
+  // console.log("hi")
+  // if (skill){
+  //   currentSkill = skill;
+  //   console.log(currentSkill)
+  // }
+  // else{
+  //   console.log("nothing")
+  // }
+}
 function sppcs() {
   currentSkill.push("spp");
-  FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").set(currentSkill);
+  console.log(currentSkill)
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
+
 }
 function shwcs() {
   currentSkill.push("shw");
-  FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").set(currentSkill);
+  console.log(currentSkill)
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
 }
 
 let rsp = document.getElementById("rsp");
@@ -171,14 +193,7 @@ let rsd = document.getElementById("rsd");
 
 //put skills u practiced onto homepg
 
-FIREBASE_AUTH.onAuthStateChanged(function(user) {
-  if (user) {
-    currentSkillArr=[];
 
-  } else {
-
-  }
-});
 
 //get database info
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
