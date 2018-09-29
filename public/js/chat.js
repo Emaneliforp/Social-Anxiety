@@ -11,8 +11,11 @@ let x = 0;
 let pm = [];
 let rmess = {};
 var botc = document.createElement('div');
+let nm = "";
 
 let chatbox = document.getElementById('chatbox');
+
+const lm = FIREBASE_DATABASE.ref("communities/" + chat).child('m');
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -22,8 +25,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             pm = snapshot.val().m;
             m = snapshot.val().m;
             
-            for (var i = 0; i <= pm.length; i++) {
-                console.log('hi');
+            for (var i = 0; i < pm.length; i++) {
                 var pc = document.createElement('div');
                 pc.classList.add('bot');
                 pc.textContent = pm[i];
@@ -43,6 +45,14 @@ firebase.auth().onAuthStateChanged(function (user) {
                 });
                 enterMessage.value = "";
             }
+        });
+        lm.on('child_added', snap => {
+            nm = snap.val();
+            var pc = document.createElement('div');
+            pc.classList.add('bot');
+            pc.textContent = nm;
+            chatbox.appendChild(pc);
+            console.log(nm);
         });
 
     } else {

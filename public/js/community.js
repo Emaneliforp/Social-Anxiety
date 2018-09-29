@@ -133,7 +133,7 @@ nameField.onkeyup = function () {
   }
   item.innerHTML = "Characters left: " + (charRemain);
 };
-
+var m = ["Hi! This is Skit, welcome to the community"];
 document.getElementById("createCommBtn").addEventListener("click",function(){
   //check for character limit
   if (!charCountSendName || !charCountSendDesc)
@@ -148,7 +148,9 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     //retrieve username of current user
     var username;
     var id;
-    var commName = nameField.value;
+      var commName = nameField.value;
+      var m = ["Skit: Hi"];
+    
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
         console.log(user);
@@ -157,9 +159,12 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
         const COMMUNITY = {
           name: commName,
           creator: FIREBASE_AUTH.currentUser.displayName,
-          desc: descField.value
+          desc: descField.value,
         }
-        FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+          FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+          FIREBASE_DATABASE.ref('communities/' + commName).set({
+              m
+          });
         const USERACC={
           username: username,
           permission: "owner"
@@ -294,13 +299,13 @@ function displayCommInSearchMain(community){
                   }
               });
       let div = document.createElement('div');
-      let domString = `<a href = "messages.html" onclick="chat()"><div class="searchResult">
+          let domString = `<div class="searchResult" onclick="chat()">
       <div class ="searchResulth5" >${community.name}</div>
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
       <div id ="modalSearchParagraph">
       ${community.desc}
       </div>
-      </div></a>`;
+      </div>`;
       div.innerHTML = domString;
 
       let communityDiv = div.firstChild;
@@ -339,6 +344,7 @@ function chat() {
         title[i].addEventListener("click", function () {
             chatn = title[i].innerHTML;
             window.localStorage.setItem('chat', chatn);
+            window.location.href = "messages.html";
         });
 
     }
