@@ -133,7 +133,7 @@ nameField.onkeyup = function () {
   }
   item.innerHTML = "Characters left: " + (charRemain);
 };
-
+var m = ["Hi! This is Skit, welcome to the community"];
 document.getElementById("createCommBtn").addEventListener("click",function(){
   //check for character limit
   if (!charCountSendName || !charCountSendDesc)
@@ -148,7 +148,9 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     //retrieve username of current user
     var username;
     var id;
-    var commName = nameField.value;
+      var commName = nameField.value;
+      var m = ["Skit: Hi", "Welcome"];
+    
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
         console.log(user);
@@ -157,9 +159,10 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
         const COMMUNITY = {
           name: commName,
           creator: FIREBASE_AUTH.currentUser.displayName,
-          desc: descField.value
+          desc: descField.value,
+          chat: m
         }
-        FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+          FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
         const USERACC={
           username: username,
           permission: "owner"
@@ -223,7 +226,8 @@ setTimeout(function(){
           FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+title).set(aaa);
           console.log("user inputted");
         } else {
-          console.log("error")
+            console.log("error");
+            window.location.href = "index.html";
         }
       });
 
@@ -282,23 +286,24 @@ function displayCommInSearch(community){
 function displayCommInSearchMain(community){
   var searchResults=[];
   FIREBASE_AUTH.onAuthStateChanged(function(user) {
-  if (user) {
+      if (user) {
+
       //gets the names of the communities that user is in
-      FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").once('value') //using once b/c we are taking a snapshot once daily
-      .then((snapshot) => {
-        let val = snapshot.val();
-        for (let key in val) {
-          searchResults.push(key);
-        }
-      })
+          FIREBASE_DATABASE.ref("users/" + user.uid + "/communities").once('value') //using once b/c we are taking a snapshot once daily
+              .then((snapshot) => {
+                  let val = snapshot.val();
+                  for (let key in val) {
+                      searchResults.push(key);
+                  }
+              });
       let div = document.createElement('div');
-      let domString = `<a href = "messages.html"><div class="searchResult">
-      <div class ="searchResulth5">${community.name}</div>
+          let domString = `<div class="searchResult" onclick="chat()">
+      <div class ="searchResulth5" >${community.name}</div>
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
       <div id ="modalSearchParagraph">
       ${community.desc}
       </div>
-      </div></a>`;
+      </div>`;
       div.innerHTML = domString;
 
       let communityDiv = div.firstChild;
@@ -310,6 +315,7 @@ function displayCommInSearchMain(community){
   }
 });
 }
+
 function searchAllComm(){
   // Declare variables
   var input, filter, i, searchResults;
@@ -328,26 +334,16 @@ function searchAllComm(){
     }
   }
 }
-let enterMessage = document.getElementById("enterMessage");
-let token = [];
-let x = 0;
-FIREBASE_AUTH.onAuthStateChanged(function (user) {
-    if (user) {
-        
 
-        let name = user.displayName;
-        
-        
-        enterMessage.addEventListener("keyup", function (event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                console.log(enterMessage.value);
-                mess = document.getElementById("enterMessage").value;
-                token = [name, mess];
-                FIREBASE_DATABASE.ref('/communities/testing/chat/' + x).set({
-                    token: token
-                });
-            }
+var title = document.getElementsByClassName("searchResulth5");
+var chatn = "";
+function chat() {
+    for (let i = 0; i < title.length; i++) {
+        title[i].addEventListener("click", function () {
+            chatn = title[i].innerHTML;
+            window.localStorage.setItem('chat', chatn);
+            window.location.href = "messages.html";
         });
+
     }
-});
+}

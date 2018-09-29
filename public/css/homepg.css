@@ -1,3 +1,5 @@
+
+
 /* blue: #07cdb2; red: #f5324a; yellow: #fab50f; white*/
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
@@ -26,6 +28,8 @@ body {
   margin: 0vw;
   background-color: #07cdb2;
   outline: none;
+  font-family: CenturyGothic, Helvetica, sans-serif;
+
   height: 100%;
 }
 .main{
@@ -81,9 +85,12 @@ body {
 .section {
   font-family: "Century Gothic";
   color: #fff;
-  font-size: 3vw;
+  font-size: 2vw;
   margin-top: 1vh;
   margin-bottom: 0;
+}
+.section p{
+  margin-left: 2em;
 }
 .communities {
   display: flex;
@@ -372,17 +379,35 @@ i {
   border-radius: 0.5vw;
 }
 .opc {
-  background-color: #fa8072;
+  background-color: #f5324a;
   width: 5.5vw;
   margin-left: 16vw;
   padding: 0.5vw;
   border-radius: 0.5vw;
   text-align: center;
 }
+
+.opc:hover{
+  background-color: #07cdb2;
+  transition: all ease 0.2s;
+}
+
+.sidebar button{
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  font-size: 1.5vw;
+  padding: 1vw;
+  margin-left: 50vw;
+  background-color: #fab50f;
+  text-decoration: none;
+  color: white;
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 1vw;
+}
+
 .opc a {
   text-decoration: none;
   color: white;
-  font-family: CenturyGothic, Helvetica, sans-serif;
   font-size: 1.2vw;
 }
 .searchSkill {
