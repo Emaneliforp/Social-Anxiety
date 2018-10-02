@@ -5,6 +5,9 @@ const FIREBASE_AUTH = firebase.auth();
 let enterMessage = document.getElementById("enterMessage");
 let chat = window.localStorage.getItem('chat');
 
+let title = document.getElementById('title');
+title.textContent = chat;
+
 let name = "";
 let m = [];
 let x = 0;
@@ -23,7 +26,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         name = user.displayName;
         FIREBASE_DATABASE.ref("communities/" + chat +'/chat').once('value').then(function (snapshot) {
             /*pm = snapshot.val().m;*/
-            m = snapshot.val().m;
+            m = snapshot.val();
             
             /*for (var i = 0; i < pm.length; i++) {
                 var pc = document.createElement('div');

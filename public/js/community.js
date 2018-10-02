@@ -149,7 +149,7 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     var username;
     var id;
       var commName = nameField.value;
-      var m = ["Skit: Hi", "Welcome"];
+      var m = ["Welcome to the community"];
     
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
