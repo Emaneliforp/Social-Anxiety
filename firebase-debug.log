@@ -61,3 +61,35 @@
 [info] i  hosting[social-anxiety]: Serving hosting files from: public
 [info] +  hosting[social-anxiety]: Local server: http://localhost:5000
 >>>>>>> e053e52785939b0d01aff5495ea4244454c6206b
+[debug] [2018-10-02T23:06:02.340Z] ----------------------------------------------------------------------
+[debug] [2018-10-02T23:06:02.344Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kcper\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-02T23:06:02.344Z] CLI Version:   4.1.0
+[debug] [2018-10-02T23:06:02.344Z] Platform:      win32
+[debug] [2018-10-02T23:06:02.344Z] Node Version:  v8.11.3
+[debug] [2018-10-02T23:06:02.345Z] Time:          Tue Oct 02 2018 16:06:02 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-02T23:06:02.345Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-02T23:06:02.366Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-02T23:06:02.367Z] > authorizing via signed-in user
+[debug] [2018-10-02T23:06:02.369Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-02T23:06:02.369Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-02T23:06:02.593Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T23:06:02.611Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T23:06:02.994Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T23:06:02.995Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/social-anxiety/tokens  
+ 
+[debug] [2018-10-02T23:06:03.401Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T23:06:03.404Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T23:06:03.812Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\kcper\Desktop\CAC\Social-Anxiety'...
+[info] 
+[debug] [2018-10-02T23:06:03.818Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-02T23:06:04.221Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
