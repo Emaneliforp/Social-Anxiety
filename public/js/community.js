@@ -203,9 +203,10 @@ setTimeout(function(){
 
   //loop through all and attach event listeners
   for (let i = 0; i < plusBtnArr.length; i++) {
+
     plusBtnArr[i].addEventListener("click", function(){
       //get title of community clicked
-
+      console.log(i)
       let title=(plusBtnArr[i].parentElement.getElementsByTagName("div")[0].innerHTML);
       let author =(plusBtnArr[i].parentElement.getElementsByTagName("div")[1].innerHTML);
       author = author.slice(12);
