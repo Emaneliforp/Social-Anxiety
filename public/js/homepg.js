@@ -119,41 +119,41 @@ logoutBtn.addEventListener("click", function(){
   firebase.auth().signOut()
   .then(function() {
     console.log("user signed out")
+    window.location.href("index.html");
   })
   .catch(function(error) {
     // An error happened
   });
 
   console.log(user);
-  // window.location.href="index.html";
+  window.location.href="index.html";
 });
-var currentSkill = [];
-firebase.auth().onAuthStateChanged(function(user) {
+var currentSkill =[];
+var userId;
+FIREBASE_AUTH.onAuthStateChanged(function(user) {
   if (user) {
-    console.log(user);
-
+    console.log(user)
     userId = FIREBASE_AUTH.currentUser.uid;
-    FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").on('child_added', function(snapshot, prevChildKey) {
-      var snapshot =  snapshot.val().currentSkill;
-      if (snapshot){
-        currentSkill = snapshot;
-        console.log("logged")
-      }
-    });
-  } else {
-    window.location.href = "index.html";
-  }
-  console.log(currentSkill);
+    console.log(userId)
+    FIREBASE_DATABASE.ref('/users/'+userId).on('child_added', function(snapshot, prevChildKey) {
+      currentSkill= snapshot.val();
 
+      console.log(currentSkill)
+    });
+  }
 });
+
 
 function sppcs() {
   currentSkill.push("spp");
-  FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").set(currentSkill);
+  console.log(currentSkill)
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
+
 }
 function shwcs() {
   currentSkill.push("shw");
-  FIREBASE_DATABASE.ref('/users/' + userId+"/currentSkill").set(currentSkill);
+  console.log(currentSkill)
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
 }
 
 let rsp = document.getElementById("rsp");
@@ -171,14 +171,7 @@ let rsd = document.getElementById("rsd");
 
 //put skills u practiced onto homepg
 
-FIREBASE_AUTH.onAuthStateChanged(function(user) {
-  if (user) {
-    currentSkillArr=[];
 
-  } else {
-
-  }
-});
 
 //get database info
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
@@ -192,35 +185,43 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
 });
 
 function showComm(community){
-  //create communities tab using data from database
-  let div = document.createElement('div');
-  let domString = `<div class ="comicon">${community.name}</div>`;
-  div.innerHTML = domString;
+  var msg = document.getElementById("test");
 
-  let communityDiv = div.firstChild;
-  var communityDivArea =document.getElementsByClassName("communities")[0];
-  communityDivArea.appendChild(communityDiv);
-  let div2=document.createElement("div");
-  let domString2= `<div class ="cmodal">
-  <div class ="practice">
-  <div class = "nav"><i class="closeC"></i></div>
-  <div class ="info">
-  <div class="title">
-  ${community.name}
-  </div>
-  <div class ="descrp">
-  ${community.desc}
-  </div>
-  <div class="opc">
-  <a href="#">Enter</a>
-  </div>
-  </div>
-  </div>
-  </div>"`
-  div2.innerHTML = domString2;
-  let communityDivModal = div2.firstChild;
-  let communityDivModalArea = document.getElementsByTagName("body")[0];
-  communityDivModalArea.appendChild(communityDivModal);
+  //create communities tab using data from database
+  if (community){
+    test.style.display="none"
+    let div = document.createElement('div');
+    let domString = `<div class ="comicon">${community.name}</div>`;
+    div.innerHTML = domString;
+
+    let communityDiv = div.firstChild;
+    var communityDivArea =document.getElementsByClassName("communities")[0];
+    communityDivArea.appendChild(communityDiv);
+    let div2=document.createElement("div");
+    let domString2= `<div class ="cmodal">
+    <div class ="practice">
+    <div class = "nav"><i class="closeC"></i></div>
+    <div class ="info">
+    <div class="title">
+    ${community.name}
+    </div>
+    <div class ="descrp">
+    ${community.desc}
+    </div>
+    <div class="opc">
+    <a href="#">Enter</a>
+    </div>
+    </div>
+    </div>
+    </div>"`
+    div2.innerHTML = domString2;
+    let communityDivModal = div2.firstChild;
+    let communityDivModalArea = document.getElementsByTagName("body")[0];
+    communityDivModalArea.appendChild(communityDivModal);
+  }
+  else{
+    test.style.display="block"
+  }
 }
 
 //for communities tab

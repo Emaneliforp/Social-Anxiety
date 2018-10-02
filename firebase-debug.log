@@ -1,0 +1,63 @@
+<<<<<<< HEAD
+[debug] [2018-09-29T18:39:19.134Z] ----------------------------------------------------------------------
+[debug] [2018-09-29T18:39:19.139Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kietc\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-29T18:39:19.140Z] CLI Version:   4.0.3
+[debug] [2018-09-29T18:39:19.140Z] Platform:      win32
+[debug] [2018-09-29T18:39:19.140Z] Node Version:  v10.8.0
+[debug] [2018-09-29T18:39:19.143Z] Time:          Sat Sep 29 2018 11:39:19 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-09-29T18:39:19.143Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-29T18:39:19.166Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-29T18:39:19.167Z] > authorizing via signed-in user
+[debug] [2018-09-29T18:39:19.171Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+  
+ Sat Sep 29 2018 11:39:19 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-09-29T18:39:19.859Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T18:39:19.860Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/social-anxiety/tokens  
+  
+ Sat Sep 29 2018 11:39:19 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-09-29T18:39:20.283Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T18:39:20.286Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+  
+ Sat Sep 29 2018 11:39:20 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-09-29T18:39:21.384Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\kietc\Desktop\Social-Anxiety'...
+[info] 
+[debug] [2018-09-29T18:39:21.400Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+  
+ Sat Sep 29 2018 11:39:21 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-09-29T18:39:22.203Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
+=======
+[debug] [2018-10-01T02:53:02.463Z] ----------------------------------------------------------------------
+[debug] [2018-10-01T02:53:02.465Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\music\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-01T02:53:02.466Z] CLI Version:   4.2.1
+[debug] [2018-10-01T02:53:02.466Z] Platform:      win32
+[debug] [2018-10-01T02:53:02.466Z] Node Version:  v8.9.4
+[debug] [2018-10-01T02:53:02.467Z] Time:          Sun Sep 30 2018 19:53:02 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-01T02:53:02.467Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-01T02:53:02.495Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-01T02:53:02.496Z] > authorizing via signed-in user
+[debug] [2018-10-01T02:53:02.498Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-01T02:53:02.498Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-01T02:53:02.896Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T02:53:02.905Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-01T02:53:03.814Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-01T02:53:03.818Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-01T02:53:04.359Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\music\social anxiety\Social-Anxiety'...
+[info] 
+[debug] [2018-10-01T02:53:04.367Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-01T02:53:04.918Z] <<< HTTP RESPONSE 200
+[info] i  hosting[social-anxiety]: Serving hosting files from: public
+[info] +  hosting[social-anxiety]: Local server: http://localhost:5000
+>>>>>>> e053e52785939b0d01aff5495ea4244454c6206b
