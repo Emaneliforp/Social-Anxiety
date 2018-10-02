@@ -148,9 +148,9 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     //retrieve username of current user
     var username;
     var id;
-      var commName = nameField.value;
-      var m = ["Welcome to the community"];
-    
+    var commName = nameField.value;
+    var m = ["Skit: Hi", "Welcome"];
+
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
         console.log(user);
@@ -162,13 +162,15 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
           desc: descField.value,
           chat: m
         }
-          FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+        FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
         const USERACC={
           username: username,
           permission: "owner"
         }
         const aaa={
-          communityName: commName,
+          name: commName,
+          creator: username,
+          desc: descField.value,
           permission: "owner"
         }
         FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
@@ -201,9 +203,10 @@ setTimeout(function(){
 
   //loop through all and attach event listeners
   for (let i = 0; i < plusBtnArr.length; i++) {
+
     plusBtnArr[i].addEventListener("click", function(){
       //get title of community clicked
-
+      console.log(i)
       let title=(plusBtnArr[i].parentElement.getElementsByTagName("div")[0].innerHTML);
       let author =(plusBtnArr[i].parentElement.getElementsByTagName("div")[1].innerHTML);
       author = author.slice(12);
@@ -226,8 +229,8 @@ setTimeout(function(){
           FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+title).set(aaa);
           console.log("user inputted");
         } else {
-            console.log("error");
-            window.location.href = "index.html";
+          console.log("error");
+          window.location.href = "index.html";
         }
       });
 
@@ -286,18 +289,9 @@ function displayCommInSearch(community){
 function displayCommInSearchMain(community){
   var searchResults=[];
   FIREBASE_AUTH.onAuthStateChanged(function(user) {
-      if (user) {
-
-      //gets the names of the communities that user is in
-          FIREBASE_DATABASE.ref("users/" + user.uid + "/communities").once('value') //using once b/c we are taking a snapshot once daily
-              .then((snapshot) => {
-                  let val = snapshot.val();
-                  for (let key in val) {
-                      searchResults.push(key);
-                  }
-              });
+    if (user) {
       let div = document.createElement('div');
-          let domString = `<div class="searchResult" onclick="chat()">
+      let domString = `<div class="searchResult" onclick="chat()">
       <div class ="searchResulth5" >${community.name}</div>
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
       <div id ="modalSearchParagraph">
@@ -309,11 +303,11 @@ function displayCommInSearchMain(community){
       let communityDiv = div.firstChild;
       var modalSearchDiv =document.getElementById("searchResultArea");
       modalSearchDiv.appendChild(communityDiv);
-
-  } else {
-    console.log("perish");
-  }
-});
+      console.log(community)
+    } else {
+      console.log("perish");
+    }
+  });
 }
 
 function searchAllComm(){
@@ -338,12 +332,12 @@ function searchAllComm(){
 var title = document.getElementsByClassName("searchResulth5");
 var chatn = "";
 function chat() {
-    for (let i = 0; i < title.length; i++) {
-        title[i].addEventListener("click", function () {
-            chatn = title[i].innerHTML;
-            window.localStorage.setItem('chat', chatn);
-            window.location.href = "messages.html";
-        });
+  for (let i = 0; i < title.length; i++) {
+    title[i].addEventListener("click", function () {
+      chatn = title[i].innerHTML;
+      window.localStorage.setItem('chat', chatn);
+      window.location.href = "messages.html";
+    });
 
-    }
+  }
 }
