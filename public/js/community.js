@@ -28,7 +28,7 @@ var use = [];
 var createModal = document.getElementById("myModalCreate");
 var searchModal = document.getElementById("myModalSearch");
 var successModal = document.getElementById("myModalSuccess");
-
+var joinModal = document.getElementById("myModalJoin");
 // Get the button that opens the modal
 var createBtn = document.getElementById("createComm");
 var searchBtn = document.getElementById("joinNewComm")
@@ -36,6 +36,7 @@ var searchBtn = document.getElementById("joinNewComm")
 var createSpan = document.getElementById("createClose");
 var searchSpan = document.getElementById("searchClose");
 var successSpan = document.getElementById("successClose");
+var joinSpan = document.getElementById("joinClose");
 
 // When the user clicks on the button, open the modal
 createBtn.onclick = function() {
@@ -50,16 +51,25 @@ createSpan.onclick = function() {
   createModal.style.display = "none";
   searchModal.style.display="none";
   successModal.style.display="none";
+  joinModal.style.display="none"
 }
 searchSpan.onclick = function() {
   createModal.style.display = "none";
   searchModal.style.display="none";
   successModal.style.display="none";
+  joinModal.style.display="none"
 }
 successSpan.onclick=function(){
   createModal.style.display = "none";
   searchModal.style.display="none";
   successModal.style.display="none";
+  joinModal.style.display="none"
+}
+joinSpan.onclick=function(){
+  createModal.style.display = "none";
+  searchModal.style.display="none";
+  successModal.style.display="none";
+  joinModal.style.display="none"
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -68,7 +78,7 @@ window.onclick = function(event) {
     createModal.style.display = "none";
     searchModal.style.display = "none";
     successModal.style.display = "none";
-
+    joinModal.style.display="none"
   }
 }
 
@@ -77,6 +87,7 @@ window.onclick = function(event) {
     createModal.style.display = "none";
     searchModal.style.display = "none";
     successModal.style.display = "none";
+    joinModal.style.display="none"
   }
 }
 window.onclick = function(event) {
@@ -84,9 +95,17 @@ window.onclick = function(event) {
     createModal.style.display = "none";
     searchModal.style.display = "none";
     successModal.style.display = "none";
+    joinModal.style.display="none"
   }
 }
-
+window.onclick = function(event) {
+  if (event.target == joinModal) {
+    createModal.style.display = "none";
+    searchModal.style.display = "none";
+    successModal.style.display = "none";
+    joinModal.style.display="none"
+  }
+}
 //character count
 var charCountSendName=true;
 var nameField=document.getElementById("commName");
@@ -243,6 +262,8 @@ setTimeout(function(){
           FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.uid).set(USERACC);
           FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+title).set(aaa);
           console.log("user inputted");
+          joinModal.style.display="block"
+          searchModal.style.display="none"
         } else {
           console.log("error");
           window.location.href = "index.html";
@@ -302,7 +323,6 @@ function displayCommInSearch(community){
 
 
 function displayCommInSearchMain(community){
-  var searchResults=[];
   FIREBASE_AUTH.onAuthStateChanged(function(user) {
     if (user) {
       let div = document.createElement('div');

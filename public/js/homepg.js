@@ -58,7 +58,7 @@ function carousel() {
 }
 //search control
 function spm() {
-  spmo.style.display = 'block';
+  sppmo.style.display = 'block';
 }
 function shwm() {
   shwmo.style.display = 'block';
@@ -72,9 +72,11 @@ let sp = document.getElementById('sp');
 let shw = document.getElementById('shw');
 let sd = document.getElementById('sd');
 
-let spclose = document.getElementById('spclose');
-let shwclose = document.getElementById('shwclose');
-let sdclose = document.getElementById('sdclose');
+let sppmo=document.getElementById("sppmo");
+let shwmo = document.getElementById("shwmo")
+
+
+let close = document.getElementsByClassName("close");
 
 //add skill
 let addSkill = document.getElementById("addSkill");
@@ -88,6 +90,17 @@ searchmoc.addEventListener('click', function () {
   searchmo.style.display = "none";
 });
 
+//close out of modals
+setTimeout(function(){
+for (let i=0;i<close.length;i++){
+  console.log(i);
+  close[i].addEventListener("click", function(){
+    shwmo.style.display="none";
+    sppmo.style.display="none";
+  })
+
+}
+},2000)
 function search() {
   // Declare variables
   var input, filter, i, searchResults;
@@ -128,6 +141,7 @@ logoutBtn.addEventListener("click", function(){
   console.log(user);
   window.location.href="index.html";
 });
+
 var currentSkill =[];
 var userId;
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
@@ -135,31 +149,83 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
     console.log(user)
     userId = FIREBASE_AUTH.currentUser.uid;
     console.log(userId)
-    FIREBASE_DATABASE.ref('/users/'+userId).on('child_added', function(snapshot, prevChildKey) {
-      currentSkill= snapshot.val();
+    FIREBASE_DATABASE.ref("users/"+userId+"/currentSkill").on('child_added', function(snapshot, prevChildKey) {
+      if(snapshot){
+        callThis();
+        displaySkillsInBox(snapshot.val());
 
-      console.log(currentSkill)
+      }
+      else {
+        console.log("nothing")
+      }
     });
   }
 });
 
+function callThis(){
+  FIREBASE_DATABASE.ref("users/"+userId+"/currentSkill").once("value")
+  .then(function(snapshot) {
+    currentSkill=(snapshot.val())
+    console.log(currentSkill)
+  });
+}
+
 
 function sppcs() {
-  currentSkill.push("spp");
-  console.log(currentSkill)
-  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
+  var spp ={
+    name:"spp",
+    type:"party"
+  }
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/spp").set(spp)
 
 }
 function shwcs() {
-  currentSkill.push("shw");
-  console.log(currentSkill)
-  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
+  var shw ={
+    name:"shw",
+    type:"homework"
+  }
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/shw").set(shw)
 }
+
+
+function displaySkillsInBox(snapshot){
+  FIREBASE_AUTH.onAuthStateChanged(function(user) {
+    if (user) {
+
+      let div = document.createElement('div');
+      console.log(snapshot)
+      console.log(snapshot.type)
+      let domString = `<div class="skilliconaa">${snapshot.name}</div>`
+      div.innerHTML = domString;
+      let skillDiv = div.firstChild;
+      console.log(skillDiv)
+      var searchBoxDiv =document.getElementById("recentskill");
+      console.log(searchBoxDiv)
+      searchBoxDiv.appendChild(skillDiv);
+    }
+  });
+}
+setTimeout(function(){
+var skillList = document.getElementsByClassName("skilliconaa");
+console.log(skillList.length)
+for (let i = 0; i < skillList.length; i++) {
+  skillList[i].addEventListener("click", function(){
+    var skillName = skillList[i].innerHTML
+    if (skillName==="spp"){
+      sppmo.style.display="block";
+    }
+    else if (skillName==="shw"){
+      shwmo.style.display="block";
+
+    }
+  })
+}
+},2000)
 
 let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
-//
+// setTimeout(function(){
 // for (var i = 0; i <= currentSkill[0].length; i++) {
 //   if (currentSkill[0][i] === "spp") {
 //     rsp.style.display = "block";
@@ -168,7 +234,7 @@ let rsd = document.getElementById("rsd");
 //     rshw.style.display = "block";
 //   }
 // }
-
+// },2000)
 //put skills u practiced onto homepg
 
 
@@ -241,7 +307,6 @@ setTimeout(function(){
     communitiesArr[i].addEventListener("click", function(){
       cModalArr[i].style.display = "block";
     });
-    console.log(closeArr[i]);
     closeArr[i].addEventListener("click", function(){
       cModalArr[i].style.display = "none";
     });
