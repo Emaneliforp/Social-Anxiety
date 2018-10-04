@@ -4,6 +4,7 @@ const FIREBASE_AUTH = firebase.auth();
 
 let enterMessage = document.getElementById("enterMessage");
 let chat = window.localStorage.getItem('chat');
+let gamebar = document.getElementById('gamebar');
 
 let title = document.getElementById('title');
 title.textContent = chat;
@@ -14,11 +15,27 @@ let x = 0;
 let pm = [];
 let rmess = {};
 let nm = "";
+let un = "";
 
 let chatbox = document.getElementById('chatbox');
 
 const lm = FIREBASE_DATABASE.ref("communities/" + chat + '/chat').child('m');
+const uname = FIREBASE_DATABASE.ref("communities/" + chat + '/mem');
 
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        FIREBASE_DATABASE.ref("communities/" + chat + '/mem').once('value').then(function (snapshot) {
+            for (var z = 0; z < snapshot.val().length; z++) {
+                un = snapshot.val()[z];
+                console.log(un);
+                var chatname = document.createElement('div');
+                chatname.classList.add('chatmem');
+                chatname.textContent = un;
+                gamebar.appendChild(chatname);
+            }
+        });
+    }
+});
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);
@@ -67,7 +84,6 @@ lm.on('child_added', snap => {
     var pc = document.createElement('div');
     if (messn === name) {
         pn.classList.add('usern');
-        console.log("hi");
     } else {
         pn.classList.add('name');
     }
