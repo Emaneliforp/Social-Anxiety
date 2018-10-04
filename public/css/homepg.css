@@ -3,12 +3,12 @@
 /* blue: #07cdb2; red: #f5324a; yellow: #fab50f; white*/
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+  supported by Chrome and Opera */
 }
 
 @-webkit-keyframes animatetop {
@@ -104,7 +104,7 @@ body {
   padding-left: 1.6em;
 
 }
-.recentskill {
+#recentskill {
   display: flex;
   flex-flow: row wrap;
   background-color: #fff;
@@ -113,6 +113,7 @@ body {
   max-width: 80%;
 }
 .comicon {
+  text-align: center;
   flex: 1;
   justify-content: center;
   margin: 1vw;
@@ -131,7 +132,10 @@ body {
   background-color: #07cdb2;
   cursor: pointer;
 }
+
+
 .skillicon {
+  text-align: center;
   flex: 1;
   justify-content: center;
   margin: 1vw;
@@ -145,6 +149,27 @@ body {
   display: none;
 }
 .skillicon:hover {
+  color: white;
+  background-color: #07cdb2;
+  cursor: pointer;
+}
+.skilliconaa {
+  flex: 1;
+  justify-content: center;
+  margin: 1vw;
+  padding: 1vh;
+  max-width: 25%;
+  max-height: 25%;
+  background-color: #fab50f;
+  color: #fff;
+  border-radius: 1vh;
+  box-sizing: border-box;
+  display: inline-block;
+  transition: all 0.2s ease;
+  text-align: center;
+
+}
+.skilliconaa:hover {
   color: white;
   background-color: #07cdb2;
   cursor: pointer;

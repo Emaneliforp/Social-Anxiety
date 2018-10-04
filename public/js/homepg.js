@@ -58,7 +58,7 @@ function carousel() {
 }
 //search control
 function spm() {
-  spmo.style.display = 'block';
+  sppmo.style.display = 'block';
 }
 function shwm() {
   shwmo.style.display = 'block';
@@ -128,6 +128,7 @@ logoutBtn.addEventListener("click", function(){
   console.log(user);
   window.location.href="index.html";
 });
+
 var currentSkill =[];
 var userId;
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
@@ -135,26 +136,78 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
     console.log(user)
     userId = FIREBASE_AUTH.currentUser.uid;
     console.log(userId)
-    FIREBASE_DATABASE.ref('/users/'+userId).on('child_added', function(snapshot, prevChildKey) {
-      currentSkill= snapshot.val();
+    FIREBASE_DATABASE.ref("users/"+userId+"/currentSkill").on('child_added', function(snapshot, prevChildKey) {
+      if(snapshot){
+        callThis();
+        displaySkillsInBox(snapshot.val());
 
-      console.log(currentSkill)
+      }
+      else {
+        console.log("nothing")
+      }
     });
   }
 });
 
+function callThis(){
+  FIREBASE_DATABASE.ref("users/"+userId+"/currentSkill").once("value")
+  .then(function(snapshot) {
+    currentSkill=(snapshot.val())
+    console.log(currentSkill)
+  });
+}
+
 
 function sppcs() {
+  var spp ={
+    name:"spp",
+    type:"party"
+  }
   currentSkill.push("spp");
   console.log(currentSkill)
-  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/spp").set(spp)
 
 }
 function shwcs() {
+  var shw ={
+    name:"shw",
+    type:"homework"
+  }
   currentSkill.push("shw");
   console.log(currentSkill)
-  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill").set(currentSkill)
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/shw").set(shw)
 }
+
+
+function displaySkillsInBox(snapshot){
+  FIREBASE_AUTH.onAuthStateChanged(function(user) {
+    if (user) {
+
+      let div = document.createElement('div');
+      console.log(snapshot)
+      console.log(snapshot.type)
+      let domString = `<div class="skilliconaa">${snapshot.name}</div>`
+      div.innerHTML = domString;
+      let skillDiv = div.firstChild;
+      console.log(skillDiv)
+      var searchBoxDiv =document.getElementById("recentskill");
+      console.log(searchBoxDiv)
+      searchBoxDiv.appendChild(skillDiv);
+    }
+  });
+}
+setTimeout(function(){
+var skillList = document.getElementsByClassName("skilliconaa");
+console.log(skillList.length)
+for (let i = 0; i < skillList.length; i++) {
+  skillList[i].addEventListener("click", function(){
+    alert("hi")
+    var skillName = (skillList[i].innerHTML)+"mo";
+    console.log(skillName)
+    // skillName.style.display="block";
+  })
+}
+},2000)
 
 let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
@@ -241,7 +294,6 @@ setTimeout(function(){
     communitiesArr[i].addEventListener("click", function(){
       cModalArr[i].style.display = "block";
     });
-    console.log(closeArr[i]);
     closeArr[i].addEventListener("click", function(){
       cModalArr[i].style.display = "none";
     });

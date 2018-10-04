@@ -26,3 +26,115 @@
 [debug] [2018-10-01T02:53:04.918Z] <<< HTTP RESPONSE 200
 [info] i  hosting[social-anxiety]: Serving hosting files from: public
 [info] +  hosting[social-anxiety]: Local server: http://localhost:5000
+[debug] [2018-10-02T04:24:40.446Z] ----------------------------------------------------------------------
+[debug] [2018-10-02T04:24:40.450Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\music\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-02T04:24:40.451Z] CLI Version:   4.2.1
+[debug] [2018-10-02T04:24:40.451Z] Platform:      win32
+[debug] [2018-10-02T04:24:40.451Z] Node Version:  v8.9.4
+[debug] [2018-10-02T04:24:40.453Z] Time:          Mon Oct 01 2018 21:24:40 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-02T04:24:40.454Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-02T04:24:40.513Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-02T04:24:40.515Z] > authorizing via signed-in user
+[debug] [2018-10-02T04:24:40.525Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-02T04:24:40.526Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-02T04:24:41.080Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T04:24:41.091Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T04:24:41.782Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T04:24:41.784Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T04:24:42.461Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\music\social anxiety\Social-Anxiety'...
+[info] 
+[debug] [2018-10-02T04:24:42.470Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-02T04:24:43.062Z] <<< HTTP RESPONSE 200
+[info] i  hosting[social-anxiety]: Serving hosting files from: public
+[info] +  hosting[social-anxiety]: Local server: http://localhost:5000
+[debug] [2018-10-02T20:29:00.886Z] ----------------------------------------------------------------------
+[debug] [2018-10-02T20:29:00.893Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\music\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-02T20:29:00.893Z] CLI Version:   4.2.1
+[debug] [2018-10-02T20:29:00.893Z] Platform:      win32
+[debug] [2018-10-02T20:29:00.893Z] Node Version:  v8.9.4
+[debug] [2018-10-02T20:29:00.895Z] Time:          Tue Oct 02 2018 13:29:00 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-02T20:29:00.895Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-02T20:29:00.926Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-02T20:29:00.926Z] > authorizing via signed-in user
+[debug] [2018-10-02T20:29:00.930Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-02T20:29:00.930Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-02T20:29:01.181Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T20:29:01.199Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T20:29:01.575Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T20:29:01.575Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T20:29:02.053Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\music\social anxiety\Social-Anxiety'...
+[info] 
+[debug] [2018-10-02T20:29:02.065Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-02T20:29:02.564Z] <<< HTTP RESPONSE 200
+[info] i  hosting[social-anxiety]: Serving hosting files from: public
+[info] +  hosting[social-anxiety]: Local server: http://localhost:5000
+[debug] [2018-10-02T22:17:27.814Z] ----------------------------------------------------------------------
+[debug] [2018-10-02T22:17:27.818Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\music\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-02T22:17:27.819Z] CLI Version:   4.2.1
+[debug] [2018-10-02T22:17:27.819Z] Platform:      win32
+[debug] [2018-10-02T22:17:27.819Z] Node Version:  v8.9.4
+[debug] [2018-10-02T22:17:27.821Z] Time:          Tue Oct 02 2018 15:17:27 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-02T22:17:27.821Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-02T22:17:27.842Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-02T22:17:27.843Z] > authorizing via signed-in user
+[debug] [2018-10-02T22:17:27.845Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-02T22:17:27.845Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-02T22:17:28.219Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T22:17:28.226Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T22:17:28.578Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-02T22:17:28.579Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-02T22:17:29.051Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\music\social anxiety\Social-Anxiety'...
+[info] 
+[debug] [2018-10-02T22:17:29.056Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-02T22:17:29.303Z] <<< HTTP RESPONSE 200
+[info] i  hosting[social-anxiety]: Serving hosting files from: public
+[info] +  hosting[social-anxiety]: Local server: http://localhost:5000
+[debug] [2018-10-03T00:06:55.021Z] ----------------------------------------------------------------------
+[debug] [2018-10-03T00:06:55.021Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\music\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-03T00:06:55.021Z] CLI Version:   4.2.1
+[debug] [2018-10-03T00:06:55.021Z] Platform:      win32
+[debug] [2018-10-03T00:06:55.021Z] Node Version:  v8.9.4
+[debug] [2018-10-03T00:06:55.021Z] Time:          Tue Oct 02 2018 17:06:55 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-03T00:06:55.021Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-03T00:06:55.036Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-03T00:06:55.036Z] > authorizing via signed-in user
+[debug] [2018-10-03T00:06:55.036Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-03T00:06:55.052Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-10-03T00:06:55.380Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-03T00:06:55.396Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-03T00:06:55.786Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-03T00:06:55.786Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+ 
+[debug] [2018-10-03T00:06:56.208Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\music\social anxiety\Social-Anxiety'...
+[info] 
+[debug] [2018-10-03T00:06:56.208Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+ 
+[debug] [2018-10-03T00:06:56.381Z] <<< HTTP RESPONSE 200
+[info] i  hosting[social-anxiety]: Serving hosting files from: public
+[info] +  hosting[social-anxiety]: Local server: http://localhost:5000
