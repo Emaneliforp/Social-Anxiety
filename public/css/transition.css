@@ -31,6 +31,13 @@
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1)
 }
+#transition p{
+  z-index: -1;
+}
+#transition img{
+  z-index: 1;
+  margin: auto;
+}
 @keyframes dropIn{
     from{transform: scale(10);}
     to{transform: none;}

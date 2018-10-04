@@ -5,12 +5,14 @@ const FIREBASE_AUTH = firebase.auth();
 let enterMessage = document.getElementById("enterMessage");
 let chat = window.localStorage.getItem('chat');
 
+let title = document.getElementById('title');
+title.textContent = chat;
+
 let name = "";
 let m = [];
 let x = 0;
 let pm = [];
 let rmess = {};
-var botc = document.createElement('div');
 let nm = "";
 
 let chatbox = document.getElementById('chatbox');
@@ -46,17 +48,37 @@ firebase.auth().onAuthStateChanged(function (user) {
                 enterMessage.value = "";
             }
         });
-        lm.on('child_added', snap => {
-            nm = snap.val();
-            var pc = document.createElement('div');
-            pc.classList.add('bot');
-            pc.textContent = nm;
-            chatbox.appendChild(pc);
-            console.log(nm);
-        });
+        
 
     } else {
         window.location.href = "index.html";
     }
 });
+var messn = "";
+var mess = "";
+var i = "";
 
+lm.on('child_added', snap => {
+    nm = snap.val();
+    i = nm.indexOf(":");
+    messn = nm.substring(0, i);
+    mess = nm.substring(i + 1);
+    var pn = document.createElement('div');
+    var pc = document.createElement('div');
+    if (messn === name) {
+        pn.classList.add('usern');
+        console.log("hi");
+    } else {
+        pn.classList.add('name');
+    }
+    pn.textContent = messn;
+    chatbox.appendChild(pn);
+    if (messn === name) {
+        pc.classList.add('user');
+    }
+    else {
+        pc.classList.add('bot');
+    }
+    pc.textContent = mess;
+    chatbox.appendChild(pc);
+});
