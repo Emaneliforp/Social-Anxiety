@@ -72,9 +72,11 @@ let sp = document.getElementById('sp');
 let shw = document.getElementById('shw');
 let sd = document.getElementById('sd');
 
-let spclose = document.getElementById('spclose');
-let shwclose = document.getElementById('shwclose');
-let sdclose = document.getElementById('sdclose');
+let sppmo=document.getElementById("sppmo");
+let shwmo = document.getElementById("shwmo")
+
+
+let close = document.getElementsByClassName("close");
 
 //add skill
 let addSkill = document.getElementById("addSkill");
@@ -88,6 +90,17 @@ searchmoc.addEventListener('click', function () {
   searchmo.style.display = "none";
 });
 
+//close out of modals
+setTimeout(function(){
+for (let i=0;i<close.length;i++){
+  console.log(i);
+  close[i].addEventListener("click", function(){
+    shwmo.style.display="none";
+    sppmo.style.display="none";
+  })
+
+}
+},2000)
 function search() {
   // Declare variables
   var input, filter, i, searchResults;
@@ -163,8 +176,6 @@ function sppcs() {
     name:"spp",
     type:"party"
   }
-  currentSkill.push("spp");
-  console.log(currentSkill)
   FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/spp").set(spp)
 
 }
@@ -173,8 +184,6 @@ function shwcs() {
     name:"shw",
     type:"homework"
   }
-  currentSkill.push("shw");
-  console.log(currentSkill)
   FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/shw").set(shw)
 }
 
@@ -201,10 +210,14 @@ var skillList = document.getElementsByClassName("skilliconaa");
 console.log(skillList.length)
 for (let i = 0; i < skillList.length; i++) {
   skillList[i].addEventListener("click", function(){
-    alert("hi")
-    var skillName = (skillList[i].innerHTML)+"mo";
-    console.log(skillName)
-    // skillName.style.display="block";
+    var skillName = skillList[i].innerHTML
+    if (skillName==="spp"){
+      sppmo.style.display="block";
+    }
+    else if (skillName==="shw"){
+      shwmo.style.display="block";
+
+    }
   })
 }
 },2000)
@@ -212,7 +225,7 @@ for (let i = 0; i < skillList.length; i++) {
 let rsp = document.getElementById("rsp");
 let rshw = document.getElementById("rshw");
 let rsd = document.getElementById("rsd");
-//
+// setTimeout(function(){
 // for (var i = 0; i <= currentSkill[0].length; i++) {
 //   if (currentSkill[0][i] === "spp") {
 //     rsp.style.display = "block";
@@ -221,7 +234,7 @@ let rsd = document.getElementById("rsd");
 //     rshw.style.display = "block";
 //   }
 // }
-
+// },2000)
 //put skills u practiced onto homepg
 
 
