@@ -13,7 +13,6 @@ let m = [];
 let x = 0;
 let pm = [];
 let rmess = {};
-var botc = document.createElement('div');
 let nm = "";
 
 let chatbox = document.getElementById('chatbox');
@@ -26,7 +25,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         name = user.displayName;
         FIREBASE_DATABASE.ref("communities/" + chat +'/chat').once('value').then(function (snapshot) {
             /*pm = snapshot.val().m;*/
-            m = snapshot.val();
+            m = snapshot.val().m;
             
             /*for (var i = 0; i < pm.length; i++) {
                 var pc = document.createElement('div');
@@ -49,17 +48,37 @@ firebase.auth().onAuthStateChanged(function (user) {
                 enterMessage.value = "";
             }
         });
-        lm.on('child_added', snap => {
-            nm = snap.val();
-            var pc = document.createElement('div');
-            pc.classList.add('bot');
-            pc.textContent = nm;
-            chatbox.appendChild(pc);
-            console.log(nm);
-        });
+        
 
     } else {
         window.location.href = "index.html";
     }
 });
+var messn = "";
+var mess = "";
+var i = "";
 
+lm.on('child_added', snap => {
+    nm = snap.val();
+    i = nm.indexOf(":");
+    messn = nm.substring(0, i);
+    mess = nm.substring(i + 1);
+    var pn = document.createElement('div');
+    var pc = document.createElement('div');
+    if (messn === name) {
+        pn.classList.add('usern');
+        console.log("hi");
+    } else {
+        pn.classList.add('name');
+    }
+    pn.textContent = messn;
+    chatbox.appendChild(pn);
+    if (messn === name) {
+        pc.classList.add('user');
+    }
+    else {
+        pc.classList.add('bot');
+    }
+    pc.textContent = mess;
+    chatbox.appendChild(pc);
+});

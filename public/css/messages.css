@@ -102,25 +102,39 @@ body {
     flex-direction: column;
     position: absolute;
 }
-
-#chatbox div {
-    font-size: 1.5vw;
-    padding: 0.5vw;
-    margin-bottom: 1vw;
-    color: white;
-    }
-
+.name {
+    color: black;
+    font-size: 1vw;
+    font-weight: bolder;
+    margin-left: 0.5vw;
+}
+.usern {
+    align-self: flex-end;
+    color: black;
+    font-size: 1vw;
+    font-weight: bolder;
+    margin-left: 0.5vw;
+}
 .bot {
     background-color: #07cdb2;
-    align-self: flex-end;
+    font-size: 1.3vw;
+    padding: 0.5vw;
+    align-self: flex-start;
     border-radius: 1vw;
-    margin-left: 3vw;
+    margin-left: 0.5vw;
+    color: white;
+    margin-bottom: 1vh;
 }
 
 .user {
     background-color: crimson;
+    font-size: 1.3vw;
+    padding: 0.5vw;
+    align-self: flex-end;
     border-radius: 1vw;
-    margin-right: 3vw;
+    margin-left: 0.5vw;
+    color: white;
+    margin-bottom: 1vh;
 }
 
 #option {
