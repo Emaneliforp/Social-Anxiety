@@ -172,7 +172,7 @@ function callThis(){
 function sppcs() {
   var spp ={
     name:"spp",
-    type:"party"
+    type:"Party"
   }
   FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/spp").set(spp)
 
@@ -180,7 +180,7 @@ function sppcs() {
 function shwcs() {
   var shw ={
     name:"shw",
-    type:"homework"
+    type:"Homework"
   }
   FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/shw").set(shw)
 }
@@ -193,7 +193,7 @@ function displaySkillsInBox(snapshot){
       let div = document.createElement('div');
       console.log(snapshot)
       console.log(snapshot.type)
-      let domString = `<div class="skilliconaa">${snapshot.name}</div>`
+      let domString = `<div class="skilliconaa">${snapshot.type}</div>`
       div.innerHTML = domString;
       let skillDiv = div.firstChild;
       console.log(skillDiv)
