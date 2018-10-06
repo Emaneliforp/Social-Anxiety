@@ -34,42 +34,42 @@ window.onload = function(){
         grade: document.getElementById("signgrade_field").value
       };
       //create account and add to database
-        if (signtPassword.value == signtRePassword.value) {
-            const promise = FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function (user) {
-                var usser = firebase.auth().currentUser;
-                if (user) {
-                    console.log(document.getElementById("signusername_field").value);
+      if (signtPassword.value == signtRePassword.value) {
+        const promise = FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function (user) {
+          var usser = firebase.auth().currentUser;
+          if (user) {
+            console.log(document.getElementById("signusername_field").value);
 
-                    let userId = usser.uid;
-                    usser.updateProfile({
-                        displayName: document.getElementById("signusername_field").value
-                    }).then(function () {
-                        //pushes user account into database
-                        FIREBASE_DATABASE.ref('users/' + userId).set(USERACC).then(
-                            function () {
-                                console.log('User data successfully stored');
-                            }).catch(function (error) {
-                                console.log(error);
-                            });
-                    })
-                } else {
-                    console.log("no user")
-                }
+            let userId = usser.uid;
+            usser.updateProfile({
+              displayName: document.getElementById("signusername_field").value
+            }).then(function() {
+              //pushes user account into database
+              FIREBASE_DATABASE.ref('users/' + userId).set(USERACC).then(
+                function () {
+                  console.log('User data successfully stored');
+                }).catch(function (error) {
+                  console.log(error);
+                });
+              })
+            } else {
+              console.log("no user")
+            }
 
-            })};
-            //catches errors
-            promise.catch(e => alert(e.message));
-            promise.then(function(v) {
-              window.location.href = "homepg.html";
-              var user = firebase.auth().currentUser;
-              console.log(user);
+          });
+
+          //catches errors
+          promise.catch(e => alert(e.message));
+          promise.then(function(v) {
+            // window.location.href = "homepg.html";
+            var user = firebase.auth().currentUser;
+            console.log(user);
           }).catch(function(error) {
             // An error happened.
             console.log("Error");
           });
-          console.log(user);
-
         }
+
 
         else{
           //prevents users from proceeding without matching passwords
