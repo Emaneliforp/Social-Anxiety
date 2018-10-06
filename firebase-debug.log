@@ -1,0 +1,32 @@
+[debug] [2018-10-04T23:59:51.522Z] ----------------------------------------------------------------------
+[debug] [2018-10-04T23:59:51.526Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kietc\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-04T23:59:51.526Z] CLI Version:   4.0.3
+[debug] [2018-10-04T23:59:51.526Z] Platform:      win32
+[debug] [2018-10-04T23:59:51.526Z] Node Version:  v10.8.0
+[debug] [2018-10-04T23:59:51.528Z] Time:          Thu Oct 04 2018 16:59:51 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-04T23:59:51.528Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-04T23:59:51.539Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-04T23:59:51.540Z] > authorizing via signed-in user
+[debug] [2018-10-04T23:59:51.542Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+  
+ Thu Oct 04 2018 16:59:51 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-04T23:59:51.904Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-04T23:59:51.908Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/social-anxiety/tokens  
+  
+ Thu Oct 04 2018 16:59:51 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-04T23:59:52.159Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-04T23:59:52.161Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+  
+ Thu Oct 04 2018 16:59:52 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-04T23:59:52.532Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\kietc\Desktop\Social-Anxiety'...
+[info] 
+[debug] [2018-10-04T23:59:52.543Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+  
+ Thu Oct 04 2018 16:59:52 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-04T23:59:53.005Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
