@@ -209,10 +209,10 @@ console.log(skillList.length)
 for (let i = 0; i < skillList.length; i++) {
   skillList[i].addEventListener("click", function(){
     var skillName = skillList[i].innerHTML
-    if (skillName==="spp"){
+    if (skillName==="Party"){
       sppmo.style.display="block";
     }
-    else if (skillName==="shw"){
+    else if (skillName==="Homework"){
       shwmo.style.display="block";
 
     }
