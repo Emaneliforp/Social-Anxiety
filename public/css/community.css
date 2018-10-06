@@ -474,6 +474,16 @@ textarea:focus{
   background-color:#f5324a;
   font-size: 140%;
   margin-top: 2.2em;
+  margin-left:0.6em;
+  border: #f5324a solid 0.2em;
+  transition: 0.2s all ease;
+
+}
+.modal-content button:hover{
+  cursor: pointer;
+  background: white;
+  color: #f5324a;
+  border-color: #f5324a;
 
 }
 #modalSearch{

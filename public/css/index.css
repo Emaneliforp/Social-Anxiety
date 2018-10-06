@@ -3,70 +3,71 @@ html{
 }
 
 *{
-    margin: 0;
-    padding: 0;
-    cursor: auto;
-    user-select: none;
-    border: 0;
-    z-index: 0;
-    font-family: "Century Gothic", Helvetica, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: auto;
+  user-select: none;
+  border: 0;
+  z-index: 0;
+  font-family: "Century Gothic", Helvetica, sans-serif;
 
 }
 
 body{
-    margin: 0;
+  margin: 0;
 }
 
 nav {
-    width: 100%;
-    background: #f5324a;
-    margin-left: 0%;
-    height: 6.5vh;
-    overflow: hidden;
+  width: 100%;
+  background: #f5324a;
+  margin-left: 0%;
+  height: 6.5vh;
+  overflow: hidden;
 
 }
-    nav a {
-        display: inline-block;
-        padding: 1.5vh 0;
-        text-decoration: none;
-        border-right: 0.2vw solid #ffffff;
-        font-size: 1.5vw;
-        color: white;
-        margin:0;
-        height: 100%;
-        padding-left: 1em;
-        padding-right: 1em;
-        line-height: 100%;
-        font-family: "Century Gothic", Helvetica, sans-serif;
-        transition: all 0.2s ease-in;
+nav a {
+  display: inline-block;
+  padding: 1.5vh 0;
+  text-decoration: none;
+  border-right: 0.2vw solid #ffffff;
+  font-size: 1.5vw;
+  color: white;
+  margin:0;
+  height: 100%;
+  padding-left: 1em;
+  padding-right: 1em;
+  line-height: 100%;
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  transition: all 0.2s ease-in;
 
-    }
-    nav a:hover{
-        background-color: #c41d30;
-        cursor: pointer;
-    }
+}
+nav a:hover{
+  background-color: #c41d30;
+  cursor: pointer;
+}
 
-    nav button{
-      display: inline-block;
-      font-family: "Century Gothic", Helvetica, sans-serif;
-      font-size: 1.5vw;
-      padding-left: 2em;
-      padding-right: 2em;
-      padding-bottom: 0.1em;
-      background-color: #f5324a;
-      text-decoration: none;
-      color: white;
-      height: 100%;
-      margin: 0.19em;
-      border: solid white 0.1em;
-      border-radius: 1vw;
-      transition: all 0.2s ease;
-    }
-    nav button:hover {
-      border-color: #f5324a;
-      background-color: #fff;
-      color: #f5324a;
-      cursor: pointer;
+nav button{
+  display: inline-block;
+  font-family: "Century Gothic", Helvetica, sans-serif;
+  font-size: 1.5vw;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.1em;
+  background-color: #f5324a;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+  margin: 0.19em;
+  border: solid white 0.1em;
+  border-radius: 1vw;
+  transition: all 0.2s ease;
+}
+nav button:hover {
+  border-color: #f5324a;
+  background-color: #fff;
+  color: #f5324a;
+  cursor: pointer;
 
 }
 
@@ -85,10 +86,10 @@ nav {
 
 .section{
   overflow: visible;
-   height: 100vh;
-   background-color: #07cdb2;
-   margin-top: 2vh;
-   font-family: "Century Gothic", Helvetica, sans-serif;
+  height: 100vh;
+  background-color: #07cdb2;
+  margin-top: 2vh;
+  font-family: "Century Gothic", Helvetica, sans-serif;
 
 }
 
@@ -117,13 +118,13 @@ nav {
 }
 
 #section1 {
-    text-align: center;
+  text-align: center;
 }
 #section1 p{
-    font-family: "Century Gothic", Arial, Helvetica, sans-serif;
-    font-size: 7vw;
-    color:#ffffff;
-    line-height: 100%
+  font-family: "Century Gothic", Arial, Helvetica, sans-serif;
+  font-size: 7vw;
+  color:#ffffff;
+  line-height: 100%
 }
 #signup {
   font-family: "Century Gothic", Helvetica, sans-serif;
@@ -210,17 +211,17 @@ nav {
   z-index: 2;
   left: 92.3vw;
   top: 96vh;
-	width: 0;
-	height: 0;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	border-top: 100px solid yellow;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 100px solid yellow;
   /* transition: 0.3s all; */
 }
 
 
 
 @font-face {
-font-family: CenturyGothic;
-src: url(CenturyGothic.ttf);
+  font-family: CenturyGothic;
+  src: url(CenturyGothic.ttf);
 }

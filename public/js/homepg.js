@@ -137,8 +137,6 @@ logoutBtn.addEventListener("click", function(){
   .catch(function(error) {
     // An error happened
   });
-
-  console.log(user);
   window.location.href="index.html";
 });
 
