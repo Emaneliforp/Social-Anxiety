@@ -208,6 +208,7 @@ img {
   background-color: #f5324a;
 }
 .slidecontent{
+
   margin: auto;
 }
 .slidecontent img{
@@ -215,10 +216,12 @@ img {
   width: 150vh;
 }
 .slidecontainer{
+
   position: relative;
   text-align: center;
 }
 .ccontainer: after, .ccontainer: before {
+
   content:none;
   display: table;
   clear:both;
