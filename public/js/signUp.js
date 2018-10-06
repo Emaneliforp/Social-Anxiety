@@ -30,27 +30,20 @@ window.onload = function(){
       //user object
       const USERACC = {
         name: document.getElementById("signname_field").value,
-        grade: document.getElementById("signgrade_field").value,
+        username:document.getElementById("signusername_field").value;
+        grade: document.getElementById("signgrade_field").value
       };
       //create account and add to database
       if (signtPassword.value == signtRePassword.value){
         const promise = FIREBASE_AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD).then(function(user) {
           var usser = firebase.auth().currentUser;
-            if (user) {
-              console.log(document.getElementById("signusername_field").value);
+          if (user) {
+            console.log(document.getElementById("signusername_field").value);
 
-              let userId = usser.uid;
-              usser.updateProfile({
-                displayName: document.getElementById("signusername_field").value
-              }).then(function() {
-                console.log("Success");
-                // Update successful.
-              }).catch(function(error) {
-                // An error happened.
-                console.log("Error");
-              });
-              console.log(user);
-
+            let userId = usser.uid;
+            usser.updateProfile({
+              displayName: document.getElementById("signusername_field").value
+            }).then(function() {
               //pushes user account into database
               FIREBASE_DATABASE.ref('users/'+ userId).set(USERACC).then(
                 function() {
@@ -58,18 +51,25 @@ window.onload = function(){
                 }).catch(function(error) {
                   console.log(error);
                 });
-              } else {
-                // No user is signed in.
+              }) else {
+                console.log("no user")
               }
 
+            };
+            //catches errors
+            promise.catch(e => alert(e.message));
+            promise.then(function(v) {
+              window.location.href = "homepg.html";
+              var user = firebase.auth().currentUser;
+              console.log(user);
+            });
+            // Update successful.
+          }).catch(function(error) {
+            // An error happened.
+            console.log("Error");
           });
-          //catches errors
-          promise.catch(e => alert(e.message));
-          promise.then(function(v) {
-            window.location.href = "homepg.html";
-            var user = firebase.auth().currentUser;
-            console.log(user);
-          });
+          console.log(user);
+
         }
 
         else{

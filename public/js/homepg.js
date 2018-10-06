@@ -1,3 +1,5 @@
+//for nav bar
+
 function opennav(){
   document.getElementById("sidenav").style.width= "250px";
 }
@@ -16,6 +18,7 @@ function currentDiv(n){
   showDivs(slideIndex = n);
 }
 
+//for slideshow
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");

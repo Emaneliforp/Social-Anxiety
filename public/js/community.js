@@ -170,43 +170,53 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     var id;
     var commName = nameField.value;
     var m = ["Skit: Hi", "Welcome"];
-    
+
 
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
-          console.log(user);
-        username = FIREBASE_AUTH.currentUser.displayName;
+        FIREBASE_DATABASE.ref("users/" + user.uid+"/username").on("value", function(snapshot){
+          username=(snapshot.val())
+        })
+      }
+    })
+
+    FIREBASE_AUTH.onAuthStateChanged(function(user) {
+      if (user) {
+        FIREBASE_DATABASE.ref("users/" + user.uid+"/username").on("value", function(snapshot){
           id = user.uid;
           use.push(username);
-        const COMMUNITY = {
-          name: commName,
-          creator: FIREBASE_AUTH.currentUser.displayName,
-          desc: descField.value,
-          mem: use
-        }
+          const COMMUNITY = {
+            name: commName,
+            creator: username,
+            desc: descField.value,
+            mem: use
+          }
           FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
           FIREBASE_DATABASE.ref("communities/" + commName + "/chat/m").set(m);
-        const USERACC={
-          username: username,
-          permission: "owner"
-        }
-        const aaa={
-          name: commName,
-          creator: username,
-          desc: descField.value,
-          permission: "owner"
-        }
-        FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
-        FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+commName).set(aaa);
+          const USERACC={
+            username: username,
+            permission: "owner"
+          }
+          const aaa={
+            name: commName,
+            creator: username,
+            desc: descField.value,
+            permission: "owner"
+          }
+          FIREBASE_DATABASE.ref("communities/" +commName+"/members/"+id).set(USERACC);
+          FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+commName).set(aaa);
 
-        console.log("Created community successfully");
-        createModal.style.display = "none";                                
-        var successModal = document.getElementById("myModalSuccess");
-        var successModalContent = document.getElementById("modalSuccess");
-        console.log(successModal);
-        console.log(successModalContent);
-        successModal.style.display="block";
-        successModalContent.style.display="block";
+          console.log("Created community successfully");
+          createModal.style.display = "none";
+          var successModal = document.getElementById("myModalSuccess");
+          var successModalContent = document.getElementById("modalSuccess");
+          console.log(successModal);
+          console.log(successModalContent);
+          successModal.style.display="block";
+          successModalContent.style.display="block";
+        })
+
+
       } else {
         console.log("error")
       }
@@ -236,20 +246,16 @@ setTimeout(function(){
       let description = (plusBtnArr[i].parentElement.getElementsByTagName("div")[2].innerHTML);
       description= description.slice(3);
       firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-              username = FIREBASE_AUTH.currentUser.displayName;
-              console.log(user);
-              console.log("hi");
-              FIREBASE_DATABASE.ref("communities/" + title + '/mem/').once('value').then(function (snapshot) {
-                  console.log(FIREBASE_AUTH.currentUser.displayName);
-                  console.log(username);
-                  m = snapshot.val();
-                  m.push(username);
-                  console.log(m);
-                  FIREBASE_DATABASE.ref("communities/" + title + "/mem/").set(m);
-              });
+        if (user) {
+          FIREBASE_DATABASE.ref("communities/" + title + '/mem/').once('value').then(function (snapshot) {
+            console.log(username);
+            m = snapshot.val();
+            m.push(username);
+            console.log(m);
+            FIREBASE_DATABASE.ref("communities/" + title + "/mem/").set(m);
+          });
           const USERACC={
-            username: user.displayName,
+            username: username,
             permission: "regular"
           }
           const aaa={

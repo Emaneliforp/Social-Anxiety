@@ -137,8 +137,9 @@ a{
 }
 #fileUploadBtn{
   padding: 0.3em 0.4em 0.8em 0.4em;
+  border-color: gray;
   font-size: 90%;
-  background-color: #f5324a;
+  background-color: gray;
   border-radius: 1em;
   height: 10%;
   width: 10%;
@@ -146,6 +147,11 @@ a{
   left: 17.5vw;
   bottom: 25vh;
 }
+#fileUploadBtn:hover{
+  color: white;
+  cursor: default;
+}
+
 
 #recentComm{
   background-color: #f5324a;
