@@ -77,7 +77,7 @@ let sd = document.getElementById('sd');
 
 let sppmo=document.getElementById("sppmo");
 let shwmo = document.getElementById("shwmo")
-
+let sdmo = document.getElementById("sdmo")
 
 let close = document.getElementsByClassName("close");
 
@@ -100,6 +100,7 @@ for (let i=0;i<close.length;i++){
   close[i].addEventListener("click", function(){
     shwmo.style.display="none";
     sppmo.style.display="none";
+    sdmo.style.display="none"
   })
 
 }
@@ -188,6 +189,14 @@ function shwcs() {
   FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/shw").set(shw)
 }
 
+function sdcs(){
+  var sd = {
+    name:"sd",
+    type:"Debate"
+  }
+  FIREBASE_DATABASE.ref('/users/'+userId + "/currentSkill/sd").set(sd)
+
+}
 
 function displaySkillsInBox(snapshot){
   FIREBASE_AUTH.onAuthStateChanged(function(user) {
@@ -218,6 +227,9 @@ for (let i = 0; i < skillList.length; i++) {
     else if (skillName==="Homework"){
       shwmo.style.display="block";
 
+    }
+    else if (skillName==="Debate"){
+      sdmo.style.display="block"
     }
   })
 }
