@@ -5,9 +5,11 @@ const FIREBASE_AUTH = firebase.auth();
 document.getElementById("arrow").addEventListener("click", function(){
   window.location.href = "homepg.html";
 })
+var username;
 
 //get all communities in database
 FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevChildKey) {
+
   displayCommInSearch(snapshot.val());
 
 });
@@ -16,6 +18,10 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
     console.log(user)
     FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
       displayCommInSearchMain(snapshot.val());
+      FIREBASE_DATABASE.ref("users/" + user.uid+"/username").on("value", function(snapshot){
+        username=(snapshot.val())
+        console.log(username)
+      })
     });
   } else {
     console.log("kms")
@@ -166,7 +172,6 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
 
   else{
     //retrieve username of current user
-    var username;
     var id;
     var commName = nameField.value;
     var m = ["Skit: Hi", "Welcome"];
@@ -207,6 +212,8 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
           FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+commName).set(aaa);
 
           console.log("Created community successfully");
+          nameField.value="";
+          descField.value="";
           createModal.style.display = "none";
           var successModal = document.getElementById("myModalSuccess");
           var successModalContent = document.getElementById("modalSuccess");
@@ -232,11 +239,11 @@ setTimeout(function(){
   //make array with all plusbtns
   let plusBtnArr = document.getElementsByClassName("plusbtn");
   //loop through all and attach event listeners
-  console.log(plusBtnArr);
+  console.log(plusBtnArr.length);
 
   //loop through all and attach event listeners
   for (let i = 0; i < plusBtnArr.length; i++) {
-
+    console.log(i)
     plusBtnArr[i].addEventListener("click", function(){
       //get title of community clicked
       console.log(i)
@@ -247,6 +254,9 @@ setTimeout(function(){
       description= description.slice(3);
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
+
+
+
           FIREBASE_DATABASE.ref("communities/" + title + '/mem/').once('value').then(function (snapshot) {
             console.log(username);
             m = snapshot.val();
@@ -279,7 +289,7 @@ setTimeout(function(){
     });
   }
 
-}, 1000);
+}, 2000);
 
 function search() {
   // Declare variables
@@ -301,15 +311,6 @@ function search() {
 }
 
 function displayCommInSearch(community){
-  var searchResults=[];
-  FIREBASE_DATABASE.ref('/communities').once('value') //using once b/c we are taking a snapshot once daily
-  .then((snapshot) => {
-    let val = snapshot.val();
-    for (let key in val) {
-      searchResults.push(key);
-    }
-  })
-
   let div = document.createElement('div');
   let domString = `<div class="modalSearchResult">
   <div id ="modalSearchh5">${community.name}</div>
