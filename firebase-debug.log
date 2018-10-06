@@ -78,3 +78,47 @@
 [debug] [2018-10-06T00:47:54.463Z] [hosting][populate queue][FINAL]
 [debug] [2018-10-06T00:47:54.464Z] [hosting] uploads queued: 60
 >>>>>>> 518f178cddf412aff8596e0e1fedbf132375af5a
+[debug] [2018-10-06T05:50:23.527Z] ----------------------------------------------------------------------
+[debug] [2018-10-06T05:50:23.530Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\kietc\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-10-06T05:50:23.530Z] CLI Version:   4.0.3
+[debug] [2018-10-06T05:50:23.530Z] Platform:      win32
+[debug] [2018-10-06T05:50:23.530Z] Node Version:  v10.8.0
+[debug] [2018-10-06T05:50:23.533Z] Time:          Fri Oct 05 2018 22:50:23 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-06T05:50:23.533Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-06T05:50:23.551Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-06T05:50:23.552Z] > authorizing via signed-in user
+[debug] [2018-10-06T05:50:23.554Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-10-06T05:50:23.555Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token:
+   '1/WC6j18a7HCi9PKC4o_OrSijnGa2TAQ-ouMyUcQSmM-W01JgxCK44bOwJZyZCuu1E',
+  client_id:
+   '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope:
+   'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Oct 05 2018 22:50:23 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-06T05:50:23.839Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-06T05:50:23.844Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/social-anxiety  
+  
+ Fri Oct 05 2018 22:50:23 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-06T05:50:24.532Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-06T05:50:24.534Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/social-anxiety/tokens  
+  
+ Fri Oct 05 2018 22:50:24 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-06T05:50:24.898Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-06T05:50:24.899Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/social-anxiety  
+  
+ Fri Oct 05 2018 22:50:24 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-06T05:50:25.333Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\kietc\Desktop\Social-Anxiety'...
+[info] 
+[debug] [2018-10-06T05:50:25.341Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/321965462198/clients/_:getWebAppConfig  
+  
+ Fri Oct 05 2018 22:50:25 GMT-0700 (Pacific Daylight Time)
+[debug] [2018-10-06T05:50:25.781Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

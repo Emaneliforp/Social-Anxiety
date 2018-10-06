@@ -118,6 +118,7 @@ body {
 .bot {
     background-color: #07cdb2;
     font-size: 1.3vw;
+    max-width: 80%;
     padding: 0.5vw;
     align-self: flex-start;
     border-radius: 1vw;
