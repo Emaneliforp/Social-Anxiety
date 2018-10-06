@@ -22,6 +22,7 @@ FIREBASE_AUTH.onAuthStateChanged(function(user) {
   }
 });
 
+var use = [];
 
 // Get the modal
 var createModal = document.getElementById("myModalCreate");
@@ -108,7 +109,7 @@ window.onclick = function(event) {
 //character count
 var charCountSendName=true;
 var nameField=document.getElementById("commName");
-var descField=document.getElementById("commDesc")
+var descField = document.getElementById("commDesc");
 
 document.getElementById('commName').onkeyup = function () {
   var item  = document.getElementById('nameCount');
@@ -169,19 +170,22 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
     var id;
     var commName = nameField.value;
     var m = ["Skit: Hi", "Welcome"];
+    
 
     FIREBASE_AUTH.onAuthStateChanged(function(user) {
       if (user) {
-        console.log(user);
+          console.log(user);
         username = FIREBASE_AUTH.currentUser.displayName;
-        id = user.uid;
+          id = user.uid;
+          use.push(username);
         const COMMUNITY = {
           name: commName,
           creator: FIREBASE_AUTH.currentUser.displayName,
           desc: descField.value,
-          chat: m
+          mem: use
         }
-        FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+          FIREBASE_DATABASE.ref("communities/" + commName).set(COMMUNITY);
+          FIREBASE_DATABASE.ref("communities/" + commName + "/chat/m").set(m);
         const USERACC={
           username: username,
           permission: "owner"
@@ -196,7 +200,7 @@ document.getElementById("createCommBtn").addEventListener("click",function(){
         FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+commName).set(aaa);
 
         console.log("Created community successfully");
-        createModal.style.display = "none";
+        createModal.style.display = "none";                                
         var successModal = document.getElementById("myModalSuccess");
         var successModalContent = document.getElementById("modalSuccess");
         console.log(successModal);
@@ -232,7 +236,18 @@ setTimeout(function(){
       let description = (plusBtnArr[i].parentElement.getElementsByTagName("div")[2].innerHTML);
       description= description.slice(3);
       firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
+          if (user) {
+              username = FIREBASE_AUTH.currentUser.displayName;
+              console.log(user);
+              console.log("hi");
+              FIREBASE_DATABASE.ref("communities/" + title + '/mem/').once('value').then(function (snapshot) {
+                  console.log(FIREBASE_AUTH.currentUser.displayName);
+                  console.log(username);
+                  m = snapshot.val();
+                  m.push(username);
+                  console.log(m);
+                  FIREBASE_DATABASE.ref("communities/" + title + "/mem/").set(m);
+              });
           const USERACC={
             username: user.displayName,
             permission: "regular"

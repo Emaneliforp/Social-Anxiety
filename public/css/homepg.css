@@ -228,6 +228,19 @@ img {
 }
 .mySlides {
   width: 100%;
+  animation: fading 3s infinite;
+  animation-iteration-count: 1;
+}
+@keyframes fading {
+  0% {
+  opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .caption{
   position: absolute;
@@ -240,6 +253,8 @@ img {
   color: white;
   padding: 3vw;
   background-color: rgba(220, 20, 60, 0.3);
+  animation: fading 3s infinite;
+  animation-iteration-count: 1;
 }
 .button{
   color: #fff!important;
