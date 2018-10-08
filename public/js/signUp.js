@@ -46,10 +46,20 @@ window.onload = function(){
             }).then(function() {
               //pushes user account into database
               FIREBASE_DATABASE.ref('users/' + userId).set(USERACC).then(
-                function () {
+                function() {
                   console.log('User data successfully stored');
                 }).catch(function (error) {
                   console.log(error);
+                });
+                //catches errors
+                promise.catch(e => alert(e.message));
+                promise.then(function(v) {
+                  window.location.href = "homepg.html";
+                  var user = firebase.auth().currentUser;
+                  console.log(user);
+                }).catch(function(error) {
+                  // An error happened.
+                  console.log("Error");
                 });
               })
             } else {
@@ -58,16 +68,7 @@ window.onload = function(){
 
           });
 
-          //catches errors
-          promise.catch(e => alert(e.message));
-          promise.then(function(v) {
-            window.location.href = "homepg.html";
-            var user = firebase.auth().currentUser;
-            console.log(user);
-          }).catch(function(error) {
-            // An error happened.
-            console.log("Error");
-          });
+
         }
 
 
