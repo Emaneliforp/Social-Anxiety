@@ -1,6 +1,5 @@
 const FIREBASE_DATABASE=firebase.database();
 const FIREBASE_AUTH = firebase.auth();
-
 //redirect to page
 document.getElementById("arrow").addEventListener("click", function(){
   window.location.href = "homepg.html";
@@ -334,6 +333,7 @@ function displayCommInSearchMain(community){
     if (user) {
       let div = document.createElement('div');
       let domString = `<div class="searchResult" onclick="chat()">
+      <span class="deleteComm">&times;</span>
       <div class ="searchResulth5" >${community.name}</div>
       <div id = "modalSearchh4">${"created by: "+community.creator}</div>
       <div id ="modalSearchParagraph">
@@ -382,4 +382,26 @@ function chat() {
     });
 
   }
+}
+window.onload = function(){
+setTimeout(function(){
+  let deleteCommArr = document.getElementsByClassName("deleteComm");
+  console.log(deleteCommArr.length)
+  for (let i=0; i<deleteCommArr.length;i++){
+    console.log(i)
+    deleteCommArr[i].addEventListener("click", function(){
+      FIREBASE_AUTH.onAuthStateChanged
+      let title=(deleteCommArr[i].parentElement.getElementsByTagName("div")[0].innerHTML);
+      console.log(title)
+      FIREBASE_AUTH.onAuthStateChanged(function(user) {
+        if(user){
+          FIREBASE_DATABASE.ref("users/" +user.uid+"/communities/"+title).set(null);
+        }
+        FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
+          displayCommInSearchMain(snapshot.val());
+        })
+      })
+    });
+  }
+},2500)
 }
