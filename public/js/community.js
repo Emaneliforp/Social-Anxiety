@@ -12,16 +12,18 @@ FIREBASE_DATABASE.ref('/communities').on('child_added', function(snapshot, prevC
   displayCommInSearch(snapshot.val());
 
 });
+
 FIREBASE_AUTH.onAuthStateChanged(function(user) {
   if (user) {
     console.log(user)
     FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
       displayCommInSearchMain(snapshot.val());
-      FIREBASE_DATABASE.ref("users/" + user.uid+"/username").on("value", function(snapshot){
-        username=(snapshot.val())
-        console.log(username)
-      })
     });
+    FIREBASE_DATABASE.ref("users/" + user.uid+"/username").on("value", function(snapshot){
+      username=(snapshot.val())
+      console.log(username)
+    })
+
   } else {
     console.log("kms")
   }
@@ -34,6 +36,7 @@ var createModal = document.getElementById("myModalCreate");
 var searchModal = document.getElementById("myModalSearch");
 var successModal = document.getElementById("myModalSuccess");
 var joinModal = document.getElementById("myModalJoin");
+var joinnn=document.getElementById("modalJoin");
 // Get the button that opens the modal
 var createBtn = document.getElementById("createComm");
 var searchBtn = document.getElementById("joinNewComm")
@@ -274,10 +277,12 @@ setTimeout(function(){
             permission: "regular"
           }
           console.log(user);
+          console.log(USERACC)
           FIREBASE_DATABASE.ref("communities/" +title+"/members/"+user.uid).set(USERACC);
           FIREBASE_DATABASE.ref("users/" +user.uid +"/communities/"+title).set(aaa);
           console.log("user inputted");
           joinModal.style.display="block"
+          joinnn.style.display="block"
           searchModal.style.display="none"
         } else {
           console.log("error");
@@ -345,7 +350,6 @@ function displayCommInSearchMain(community){
       let communityDiv = div.firstChild;
       var modalSearchDiv =document.getElementById("searchResultArea");
       modalSearchDiv.appendChild(communityDiv);
-      console.log(community)
     } else {
       console.log("perish");
     }
@@ -383,25 +387,28 @@ function chat() {
 
   }
 }
+function deleteCommunities(index){
+  let child = deleteCommArr[index].parentElement;
+  console.log(child)
+  let title=deleteCommArr[index].parentElement.getElementsByTagName("div")[0].innerHTML;
+  console.log(title)
+  FIREBASE_AUTH.onAuthStateChanged(function(user) {
+    if(user){
+      FIREBASE_DATABASE.ref("users/" +user.uid+"/communities/"+title).set(null);
+    }
+  });
+  console.log("hi")
+  child.style.display="none"
+}
+
+let deleteCommArr = [];
 window.onload = function(){
-setTimeout(function(){
-  let deleteCommArr = document.getElementsByClassName("deleteComm");
-  console.log(deleteCommArr.length)
-  for (let i=0; i<deleteCommArr.length;i++){
-    console.log(i)
-    deleteCommArr[i].addEventListener("click", function(){
-      FIREBASE_AUTH.onAuthStateChanged
-      let title=(deleteCommArr[i].parentElement.getElementsByTagName("div")[0].innerHTML);
-      console.log(title)
-      FIREBASE_AUTH.onAuthStateChanged(function(user) {
-        if(user){
-          FIREBASE_DATABASE.ref("users/" +user.uid+"/communities/"+title).set(null);
-        }
-        FIREBASE_DATABASE.ref("users/"+user.uid+"/communities").on('child_added', function(snapshot, prevChildKey) {
-          displayCommInSearchMain(snapshot.val());
-        })
-      })
-    });
-  }
-},2500)
+  setTimeout(function(){
+    deleteCommArr=document.getElementsByClassName("deleteComm");
+    console.log(deleteCommArr.length)
+    for (let i=0; i<deleteCommArr.length;i++){
+      console.log(i)
+      deleteCommArr[i].addEventListener("click", deleteCommunities(i));
+    }
+  },2500)
 }

@@ -102,12 +102,13 @@ nav button:hover {
 }
 
 #section1 img{
+
   float: left;
   position: relative;
-  padding-top: 5vh;
-
-  height: 40vh;
+  top:0;
+  height:70vh;
   width: 50vw;
+  padding-bottom: 5vh;
 }
 
 #rightSec {
@@ -130,7 +131,7 @@ nav button:hover {
   font-family: "Century Gothic", Helvetica, sans-serif;
   font-size: 1.5vw;
   padding: 1vw;
-  margin-left: 50vw;
+  margin-bottom:5vh;
   background-color: #fab50f;
   text-decoration: none;
   color: white;
@@ -203,9 +204,7 @@ nav button:hover {
   padding: 2.5vh;
 }
 
-.stuff{
-  padding-top: 3%;
-}
+
 .triangle-down {
   position:relative;
   z-index: 2;
