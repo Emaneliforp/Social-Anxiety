@@ -301,7 +301,7 @@ function search() {
   input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
   searchResults=document.getElementsByClassName("searchResult");
-
+  
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < searchResults.length; i++) {
     a = searchResults[i].getElementsByTagName("h5")[0];

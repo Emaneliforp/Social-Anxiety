@@ -195,7 +195,7 @@ nav button:hover {
 }
 
 #credit{
-  height: 5vh;
+  height: 4.2vh;
   background-color: black;
   font-family: "Century Gothic", Helvetica, sans-serif;
   font-size: 1.5vh;
@@ -223,4 +223,29 @@ nav button:hover {
 @font-face {
   font-family: CenturyGothic;
   src: url(CenturyGothic.ttf);
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fab50f;
+
+  border-radius: 0.2em;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f5324a;
 }
