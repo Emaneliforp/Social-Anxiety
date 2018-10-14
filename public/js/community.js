@@ -301,7 +301,7 @@ function search() {
   input = document.getElementById('searchBar');
   filter = input.value.toUpperCase();
   searchResults=document.getElementsByClassName("searchResult");
-  
+
   // Loop through all list items, and hide those who don't match the search query
   for (i = 0; i < searchResults.length; i++) {
     a = searchResults[i].getElementsByTagName("h5")[0];
@@ -387,28 +387,28 @@ function chat() {
 
   }
 }
-function deleteCommunities(index){
-  let child = deleteCommArr[index].parentElement;
-  console.log(child)
-  let title=deleteCommArr[index].parentElement.getElementsByTagName("div")[0].innerHTML;
-  console.log(title)
-  FIREBASE_AUTH.onAuthStateChanged(function(user) {
-    if(user){
-      FIREBASE_DATABASE.ref("users/" +user.uid+"/communities/"+title).set(null);
-    }
-  });
-  console.log("hi")
-  child.style.display="none"
-}
-
-let deleteCommArr = [];
-window.onload = function(){
-  setTimeout(function(){
-    deleteCommArr=document.getElementsByClassName("deleteComm");
-    console.log(deleteCommArr.length)
-    for (let i=0; i<deleteCommArr.length;i++){
-      console.log(i)
-      deleteCommArr[i].addEventListener("click", deleteCommunities(i));
-    }
-  },2500)
-}
+// function deleteCommunities(index){
+//   let child = deleteCommArr[index].parentElement;
+//   console.log(child)
+//   let title=deleteCommArr[index].parentElement.getElementsByTagName("div")[0].innerHTML;
+//   console.log(title)
+//   FIREBASE_AUTH.onAuthStateChanged(function(user) {
+//     if(user){
+//       FIREBASE_DATABASE.ref("users/" +user.uid+"/communities/"+title).set(null);
+//     }
+//   });
+//   console.log("hi")
+//   child.style.display="none"
+// }
+//
+// let deleteCommArr = [];
+// window.onload = function(){
+//   setTimeout(function(){
+//     deleteCommArr=document.getElementsByClassName("deleteComm");
+//     console.log(deleteCommArr.length)
+//     for (let i=0; i<deleteCommArr.length;i++){
+//       console.log(i)
+//       deleteCommArr[i].addEventListener("click", deleteCommunities(i));
+//     }
+//   },2500)
+// }
